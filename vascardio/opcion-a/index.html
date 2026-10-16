@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Vascardio · Opción A</title>
+<link rel="icon" href="/vascardio/assets/logos/VASCARDIO_Symbol_FullColor_RGB.svg">
+<style>@font-face{font-family:"Instrument Serif";src:url("/vascardio/assets/fonts/InstrumentSerif-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Instrument Serif";src:url("/vascardio/assets/fonts/InstrumentSerif-Italic.ttf") format("truetype");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Bricolage Grotesque";src:url("/vascardio/assets/fonts/BricolageGrotesque-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Bricolage Grotesque";src:url("/vascardio/assets/fonts/BricolageGrotesque-Bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"DM Mono";src:url("/vascardio/assets/fonts/DMMono-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+
+:root{--red:#C82E30;--red-700:#A82528;--ink:#231C1B;--white:#FFFFFF;--stone:#D8CCBC;--umber:#6E5F50;--gold:#B6896D;--oxblood:#6B1612;--cream:#F1E6D6;
+--serif:"Instrument Serif","Iowan Old Style",Georgia,serif;--sans:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;--mono:"DM Mono",ui-monospace,Menlo,monospace}
+*{box-sizing:border-box}
+html{color-scheme:light}
+body{margin:0;background:var(--white);color:var(--ink);font:400 18px/1.6 var(--sans)}
+a{color:var(--red)}a:hover{color:var(--oxblood)}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.topbar{position:sticky;top:0;z-index:50;background:var(--white);box-shadow:0 1px 0 var(--stone)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px;flex-wrap:wrap;padding-block:8px}
+.topbar img{width:170px;height:auto;display:block}
+.topnav{display:flex;gap:4px;flex-wrap:wrap}
+.topnav a{color:var(--ink);text-decoration:none;font-size:15px;padding:10px 12px;min-height:44px;display:inline-flex;align-items:center}
+.topnav a[aria-current="page"]{font-weight:700;box-shadow:inset 0 -2px 0 var(--red)}
+.eyebrow{font-family:var(--mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--red);margin:0}
+h1,h2,h3{text-wrap:balance}
+.foot{background:var(--ink);color:var(--stone);margin-top:96px}
+.foot .wrap{padding-block:40px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:15px}
+.foot a{color:var(--white)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+<style>:root, [data-theme="white"]{--vascardio-red:#C82E30;--vascardio-gold:#B6896D;--ink:#231C1B;--white:#FFFFFF;--cream:#F1E6D6;--stone:#D8CCBC;--umber:#6E5F50;--oxblood:#6B1612;--heart-overlap:#B7543C;--red-700:#A82528;--red-800:#8F1E21;--surface:var(--white);--text:var(--ink);--text-muted:var(--umber);--text-accent:var(--vascardio-red);--link:var(--vascardio-red);--link-hover:var(--oxblood);--action:var(--vascardio-red);--on-action:var(--white);--action-hover:var(--red-700);--on-action-hover:var(--white);--action-pressed:var(--red-800);--border-strong:var(--ink);--border-input:var(--umber);--border-subtle:var(--stone);--accent-line:var(--vascardio-gold);--focus-ring:var(--ink);--error:var(--oxblood);--error-border:var(--vascardio-red);--selected:var(--vascardio-red);--shadow-sticky:0 1px 0 #D8CCBC, 0 8px 24px rgba(35, 28, 27, 0.08);--shadow-overlay:0 16px 48px rgba(35, 28, 27, 0.16);}
+[data-theme="ink"]{--surface:var(--ink);--text:var(--white);--text-muted:var(--stone);--text-accent:var(--vascardio-gold);--link:var(--vascardio-gold);--link-hover:var(--cream);--action:var(--vascardio-red);--on-action:var(--white);--action-hover:var(--red-700);--on-action-hover:var(--white);--action-pressed:var(--red-800);--border-strong:var(--white);--border-input:var(--stone);--border-subtle:var(--umber);--accent-line:var(--vascardio-gold);--focus-ring:var(--white);--error:var(--cream);--error-border:var(--vascardio-red);--selected:var(--vascardio-red);--shadow-sticky:0 1px 0 #D8CCBC, 0 8px 24px rgba(35, 28, 27, 0.08);--shadow-overlay:0 16px 48px rgba(35, 28, 27, 0.16);}
+[data-theme="red"]{--surface:var(--vascardio-red);--text:var(--white);--text-muted:var(--white);--text-accent:var(--white);--link:var(--white);--link-hover:var(--white);--action:var(--white);--on-action:var(--vascardio-red);--action-hover:var(--cream);--on-action-hover:var(--oxblood);--action-pressed:var(--stone);--border-strong:var(--white);--border-input:var(--white);--border-subtle:var(--oxblood);--accent-line:var(--cream);--focus-ring:var(--white);--error:var(--white);--error-border:var(--white);--selected:var(--white);--shadow-sticky:0 1px 0 #D8CCBC, 0 8px 24px rgba(35, 28, 27, 0.08);--shadow-overlay:0 16px 48px rgba(35, 28, 27, 0.16);}
+:root{--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:24px;--space-6:32px;--space-7:48px;--space-8:64px;--space-9:96px;--space-10:128px;--space-11:160px;--radius-none:0px;--container-max:1280px;--gutter:32px;--margin-desktop:80px;--section-y:160px;--section-y-mobile:64px;--control-h:56px;--touch-min:48px;--icon-brand:48px;--icon-ui:24px;--z-sticky:100;--z-bottom-bar:110;--z-dropdown:200;--z-overlay:300;--z-modal:400;--z-toast:500;--z-skip:1000;--dur-fast:120ms;--dur-base:200ms;--dur-slow:320ms;--ease-out:cubic-bezier(.2,.7,.2,1);--font-display:"Instrument Serif", "Iowan Old Style", Georgia, serif;--font-text:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;--font-mono:"DM Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;}
+
+.ds-hero{padding-block:64px 32px;display:flex;flex-direction:column;gap:16px}
+.ds-hero h1{margin:0;font:400 clamp(44px,7vw,88px)/1 var(--serif);letter-spacing:-.01em}
+.ds-hero p.lead{margin:0;max-width:44rem;font-size:20px}
+.ds-toc{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.ds-toc a{font-size:15px;color:var(--ink);text-decoration:none;padding:8px 14px;box-shadow:inset 0 0 0 1px var(--stone)}
+.ds-sec{padding-top:72px;display:flex;flex-direction:column;gap:24px}
+.ds-sec>h2{margin:0;font:400 clamp(32px,4vw,48px)/1.1 var(--serif)}
+.ds-note{margin:0;color:var(--umber);max-width:46rem}
+.sw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px}
+.sw{display:flex;flex-direction:column;gap:6px;min-width:0}
+.sw b{font-size:16px}.sw code,.ds-table code{font-family:var(--mono);font-size:14px}
+.sw .chip{height:96px;box-shadow:inset 0 0 0 1px rgba(35,28,27,.12)}
+.sw span{font-size:14px;color:var(--umber);line-height:1.4}
+.tbl-box{overflow-x:auto;box-shadow:inset 0 0 0 1px var(--stone)}
+.ds-table{width:100%;border-collapse:collapse;font-size:15px;min-width:760px}
+.ds-table th,.ds-table td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--stone);vertical-align:top}
+.ds-table th{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--umber);font-weight:400}
+.ds-table td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.dot{display:inline-block;width:18px;height:18px;vertical-align:-4px;margin-right:6px;box-shadow:inset 0 0 0 1px rgba(35,28,27,.25)}
+.type-row{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:24px;padding:18px 0;border-bottom:1px solid var(--stone);align-items:baseline}
+.type-row .meta{font-family:var(--mono);font-size:13px;color:var(--umber);line-height:1.5}
+.type-row .sample{min-width:0;overflow-wrap:anywhere}
+.comp{display:flex;flex-direction:column;gap:12px;padding-top:24px;border-top:1px solid var(--ink)}
+.comp h3{margin:0;font:700 22px/1.3 var(--sans)}
+.comp .doc{max-width:46rem;font-size:16px;color:var(--ink)}
+.comp .doc h1{display:none}.comp .doc p:first-of-type{margin-top:0}
+.pv-box{overflow-x:auto;box-shadow:inset 0 0 0 1px var(--stone);background:#FFFFFF}
+.pv{min-width:720px;font-family:var(--font-text);background:var(--surface);color:var(--text)}
+.pv .pad{padding:24px}.pv .band{padding:24px;background:var(--surface);color:var(--text)}
+.asset-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px}
+.asset{display:flex;flex-direction:column;gap:8px;min-width:0}
+.asset .tile{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;padding:16px;box-shadow:inset 0 0 0 1px var(--stone);background:#FFFFFF}
+.asset .tile.ink{background:var(--ink)}.asset .tile.red{background:var(--red)}
+.asset img{max-width:100%;max-height:100%;object-fit:contain}
+.asset span{font-family:var(--mono);font-size:12px;color:var(--umber);overflow-wrap:anywhere}
+.icon-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px}
+.icon-grid figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:8px;padding:16px 8px;box-shadow:inset 0 0 0 1px var(--stone);text-align:center;font-size:13px}
+.icon-grid img{width:48px;height:48px}
+.manual{max-width:48rem}
+.manual h2{font:400 32px/1.15 var(--serif);margin:40px 0 12px}
+.manual blockquote{margin:16px 0;padding-left:16px;border-left:2px solid var(--stone);font-family:var(--serif);font-size:24px}
+.manual code{font-family:var(--mono);font-size:15px;background:#F7F2EC;padding:1px 5px}
+
+/* Vascardio · Opción A Editorial — estilos de componentes. Solo consume tokens. */
+.va-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:var(--control-h);padding:0 28px;border:0;border-radius:var(--radius-none);background:transparent;color:var(--text);font-family:var(--font-mono);font-size:16px;line-height:1.2;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;cursor:pointer;white-space:normal;text-align:center;transition:background-color var(--dur-fast) var(--ease-out),color var(--dur-fast) var(--ease-out)}
+.va-btn:focus-visible{outline:3px solid var(--focus-ring);outline-offset:3px}
+.va-btn-primary{background:var(--action);color:var(--on-action)}
+.va-btn-primary:hover{background:var(--action-hover);color:var(--on-action-hover)}
+.va-btn-primary:active{background:var(--action-pressed);color:var(--on-action-hover)}
+.va-btn-secondary{box-shadow:inset 0 0 0 1.5px var(--border-strong);color:var(--text)}
+.va-btn-secondary:hover{background:var(--text);color:var(--surface)}
+.va-btn-link{min-height:var(--touch-min);padding:0;color:var(--link);text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:1.5px}
+.va-btn-link:hover{color:var(--link-hover)}
+.va-btn[disabled],.va-btn[aria-disabled="true"]{opacity:.45;cursor:not-allowed}
+.va-row{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.va-stack{display:flex;flex-direction:column;gap:16px}
+.va-label{font-family:var(--font-mono);font-size:14px;line-height:20px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-accent)}
+
+.va-field{display:flex;flex-direction:column;gap:8px;max-width:440px}
+.va-field>label{font-family:var(--font-text);font-weight:700;font-size:17px;line-height:1.4;color:var(--text)}
+.va-input{width:100%;box-sizing:border-box;min-height:var(--control-h);padding:0 16px;border:1px solid var(--border-input);border-radius:var(--radius-none);background:var(--surface);color:var(--text);font:400 17px/1.4 var(--font-text)}
+.va-input:focus-visible{outline:3px solid var(--focus-ring);outline-offset:3px}
+.va-input[aria-invalid="true"]{border:2px solid var(--error-border)}
+.va-help{font:400 16px/1.5 var(--font-text);color:var(--text-muted)}
+.va-error{display:flex;gap:8px;align-items:flex-start;font:400 16px/1.5 var(--font-text);color:var(--error)}
+.va-error svg{flex:none;margin-top:3px}
+
+.va-choices{display:flex;flex-wrap:wrap;gap:8px;border:0;margin:0;padding:0}
+.va-choices legend{font:700 17px/1.4 var(--font-text);color:var(--text);margin-bottom:10px;padding:0}
+.va-chip{position:relative;display:inline-flex;align-items:center;min-height:var(--control-h);padding:0 20px;box-shadow:inset 0 0 0 1.5px var(--border-input);color:var(--text);font:400 17px/1.3 var(--font-text);cursor:pointer}
+.va-chip input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.va-chip:has(input:checked){background:var(--text);color:var(--surface);box-shadow:none}
+.va-chip:has(input:focus-visible){outline:3px solid var(--focus-ring);outline-offset:3px}
+
+.va-upload{position:relative;display:flex;gap:16px;align-items:center;padding:20px;border:1.5px dashed var(--border-input);max-width:520px;color:var(--text);font:400 17px/1.4 var(--font-text)}
+.va-upload input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.va-upload .va-upload-icon{width:48px;height:48px;flex:none;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 0 1.5px var(--border-strong)}
+.va-upload small{display:block;font-size:16px;color:var(--text-muted)}
+.va-upload:has(input:focus-visible){outline:3px solid var(--focus-ring);outline-offset:3px}
+
+.va-notice{display:flex;gap:14px;align-items:flex-start;padding:18px 20px;max-width:640px;box-shadow:inset 0 0 0 1px var(--border-subtle);font:400 17px/1.5 var(--font-text);color:var(--text)}
+.va-notice svg{flex:none;margin-top:2px}
+.va-notice b{font-weight:700}
+.va-notice-error{box-shadow:inset 0 0 0 2px var(--error-border);color:var(--error)}
+.va-notice-warning{box-shadow:inset 0 0 0 1px var(--border-subtle),inset 0 4px 0 var(--accent-line)}
+.va-notice-success{box-shadow:inset 0 0 0 1.5px var(--border-strong)}
+
+.va-steps{display:flex;flex-direction:column;gap:10px;max-width:520px}
+.va-steps-bar{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.va-steps-bar span{height:4px;background:var(--border-subtle)}
+.va-steps-bar span.done{background:var(--text)}
+.va-steps-bar span.current{background:var(--vascardio-red)}
+.va-steps-text{font-family:var(--font-mono);font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-accent)}
+
+.va-header{background:var(--surface);color:var(--text)}
+.va-header-top{display:flex;justify-content:space-between;gap:24px;padding:10px 32px;box-shadow:inset 0 -1px 0 var(--border-subtle);font-family:var(--font-mono);font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted)}
+.va-header-top a{color:var(--text);text-decoration:none}
+.va-header-main{display:flex;align-items:center;justify-content:space-between;gap:32px;padding:16px 32px}
+.va-header-main img{width:220px;height:auto;display:block;flex:none}
+.va-header-main .va-btn{white-space:nowrap;flex:none}
+.va-nav{display:flex;gap:28px;flex-wrap:wrap}
+.va-nav a{font-family:var(--font-mono);font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);text-decoration:none;min-height:var(--touch-min);display:inline-flex;align-items:center}
+.va-nav a[aria-current="page"]{text-decoration:underline;text-underline-offset:8px;text-decoration-color:var(--vascardio-red);text-decoration-thickness:2px}
+
+.va-bar{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));height:76px;background:var(--surface);box-shadow:var(--shadow-sticky);max-width:390px}
+.va-bar a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:var(--text);text-decoration:none;font-family:var(--font-mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.va-bar a+a{box-shadow:-1px 0 0 var(--border-subtle)}
+.va-bar a.va-bar-main{background:var(--action);color:var(--on-action)}
+
+.va-service{display:flex;flex-direction:column;gap:14px;padding:32px;box-shadow:inset 0 0 0 1px var(--border-subtle);max-width:380px;transition:box-shadow var(--dur-fast) var(--ease-out)}
+.va-service:hover{box-shadow:inset 0 0 0 1.5px var(--text),inset 0 3px 0 var(--vascardio-red)}
+.va-service img{width:48px;height:48px}
+.va-service h3{margin:0;font:400 32px/1.15 var(--font-display);color:var(--text)}
+.va-service p{margin:0;font:400 17px/1.55 var(--font-text);color:var(--text-muted)}
+.va-service .va-btn-link{align-self:flex-start}
+
+.va-hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:48px;align-items:center}
+.va-hero h1{margin:0;font:400 72px/1 var(--font-display);letter-spacing:-.01em;color:var(--text)}
+.va-hero .va-echo{margin:0;font:italic 400 24px/1.35 var(--font-display);color:var(--text-muted)}
+.va-hero p{margin:0;font:400 19px/1.6 var(--font-text);max-width:34rem}
+.va-hero img{width:100%;height:auto;display:block}
+@media (prefers-reduced-motion:reduce){.va-btn{transition:none}}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="wrap"><a href="/vascardio/" aria-label="Propuesta Vascardio, inicio"><img src="/vascardio/assets/logos/VASCARDIO-HVI_Horizontal_FullColor_RGB.svg" alt="Vascardio Heart &amp; Vascular Institute"></a><nav class="topnav" aria-label="Propuesta"><a href="/vascardio/">Inicio</a><a href="/vascardio/opcion-a/" aria-current="page">Opción A</a><a href="/vascardio/opcion-b/">Opción B</a><a href="/vascardio/comparar/">Comparar</a><a href="/vascardio/presentacion/">Presentación</a></nav></div></header>
+<main>
+
+<div class="wrap">
+<section class="ds-hero"><p class="eyebrow">Design system · Opción A</p><h1>Editorial</h1><p class="lead">La opción A presenta a Vascardio como un instituto con autoridad editorial: mucho blanco, titulares grandes en Instrument Serif, filetes finos, botones y labels en DM Mono MAYÚSCULAS y esquinas rectas en todo. Sigue la maqueta web del manual de marca v2.0 (p. 30) al pie de la letra.</p>
+<nav class="ds-toc" aria-label="Secciones"><a href="#color">Color</a><a href="#tipografia">Tipografía</a><a href="#forma">Espacio y forma</a><a href="#componentes">Componentes</a><a href="#assets">Logos, íconos y gráficos</a><a href="#manual">Manual de uso</a><a href="/vascardio/opcion-b/">Ver opción B →</a></nav></section>
+<section class="ds-sec" id="color"><h2>Color</h2><p class="ds-note">Los colores del manual v2.0. Abajo, cómo se usan sobre los tres fondos del sitio (blanco, ink y rojo). En textos, bordes y foco se indica el contraste contra ese fondo, calculado con la fórmula WCAG.</p><div class="sw-grid"><div class="sw"><div class="chip" style="background:#C82E30"></div><b>vascardio-red</b><code>#C82E30</code><span>Rojo del logo (manual v2). Acción principal y acento; como mucho ~10 % de una pantalla. Fondo dominante solo en el hub del ASC.</span></div><div class="sw"><div class="chip" style="background:#B6896D"></div><b>vascardio-gold</b><code>#B6896D</code><span>Dorado del logo. Líneas, detalles y texto solo sobre ink (5.42:1). Nunca texto sobre white (3.09:1).</span></div><div class="sw"><div class="chip" style="background:#231C1B"></div><b>ink</b><code>#231C1B</code><span>Texto principal y fondo oscuro del Institute.</span></div><div class="sw"><div class="chip" style="background:#FFFFFF"></div><b>white</b><code>#FFFFFF</code><span>Fondo por defecto.</span></div><div class="sw"><div class="chip" style="background:#F1E6D6"></div><b>cream</b><code>#F1E6D6</code><span>Solo acento: el corazón sobre fondos oscuros y estados hover sobre rojo. Nunca fondo de sección.</span></div><div class="sw"><div class="chip" style="background:#D8CCBC"></div><b>stone</b><code>#D8CCBC</code><span>Divisores y patrón sobre white. Texto secundario sobre ink (10.6:1). Nunca borde de campo (1.58:1).</span></div><div class="sw"><div class="chip" style="background:#6E5F50"></div><b>umber</b><code>#6E5F50</code><span>Texto secundario y borde de campos sobre white (6.15:1). No usar sobre ink (2.73:1).</span></div><div class="sw"><div class="chip" style="background:#6B1612"></div><b>oxblood</b><code>#6B1612</code><span>Profundidad, hover de enlaces y texto de error sobre white (12.01:1).</span></div><div class="sw"><div class="chip" style="background:#B7543C"></div><b>heart-overlap</b><code>#B7543C</code><span>Solo logo: donde la mano cruza el corazón. No se usa en interfaz.</span></div><div class="sw"><div class="chip" style="background:#A82528"></div><b>red-700</b><code>#A82528</code><span>Derivado (no está en el manual): hover del botón primario. White encima 7.09:1. Pendiente de aprobación del cliente.</span></div><div class="sw"><div class="chip" style="background:#8F1E21"></div><b>red-800</b><code>#8F1E21</code><span>Derivado (no está en el manual): botón primario pulsado. White encima 8.84:1. Pendiente de aprobación del cliente.</span></div></div><div class="tbl-box"><table class="ds-table"><thead><tr><th>Token</th><th>Sobre blanco</th><th>Sobre ink</th><th>Sobre rojo</th><th>Uso</th></tr></thead><tbody><tr><td><code>surface</code></td><td class="num"><span class="dot" style="background:#FFFFFF"></span>white</td><td class="num"><span class="dot" style="background:#231C1B"></span>ink</td><td class="num"><span class="dot" style="background:#C82E30"></span>vascardio-red</td><td>Fondo del bloque. Cambia con el tema: white (Masterbrand), ink (Institute), vascardio-red (ASC).</td></tr><tr><td><code>text</code></td><td class="num"><span class="dot" style="background:#231C1B"></span>ink · 16.75:1</td><td class="num"><span class="dot" style="background:#FFFFFF"></span>white · 16.75:1</td><td class="num"><span class="dot" style="background:#FFFFFF"></span>white · 5.40:1</td><td>Texto principal sobre surface en los tres fondos (16.75 / 16.75 / 5.40).</td></tr><tr><td><code>text-muted</code></td><td class="num"><span class="dot" style="background:#6E5F50"></span>umber · 6.15:1</td><td class="num"><span class="dot" style="background:#D8CCBC"></span>stone · 10.60:1</td><td class="num"><span class="dot" style="background:#FFFFFF"></span>white · 5.40:1</td><td>Texto secundario, ayudas y metadatos sobre surface (6.15 / 10.60 / 5.40). Sobre rojo no hay gris legible: se usa white.</td></tr><tr><td><code>text-accent</code></td><td class="num"><span class="dot" style="background:#C82E30"></span>vascardio-red · 5.40:1</td><td class="num"><span class="dot" style="background:#B6896D"></span>vascardio-gold · 5.42:1</td><td class="num"><span class="dot" style="background:#FFFFFF"></span>white · 5.40:1</td><td>Labels y cifras destacadas sobre surface (5.40 / 5.42 / 5.40).</td></tr><tr><td><code>link</code></td><td class="num"><span class="dot" style="background:#C82E30"></span>vascardio-red · 5.40:1</td><td class="num"><span class="dot" style="background:#B6896D"></span>vascardio-gold · 5.42:1</td><td class="num"><span class="dot" style="background:#FFFFFF"></span>white · 5.40:1</td><td>Enlaces en texto, siempre subrayados, sobre surface (5.40 / 5.42 / 5.40).</td></tr><tr><td><code>link-hover</code></td><td class="num"><span class="dot" style="background:#6B1612"></span>oxblood · 12.01:1</td><td class="num"><span class="dot" style="background:#F1E6D6"></span>cream · 13.59:1</td><td class="num"><span class="dot" style="background:#FFFFFF"></span>white · 5.40:1</td><td>Enlace al pasar el cursor o con foco (12.01 / 13.59 / 5.40).</td></tr><tr><td><code>action</code></td><td class="num"><span class="dot" style="background:#C82E30"></span>vascardio-red</td><td class="num"><span class="dot" style="background:#C82E30"></span>vascardio-red</td><td class="num"><span class="dot" style="background:#FFFFFF"></span>white</td><td>Relleno del botón primario. Sobre rojo se invierte a white.</td></tr><tr><td><code>on-action</code></td><td class="num"><span class="dot" style="background:#FFFFFF"></span>white</td><td class="num"><span class="dot" style="background:#FFFFFF"></span>white</td><td class="num"><span class="dot" style="background:#C82E30"></span>vascardio-red</td><td>Texto del botón primario sobre action (5.40 en los tres).</td></tr><tr><td><code>action-hover</code></td><td class="num"><span class="dot" style="background:#A82528"></span>red-700</td><td class="num"><span class="dot" style="background:#A82528"></span>red-700</td><td class="num"><span class="dot" style="background:#F1E6D6"></span>cream</td><td>Relleno del primario en hover.</td></tr><tr><td><code>on-action-hover</code></td><td class="num"><span class="dot" style="background:#FFFFFF"></span>white</td><td class="num"><span class="dot" style="background:#FFFFFF"></span>white</td><td class="num"><span class="dot" style="background:#6B1612"></span>oxblood</td><td>Texto del primario en hover (7.09 / 7.09 / 9.74).</td></tr><tr><td><code>action-pressed</code></td><td class="num"><span class="dot" style="background:#8F1E21"></span>red-800</td><td class="num"><span class="dot" style="background:#8F1E21"></span>red-800</td><td class="num"><span class="dot" style="background:#D8CCBC"></span>stone</td><td>Relleno del primario pulsado.</td></tr><tr><td><code>border-strong</code></td><td class="num"><span class="dot" style="background:#231C1B"></span>ink · 16.75:1</td><td class="num"><span class="dot" style="background:#FFFFFF"></span>white · 16.75:1</td><td class="num"><span class="dot" style="background:#FFFFFF"></span>white · 5.40:1</td><td>Contorno del botón secundario y de la opción seleccionada.</td></tr><tr><td><code>border-input</code></td><td class="num"><span class="dot" style="background:#6E5F50"></span>umber · 6.15:1</td><td class="num"><span class="dot" style="background:#D8CCBC"></span>stone · 10.60:1</td><td class="num"><span class="dot" style="background:#FFFFFF"></span>white · 5.40:1</td><td>Borde de campos, selects, radios y chips (6.15 / 10.60 / 5.40, mínimo 3:1).</td></tr><tr><td><code>border-subtle</code></td><td class="num"><span class="dot" style="background:#D8CCBC"></span>stone</td><td class="num"><span class="dot" style="background:#6E5F50"></span>umber</td><td class="num"><span class="dot" style="background:#6B1612"></span>oxblood</td><td>Divisores y bordes decorativos que no portan significado.</td></tr><tr><td><code>accent-line</code></td><td class="num"><span class="dot" style="background:#B6896D"></span>vascardio-gold</td><td class="num"><span class="dot" style="background:#B6896D"></span>vascardio-gold</td><td class="num"><span class="dot" style="background:#F1E6D6"></span>cream</td><td>Filetes y detalles de marca (no texto).</td></tr><tr><td><code>focus-ring</code></td><td class="num"><span class="dot" style="background:#231C1B"></span>ink · 16.75:1</td><td class="num"><span class="dot" style="background:#FFFFFF"></span>white · 16.75:1</td><td class="num"><span class="dot" style="background:#FFFFFF"></span>white · 5.40:1</td><td>Anillo de foco: contorno sólido de 3 px separado 3 px del control (16.75 / 16.75 / 5.40).</td></tr><tr><td><code>error</code></td><td class="num"><span class="dot" style="background:#6B1612"></span>oxblood · 12.01:1</td><td class="num"><span class="dot" style="background:#F1E6D6"></span>cream · 13.59:1</td><td class="num"><span class="dot" style="background:#FFFFFF"></span>white · 5.40:1</td><td>Texto de error, siempre con ícono y palabra (12.01 / 13.59 / 5.40).</td></tr><tr><td><code>error-border</code></td><td class="num"><span class="dot" style="background:#C82E30"></span>vascardio-red · 5.40:1</td><td class="num"><span class="dot" style="background:#C82E30"></span>vascardio-red · 3.10:1</td><td class="num"><span class="dot" style="background:#FFFFFF"></span>white · 5.40:1</td><td>Borde del campo con error (5.40 / 3.10 / 5.40).</td></tr><tr><td><code>selected</code></td><td class="num"><span class="dot" style="background:#C82E30"></span>vascardio-red · 5.40:1</td><td class="num"><span class="dot" style="background:#C82E30"></span>vascardio-red · 3.10:1</td><td class="num"><span class="dot" style="background:#FFFFFF"></span>white · 5.40:1</td><td>Borde y marca de la opción elegida en grupos de opciones (5.40 / 3.10 / 5.40).</td></tr></tbody></table></div></section>
+<section class="ds-sec" id="tipografia"><h2>Tipografía</h2><div><div class="type-row"><div class="meta"><b style="font-family:var(--sans);font-size:15px;color:var(--ink)">display</b><br>Display · 112px/112px · 400<br>Titular del hero, una vez por página. Fluido: clamp(3rem, 1.667rem + 5.926vw, 7rem), 48 px en 360 px.</div><div class="sample" style="font-family:'Instrument Serif', 'Iowan Old Style', Georgia, serif;font-size:112px;line-height:112px;font-weight:400;letter-spacing:-0.01em;">Consulta y estudios, en un mismo lugar.</div></div><div class="type-row"><div class="meta"><b style="font-family:var(--sans);font-size:15px;color:var(--ink)">h1</b><br>Display · 72px/76px · 400<br>Titular de página interior y de bloques ASC/Institute. clamp(2.5rem, …, 4.5rem).</div><div class="sample" style="font-family:'Instrument Serif', 'Iowan Old Style', Georgia, serif;font-size:72px;line-height:76px;font-weight:400;">Su procedimiento, en nuestro propio centro.</div></div><div class="type-row"><div class="meta"><b style="font-family:var(--sans);font-size:15px;color:var(--ink)">h2</b><br>Display · 48px/53px · 400<br>Título de sección. clamp(2rem, …, 3rem).</div><div class="sample" style="font-family:'Instrument Serif', 'Iowan Old Style', Georgia, serif;font-size:48px;line-height:53px;font-weight:400;">Atención para cada necesidad</div></div><div class="type-row"><div class="meta"><b style="font-family:var(--sans);font-size:15px;color:var(--ink)">h3</b><br>Display · 32px/37px · 400<br>Título de servicio y de paso. clamp(1.5rem, …, 2rem).</div><div class="sample" style="font-family:'Instrument Serif', 'Iowan Old Style', Georgia, serif;font-size:32px;line-height:37px;font-weight:400;">Estudios diagnósticos</div></div><div class="type-row"><div class="meta"><b style="font-family:var(--sans);font-size:15px;color:var(--ink)">lead</b><br>Display · 26px/35px · 400<br>Entradilla en itálica y el eco bilingüe (una línea en el otro idioma, máximo una por pantalla).</div><div class="sample" style="font-family:'Instrument Serif', 'Iowan Old Style', Georgia, serif;font-size:26px;line-height:35px;font-weight:400;font-style:italic;">Heart and vascular care, all in one place.</div></div><div class="type-row"><div class="meta"><b style="font-family:var(--sans);font-size:15px;color:var(--ink)">body-lg</b><br>Texto · 19px/30px · 400<br>Párrafo de apertura de sección.</div><div class="sample" style="font-family:'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;font-size:19px;line-height:30px;font-weight:400;">Coordine su próxima visita con el equipo del Dr. Dieguez.</div></div><div class="type-row"><div class="meta"><b style="font-family:var(--sans);font-size:15px;color:var(--ink)">body</b><br>Texto · 18px/29px · 400<br>Texto corrido. 17 px en móvil, 18 px desde 1024 px. Medida 60–72 caracteres.</div><div class="sample" style="font-family:'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;font-size:18px;line-height:29px;font-weight:400;">Recepción confirma sus datos y su seguro.</div></div><div class="type-row"><div class="meta"><b style="font-family:var(--sans);font-size:15px;color:var(--ink)">body-strong</b><br>Texto · 18px/29px · 700<br>Etiquetas de campo y énfasis dentro de texto.</div><div class="sample" style="font-family:'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;font-size:18px;line-height:29px;font-weight:700;">Nombre completo</div></div><div class="type-row"><div class="meta"><b style="font-family:var(--sans);font-size:15px;color:var(--ink)">small</b><br>Texto · 16px/24px · 400<br>Notas, ayudas de campo, pie. Piso absoluto: nunca menos de 16 px.</div><div class="sample" style="font-family:'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;font-size:16px;line-height:24px;font-weight:400;">La cobertura se confirma siempre con el equipo administrativo.</div></div><div class="type-row"><div class="meta"><b style="font-family:var(--sans);font-size:15px;color:var(--ink)">label</b><br>Mono · 14px/20px · 400<br>Antetítulos, labels y datos, siempre en MAYÚSCULAS.</div><div class="sample" style="font-family:'DM Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;font-size:14px;line-height:20px;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;">CARDIOLOGÍA Y SALUD VASCULAR</div></div><div class="type-row"><div class="meta"><b style="font-family:var(--sans);font-size:15px;color:var(--ink)">button</b><br>Mono · 16px/19px · 400<br>Botones, en MAYÚSCULAS, como la maqueta web del manual (p. 30).</div><div class="sample" style="font-family:'DM Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;font-size:16px;line-height:19px;font-weight:400;letter-spacing:0.06em;text-transform:uppercase;">SOLICITAR CITA</div></div><div class="type-row"><div class="meta"><b style="font-family:var(--sans);font-size:15px;color:var(--ink)">nav</b><br>Mono · 15px/18px · 400<br>Menú principal, barra superior y selector ES | EN, en MAYÚSCULAS.</div><div class="sample" style="font-family:'DM Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;font-size:15px;line-height:18px;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;">SERVICIOS · CONDICIONES · TU VISITA</div></div></div></section>
+<section class="ds-sec" id="forma"><h2>Espacio y forma</h2><div style="display:flex;flex-direction:column;gap:8px"><div style="display:flex;align-items:center;gap:16px"><code style="width:96px;font-family:var(--mono);font-size:14px">space-1</code><span style="height:14px;width:4px;background:var(--red)"></span><span style="font-size:14px;color:var(--umber)">4px</span></div><div style="display:flex;align-items:center;gap:16px"><code style="width:96px;font-family:var(--mono);font-size:14px">space-2</code><span style="height:14px;width:8px;background:var(--red)"></span><span style="font-size:14px;color:var(--umber)">8px</span></div><div style="display:flex;align-items:center;gap:16px"><code style="width:96px;font-family:var(--mono);font-size:14px">space-3</code><span style="height:14px;width:12px;background:var(--red)"></span><span style="font-size:14px;color:var(--umber)">12px</span></div><div style="display:flex;align-items:center;gap:16px"><code style="width:96px;font-family:var(--mono);font-size:14px">space-4</code><span style="height:14px;width:16px;background:var(--red)"></span><span style="font-size:14px;color:var(--umber)">16px</span></div><div style="display:flex;align-items:center;gap:16px"><code style="width:96px;font-family:var(--mono);font-size:14px">space-5</code><span style="height:14px;width:24px;background:var(--red)"></span><span style="font-size:14px;color:var(--umber)">24px</span></div><div style="display:flex;align-items:center;gap:16px"><code style="width:96px;font-family:var(--mono);font-size:14px">space-6</code><span style="height:14px;width:32px;background:var(--red)"></span><span style="font-size:14px;color:var(--umber)">32px</span></div><div style="display:flex;align-items:center;gap:16px"><code style="width:96px;font-family:var(--mono);font-size:14px">space-7</code><span style="height:14px;width:48px;background:var(--red)"></span><span style="font-size:14px;color:var(--umber)">48px</span></div><div style="display:flex;align-items:center;gap:16px"><code style="width:96px;font-family:var(--mono);font-size:14px">space-8</code><span style="height:14px;width:64px;background:var(--red)"></span><span style="font-size:14px;color:var(--umber)">64px</span></div><div style="display:flex;align-items:center;gap:16px"><code style="width:96px;font-family:var(--mono);font-size:14px">space-9</code><span style="height:14px;width:96px;background:var(--red)"></span><span style="font-size:14px;color:var(--umber)">96px</span></div><div style="display:flex;align-items:center;gap:16px"><code style="width:96px;font-family:var(--mono);font-size:14px">space-10</code><span style="height:14px;width:128px;background:var(--red)"></span><span style="font-size:14px;color:var(--umber)">128px</span></div><div style="display:flex;align-items:center;gap:16px"><code style="width:96px;font-family:var(--mono);font-size:14px">space-11</code><span style="height:14px;width:160px;background:var(--red)"></span><span style="font-size:14px;color:var(--umber)">160px</span></div></div><h3 style="margin:24px 0 0;font:700 20px var(--sans)">Radios</h3><div class="sw-grid"><div class="sw"><div class="chip" style="background:#FFFFFF;box-shadow:inset 0 0 0 1.5px var(--ink);border-radius:0px"></div><b>radius-none</b><code>0px</code><span>Botones, campos, tarjetas, fotos y avisos.</span></div></div><h3 style="margin:24px 0 0;font:700 20px var(--sans)">Sombras</h3><div class="sw-grid"><div class="sw"><div class="chip" style="background:#FFFFFF;box-shadow:0 1px 0 #D8CCBC, 0 8px 24px rgba(35, 28, 27, 0.08)"></div><b>shadow-sticky</b><span>Header fijo y barra inferior móvil al hacer scroll.</span></div><div class="sw"><div class="chip" style="background:#FFFFFF;box-shadow:0 16px 48px rgba(35, 28, 27, 0.16)"></div><b>shadow-overlay</b><span>Menú desplegable y diálogos.</span></div></div></section>
+<section class="ds-sec" id="componentes"><h2>Componentes</h2><p class="ds-note">Cada componente funciona en vivo: pase el cursor, haga clic en las opciones o use el teclado.</p><article class="comp" id="c-heroeditorial"><h3>HeroEditorial</h3><p class="ds-note" style="margin:0">Firma de la opción A: titular grande, eco bilingüe y foto en el corazón</p><div class="pv-box"><div class="pv" data-theme="white">
+
+<div class="pad"><section class="va-hero"><div class="va-stack" style="gap:20px"><span class="va-label">Cardiología y salud vascular · Hialeah, FL</span><h1>Consulta y estudios, en un mismo lugar.</h1><p>Coordine su próxima visita con el equipo del Dr. Dieguez. Le atendemos en español y en inglés, a pocos minutos de casa.</p><p class="va-echo" lang="en">Heart and vascular care, all in one place.</p><div class="va-row"><a class="va-btn va-btn-primary" href="#">Solicitar una cita</a><a class="va-btn va-btn-secondary" href="#">Llamar al instituto</a></div></div>
+<img src="/vascardio/assets/graphics/VASCARDIO_PhotoFrame-CutOut_Portrait_transparent.png" alt="El Dr. Francisco J. Dieguez Jr. en el pasillo del instituto"></section></div>
+</div></div><div class="doc"><h1>HeroEditorial</h1>
+<p>Hero de la home (<code>va-hero</code>): antetítulo en <code>label</code>, titular en Instrument Serif, párrafo, eco bilingüe en itálica y dos botones, con la foto del médico dentro del corazón a la derecha.</p>
+<ul>
+<li>Es la firma de la opción A: mucho blanco, tipografía grande y la foto recortada en el corazón (set Photo frame del manual).</li>
+<li>El eco bilingüe es una sola línea en el otro idioma con <code>lang</code> correcto; máximo uno por pantalla y nunca en botones ni formularios.</li>
+<li>Botones: primario «Solicitar una cita» y secundario «Llamar al instituto».</li>
+<li>En móvil la foto pasa debajo del texto a 290 px de ancho.</li>
+</ul></div></article><article class="comp" id="c-button"><h3>Button</h3><p class="ds-note" style="margin:0">Primario, secundario y enlace sobre los tres fondos</p><div class="pv-box"><div class="pv" data-theme="white">
+
+<div class="band" data-theme="white"><div class="va-row"><a class="va-btn va-btn-primary" href="#">Solicitar cita</a><a class="va-btn va-btn-secondary" href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Llamar</a><a class="va-btn va-btn-link" href="#">Explorar servicios</a><button class="va-btn va-btn-primary" type="button" disabled>Enviando…</button></div></div>
+<div class="band" data-theme="ink"><div class="va-row"><a class="va-btn va-btn-primary" href="#">Solicitar cita</a><a class="va-btn va-btn-secondary" href="#">Conocer al equipo</a><a class="va-btn va-btn-link" href="#">Ver credenciales</a></div></div>
+<div class="band" data-theme="red"><div class="va-row"><a class="va-btn va-btn-primary" href="#">Solicitar cita</a><a class="va-btn va-btn-secondary" href="#">Recorrer el centro</a><a class="va-btn va-btn-link" href="#">Procedimientos habilitados</a></div></div>
+
+</div></div><div class="doc"><h1>Button</h1>
+<p>Botón rectangular en DM Mono MAYÚSCULAS, en tres variantes: primario (<code>va-btn va-btn-primary</code>), secundario (<code>va-btn va-btn-secondary</code>) y enlace (<code>va-btn va-btn-link</code>).</p>
+<ul>
+<li><strong>Primario:</strong> relleno <code>action</code>, texto <code>on-action</code>. Hover <code>action-hover</code> / <code>on-action-hover</code>, pulsado <code>action-pressed</code>. Uno solo por bloque y siempre para la acción de cita: «Solicitar cita».</li>
+<li><strong>Secundario:</strong> contorno de 1.5 px en <code>border-strong</code>, texto <code>text</code>; en hover se invierte (relleno <code>text</code>, texto <code>surface</code>). Para la segunda acción: «Llamar», «Conocer al equipo».</li>
+<li><strong>Enlace:</strong> texto <code>link</code> subrayado, sin relleno, para acciones terciarias.</li>
+<li>Los tres funcionan sobre los temas white, ink y red sin cambiar de clase: el bloque que los contiene pone <code>data-theme</code>.</li>
+<li>Alto <code>control-h</code> (56 px), relleno lateral 28 px, esquinas <code>radius-none</code>. El texto crece en dos líneas antes que cortarse (el español es un 25 % más largo).</li>
+<li>Foco: contorno de 3 px en <code>focus-ring</code>, separado 3 px.</li>
+<li>El consumidor pone un <code>&lt;a href&gt;</code> o un <code>&lt;button&gt;</code> con la clase y el texto; un ícono de interfaz opcional va antes del texto, en <code>currentColor</code>.</li>
+</ul></div></article><article class="comp" id="c-field"><h3>Field</h3><p class="ds-note" style="margin:0">Por defecto, con ayuda y con error</p><div class="pv-box"><div class="pv" data-theme="white">
+
+<div class="pad va-stack">
+ <div class="va-field"><label for="a1">Nombre completo</label><input class="va-input" id="a1" value="María Fernanda Rojas"></div>
+ <div class="va-field"><label for="a2">Teléfono</label><input class="va-input" id="a2" inputmode="tel" placeholder=""><span class="va-help">Le llamamos a este número para confirmar la cita.</span></div>
+ <div class="va-field"><label for="a3">Correo electrónico</label><input class="va-input" id="a3" aria-invalid="true" aria-describedby="a3e" value="maria.rojas@"><span class="va-error" id="a3e"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16.5v.01"/></svg>Error: falta el dominio. Ejemplo: nombre@correo.com</span></div>
+</div>
+</div></div><div class="doc"><h1>Field</h1>
+<p>Campo de texto con etiqueta siempre visible encima (<code>va-field</code> &gt; <code>label</code> + <code>va-input</code>), ayuda opcional (<code>va-help</code>) y mensaje de error (<code>va-error</code>).</p>
+<ul>
+<li>Etiqueta en Bricolage Bold 17 px, color <code>text</code>. Nunca se sustituye por el placeholder.</li>
+<li>Campo de 56 px (<code>control-h</code>), borde de 1 px en <code>border-input</code> (umber, 6.15:1), esquinas rectas, fondo <code>surface</code>.</li>
+<li>Error: borde de 2 px en <code>error-border</code> y mensaje en <code>error</code> con ícono y la palabra «Error». El campo lleva <code>aria-invalid="true"</code> y <code>aria-describedby</code> apuntando al mensaje.</li>
+<li>Foco: contorno de 3 px en <code>focus-ring</code>.</li>
+<li>El consumidor pone el <code>id</code>, el <code>for</code>, el <code>inputmode</code> adecuado y el texto de ayuda.</li>
+</ul></div></article><article class="comp" id="c-choice"><h3>Choice</h3><p class="ds-note" style="margin:0">Opciones en forma de chip; la elegida se rellena en ink</p><div class="pv-box"><div class="pv" data-theme="white">
+
+<div class="pad"><fieldset class="va-choices"><legend>¿Qué tipo de atención necesita?</legend>
+<label class="va-chip"><input type="radio" name="ac" checked>Primera consulta</label>
+<label class="va-chip"><input type="radio" name="ac">Estudio diagnóstico</label>
+<label class="va-chip"><input type="radio" name="ac">Seguimiento</label>
+<label class="va-chip"><input type="radio" name="ac">Segunda opinión</label></fieldset></div>
+</div></div><div class="doc"><h1>Choice</h1>
+<p>Grupo de opciones de una sola elección presentado como chips rectangulares (<code>va-choices</code> &gt; <code>va-chip</code> con un <code>input type="radio"</code> dentro).</p>
+<ul>
+<li>Chip de 56 px con contorno de 1.5 px en <code>border-input</code>; la opción elegida se rellena en <code>text</code> con texto <code>surface</code> (en white: ink con letra blanca).</li>
+<li>La pregunta va en un <code>&lt;legend&gt;</code> en Bricolage Bold. Siempre incluir una salida: «No estoy seguro» o «No tengo seguro».</li>
+<li>Foco visible en el chip con <code>focus-ring</code>.</li>
+<li>Para elecciones múltiples se usa el mismo chip con <code>type="checkbox"</code>.</li>
+</ul></div></article><article class="comp" id="c-fileupload"><h3>FileUpload</h3><p class="ds-note" style="margin:0">Carga opcional de ID y tarjeta de seguro</p><div class="pv-box"><div class="pv" data-theme="white">
+
+<div class="pad"><label class="va-upload"><span class="va-upload-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M17 8l-5-5-5 5"/><path d="M12 3v12"/></svg></span><span><u>Tarjeta de seguro, ambos lados</u> (opcional)<small>JPG, PNG o PDF, hasta 10 MB. También puede traerla a la cita.</small></span><input type="file" accept=".jpg,.jpeg,.png,.pdf"></label></div>
+</div></div><div class="doc"><h1>FileUpload</h1>
+<p>Zona para adjuntar un archivo (<code>va-upload</code>), con borde discontinuo de 1.5 px en <code>border-input</code> y el <code>input type="file"</code> cubriendo toda la zona.</p>
+<ul>
+<li>Siempre opcional en el formulario de cita y con la alternativa escrita: «También puede traerla a la cita».</li>
+<li>Indica formatos y tamaño máximo en <code>small</code>.</li>
+<li>Solo dentro de la zona sin tracking (páginas de cita): los datos son PHI.</li>
+</ul></div></article><article class="comp" id="c-notice"><h3>Notice</h3><p class="ds-note" style="margin:0">Información, aviso, error y confirmación</p><div class="pv-box"><div class="pv" data-theme="white">
+
+<div class="pad va-stack">
+<div class="va-notice" role="note"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 11v6M12 7.5v.01"/></svg><span>Esta página no usa cookies de publicidad. Solo el equipo de Vascardio ve su información.</span></div>
+<div class="va-notice va-notice-warning" role="note"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 11v6M12 7.5v.01"/></svg><span>La cobertura se confirma con recepción. El buscador orienta, pero no garantiza la aprobación de su plan.</span></div>
+<div class="va-notice va-notice-error" role="alert"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16.5v.01"/></svg><span><b>Error:</b> revise 2 campos. Falta el teléfono y el correo no es válido.</span></div>
+<div class="va-notice va-notice-success" role="status"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg><span><b>Recibimos su solicitud.</b> Recepción le llamará para acordar fecha y hora. Su cita aún no está confirmada.</span></div>
+</div>
+</div></div><div class="doc"><h1>Notice</h1>
+<p>Aviso en bloque (<code>va-notice</code>) con ícono a la izquierda, en cuatro tonos: información (por defecto), aviso (<code>va-notice-warning</code>), error (<code>va-notice-error</code>) y confirmación (<code>va-notice-success</code>).</p>
+<ul>
+<li>Solo paleta del manual: sin verde ni azul. El estado lo dicen el ícono y la palabra, nunca solo el color.</li>
+<li>Información: filete de 1 px en <code>border-subtle</code>. Aviso: el mismo filete con una línea superior de 4 px en <code>accent-line</code> (dorado). Error: contorno de 2 px en <code>error-border</code> y texto en <code>error</code>. Confirmación: contorno de 1.5 px en <code>border-strong</code>.</li>
+<li>Error con <code>role="alert"</code>, confirmación con <code>role="status"</code>.</li>
+<li>La confirmación de la solicitud dice siempre que la cita aún no está confirmada.</li>
+</ul></div></article><article class="comp" id="c-stepper"><h3>Stepper</h3><p class="ds-note" style="margin:0">Progreso del formulario de cita en 3 pasos</p><div class="pv-box"><div class="pv" data-theme="white">
+
+<div class="pad"><div class="va-steps"><span class="va-steps-text">Paso 2 de 3 · Seguro</span><div class="va-steps-bar" aria-hidden="true"><span class="done"></span><span class="current"></span><span></span></div></div></div>
+</div></div><div class="doc"><h1>Stepper</h1>
+<p>Barra de progreso del formulario de cita (<code>va-steps</code>): una línea en DM Mono MAYÚSCULAS con el paso y su nombre, y tres segmentos de 4 px.</p>
+<ul>
+<li>Segmento completado en <code>text</code>, actual en <code>vascardio-red</code>, pendiente en <code>border-subtle</code>.</li>
+<li>El texto («Paso 2 de 3 · Seguro») es lo que lee el lector de pantalla; los segmentos van con <code>aria-hidden</code>.</li>
+<li>El formulario tiene exactamente tres pasos: tipo de atención, seguro, datos de contacto.</li>
+</ul></div></article><article class="comp" id="c-siteheader"><h3>SiteHeader</h3><p class="ds-note" style="margin:0">Barra superior de audiencias y barra principal</p><div class="pv-box"><div class="pv" data-theme="white">
+
+<header class="va-header"><div class="va-header-top"><span>[TELÉFONO] · Lun–Vie [HORARIO]</span><span style="display:flex;gap:24px"><a href="#">Pacientes internacionales</a><a href="#">Médicos</a><a href="#">Aseguradoras</a><a href="#" lang="en">ES | EN</a></span></div>
+<div class="va-header-main"><img src="/vascardio/assets/logos/VASCARDIO-HVI_Horizontal_FullColor_RGB.svg" alt="Vascardio Heart &amp; Vascular Institute"><nav class="va-nav" aria-label="Principal"><a href="#" aria-current="page">Servicios</a><a href="#">Condiciones</a><a href="#">Tu visita</a><a href="#">Equipo</a><a href="#">Contacto</a></nav><a class="va-btn va-btn-primary" href="#">Solicitar cita</a></div></header>
+</div></div><div class="doc"><h1>SiteHeader</h1>
+<p>Header de escritorio en dos niveles (<code>va-header</code>): barra superior en DM Mono con teléfono, horario y las puertas a las otras audiencias, y barra principal con logo, menú y el botón «Solicitar cita».</p>
+<ul>
+<li>Logo: <code>VASCARDIO-HVI_Horizontal_FullColor_RGB.svg</code> a 220 px de ancho sobre white.</li>
+<li>Menú en <code>nav</code> (DM Mono 15 px, MAYÚSCULAS). La página actual se marca con subrayado rojo de 2 px y <code>aria-current="page"</code>.</li>
+<li>El selector ES | EN lleva a la página equivalente, nunca a la home.</li>
+<li>Al hacer scroll el header queda fijo con <code>shadow-sticky</code>. En móvil se reduce a logo, EN y menú, y la acción pasa a la barra inferior (QuickActionBar).</li>
+</ul></div></article><article class="comp" id="c-quickactionbar"><h3>QuickActionBar</h3><p class="ds-note" style="margin:0">Barra fija inferior en móvil</p><div class="pv-box"><div class="pv" data-theme="white">
+
+<div class="pad" style="background:var(--border-subtle)"><nav class="va-bar" aria-label="Acciones rápidas"><a href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Llamar</a><a href="#"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>WhatsApp</a><a class="va-bar-main" href="#"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Agendar</a></nav></div>
+</div></div><div class="doc"><h1>QuickActionBar</h1>
+<p>Barra fija al pie en móvil (<code>va-bar</code>) con tres celdas iguales: Llamar, WhatsApp y Agendar.</p>
+<ul>
+<li>Alto 76 px, fondo <code>surface</code>, sombra <code>shadow-sticky</code>, celdas separadas por un filete en <code>border-subtle</code>.</li>
+<li>«Agendar» es la única celda con relleno <code>action</code>.</li>
+<li>En las páginas del formulario de cita la barra se reemplaza por «¿Prefiere llamar?» y no carga WhatsApp ni nada de terceros.</li>
+<li>WhatsApp usará su glifo oficial a un color; aquí va un marcador de trazo.</li>
+</ul></div></article><article class="comp" id="c-servicecard"><h3>ServiceCard</h3><p class="ds-note" style="margin:0">Servicio con ícono de pincel en caja de filete</p><div class="pv-box"><div class="pv" data-theme="white">
+
+<div class="pad" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px">
+<article class="va-service"><img src="/vascardio/assets/icons-brush/VASCARDIO_Icon_01_Cardiology.svg" alt=""><h3>Estudios diagnósticos</h3><p>Ecocardiograma, pruebas de esfuerzo y estudios vasculares para evaluar su corazón y su circulación.</p><a class="va-btn va-btn-link" href="#">Ver estudios</a></article>
+<article class="va-service"><img src="/vascardio/assets/icons-brush/VASCARDIO_Icon_02_Vascular.svg" alt=""><h3>Procedimientos</h3><p>Cateterismo y procedimientos vasculares, explicados paso a paso antes de decidir.</p><a class="va-btn va-btn-link" href="#">Ver procedimientos</a></article>
+</div>
+</div></div><div class="doc"><h1>ServiceCard</h1>
+<p>Entrada de servicio editorial (<code>va-service</code>): caja de esquinas rectas con filete de 1 px en <code>border-subtle</code>, sin sombra, con ícono de pincel, título en Instrument Serif y enlace en MAYÚSCULAS.</p>
+<ul>
+<li>
+<p>Hover: el filete pasa a 1.5 px en <code>text</code> y aparece una línea superior de 3 px en <code>vascardio-red</code>.</p>
+</li>
+<li>
+<p>Ícono de la familia de pincel a 48 px (<code>icon-brand</code>), decorativo (<code>alt=""</code>) porque el título ya lo nombra.</p>
+</li>
+<li>Título <code>h3</code> (32 px), descripción en <code>body</code> color <code>text-muted</code>, una sola acción como enlace.</li>
+<li>Se agrupan de 3 en escritorio y se apilan en móvil.</li>
+</ul></div></article></section>
+<section class="ds-sec" id="assets"><h2>Logos, íconos y gráficos</h2><div class="asset-grid"><div class="asset"><div class="tile "><img src="/vascardio/assets/logos/VASCARDIO-HVI_Horizontal_FullColor_RGB.svg" alt=""></div><span>VASCARDIO-HVI_Horizontal_FullColor_RGB.svg</span></div><div class="asset"><div class="tile ink"><img src="/vascardio/assets/logos/VASCARDIO-HVI_Horizontal_Reversed-Ink_RGB.svg" alt=""></div><span>VASCARDIO-HVI_Horizontal_Reversed-Ink_RGB.svg</span></div><div class="asset"><div class="tile red"><img src="/vascardio/assets/logos/VASCARDIO-HVI_Horizontal_Reversed-Red_RGB.svg" alt=""></div><span>VASCARDIO-HVI_Horizontal_Reversed-Red_RGB.svg</span></div><div class="asset"><div class="tile "><img src="/vascardio/assets/logos/VASCARDIO_Horizontal_FullColor_RGB.svg" alt=""></div><span>VASCARDIO_Horizontal_FullColor_RGB.svg</span></div><div class="asset"><div class="tile "><img src="/vascardio/assets/logos/VASCARDIO_Symbol_FullColor_RGB.svg" alt=""></div><span>VASCARDIO_Symbol_FullColor_RGB.svg</span></div><div class="asset"><div class="tile ink"><img src="/vascardio/assets/logos/VASCARDIO_Symbol_Reversed-Ink_RGB.svg" alt=""></div><span>VASCARDIO_Symbol_Reversed-Ink_RGB.svg</span></div><div class="asset"><div class="tile red"><img src="/vascardio/assets/logos/VASCARDIO_Symbol_Reversed-Red_RGB.svg" alt=""></div><span>VASCARDIO_Symbol_Reversed-Red_RGB.svg</span></div></div><div class="icon-grid"><figure><img src="/vascardio/assets/icons-brush/VASCARDIO_Icon_01_Cardiology.svg" alt=""><figcaption>Cardiología</figcaption></figure><figure><img src="/vascardio/assets/icons-brush/VASCARDIO_Icon_02_Vascular.svg" alt=""><figcaption>Vascular</figcaption></figure><figure><img src="/vascardio/assets/icons-brush/VASCARDIO_Icon_03_Orthopedics.svg" alt=""><figcaption>Ortopedia</figcaption></figure><figure><img src="/vascardio/assets/icons-brush/VASCARDIO_Icon_04_Podiatry.svg" alt=""><figcaption>Podiatría</figcaption></figure><figure><img src="/vascardio/assets/icons-brush/VASCARDIO_Icon_05_Pain-management.svg" alt=""><figcaption>Manejo del dolor</figcaption></figure><figure><img src="/vascardio/assets/icons-brush/VASCARDIO_Icon_06_General-surgery.svg" alt=""><figcaption>Cirugía general</figcaption></figure><figure><img src="/vascardio/assets/icons-brush/VASCARDIO_Icon_07_Interventional-radiology.svg" alt=""><figcaption>Radiología intervencionista</figcaption></figure><figure><img src="/vascardio/assets/icons-brush/VASCARDIO_Icon_08_Urology.svg" alt=""><figcaption>Urología</figcaption></figure><figure><img src="/vascardio/assets/icons-brush/VASCARDIO_Icon_09_Same-day-discharge.svg" alt=""><figcaption>Alta el mismo día</figcaption></figure><figure><img src="/vascardio/assets/icons-brush/VASCARDIO_Icon_10_Bilingual-care.svg" alt=""><figcaption>Atención bilingüe</figcaption></figure><figure><img src="/vascardio/assets/icons-brush/VASCARDIO_Icon_11_Appointments.svg" alt=""><figcaption>Citas</figcaption></figure><figure><img src="/vascardio/assets/icons-brush/VASCARDIO_Icon_12_Location.svg" alt=""><figcaption>Ubicación</figcaption></figure><figure><img src="/vascardio/assets/icons-brush/VASCARDIO_Icon_13_Call-us.svg" alt=""><figcaption>Llámenos</figcaption></figure><figure><img src="/vascardio/assets/icons-brush/VASCARDIO_Icon_14_Insurance.svg" alt=""><figcaption>Seguros</figcaption></figure><figure><img src="/vascardio/assets/icons-brush/VASCARDIO_Icon_15_Physician-referral.svg" alt=""><figcaption>Referidos médicos</figcaption></figure><figure><img src="/vascardio/assets/icons-brush/VASCARDIO_Icon_16_Recovery.svg" alt=""><figcaption>Recuperación</figcaption></figure><figure><img src="/vascardio/assets/icons-brush/VASCARDIO_Icon_17_Medication.svg" alt=""><figcaption>Medicamentos</figcaption></figure><figure><img src="/vascardio/assets/icons-brush/VASCARDIO_Icon_18_Accessibility.svg" alt=""><figcaption>Accesibilidad</figcaption></figure><figure><img src="/vascardio/assets/icons-brush/VASCARDIO_Icon_19_Family-companions.svg" alt=""><figcaption>Familia y acompañantes</figcaption></figure><figure><img src="/vascardio/assets/icons-brush/VASCARDIO_Icon_20_Directions.svg" alt=""><figcaption>Cómo llegar</figcaption></figure></div><div class="asset-grid"><div class="asset"><div class="tile "><img src="/vascardio/assets/graphics/VASCARDIO_BrushHeart_FullColor.svg" alt=""></div><span>VASCARDIO_BrushHeart_FullColor.svg</span></div><div class="asset"><div class="tile ink"><img src="/vascardio/assets/graphics/VASCARDIO_BrushHeart_OnInk.svg" alt=""></div><span>VASCARDIO_BrushHeart_OnInk.svg</span></div><div class="asset"><div class="tile red"><img src="/vascardio/assets/graphics/VASCARDIO_BrushHeart_OnRed.svg" alt=""></div><span>VASCARDIO_BrushHeart_OnRed.svg</span></div><div class="asset"><div class="tile "><img src="/vascardio/assets/graphics/VASCARDIO_PhotoFrame_Portrait-Red-Duotone_4x5.jpg" alt=""></div><span>VASCARDIO_PhotoFrame_Portrait-Red-Duotone_4x5.jpg</span></div><div class="asset"><div class="tile "><img src="/vascardio/assets/graphics/VASCARDIO_Overlay_Photo-Red_16x9.jpg" alt=""></div><span>VASCARDIO_Overlay_Photo-Red_16x9.jpg</span></div><div class="asset"><div class="tile "><img src="/vascardio/assets/graphics/VASCARDIO_Pattern-Tile_White_seamless.jpg" alt=""></div><span>VASCARDIO_Pattern-Tile_White_seamless.jpg</span></div><div class="asset"><div class="tile "><img src="/vascardio/assets/graphics/VASCARDIO_PhotoFrame_Doorway-on-White_16x9.jpg" alt=""></div><span>VASCARDIO_PhotoFrame_Doorway-on-White_16x9.jpg</span></div><div class="asset"><div class="tile "><img src="/vascardio/assets/graphics/VASCARDIO_PhotoFrame-CutOut_Portrait_transparent.png" alt=""></div><span>VASCARDIO_PhotoFrame-CutOut_Portrait_transparent.png</span></div><div class="asset"><div class="tile "><img src="/vascardio/assets/graphics/VASCARDIO_PhotoFrame-CutOut_Doorway_transparent.png" alt=""></div><span>VASCARDIO_PhotoFrame-CutOut_Doorway_transparent.png</span></div><div class="asset"><div class="tile "><img src="/vascardio/assets/graphics/VASCARDIO_PhotoFrame_Portrait-Red-Duotone_4x5.jpg" alt=""></div><span>VASCARDIO_PhotoFrame_Portrait-Red-Duotone_4x5.jpg</span></div></div></section>
+<section class="ds-sec" id="manual"><h2>Manual de uso</h2><div class="manual"><p>La opción A presenta a Vascardio como un instituto con autoridad editorial: mucho blanco, titulares grandes en Instrument Serif, filetes finos, botones y labels en DM Mono MAYÚSCULAS y esquinas rectas en todo. Sigue la maqueta web del manual de marca v2.0 (p. 30) al pie de la letra.</p>
+<h2>Voz y contenido</h2>
+<ul>
+<li>Trate al paciente de <strong>usted</strong>: «Coordine su próxima visita», «Le atendemos en español y en inglés».</li>
+<li>Frases cortas y concretas. Sin signos de exclamación ni superlativos.</li>
+<li><strong>Cifras verificables o ninguna.</strong> Nada de «100 % de éxito». Toda cifra, horario, teléfono o aseguradora sin confirmar va como marcador entre corchetes: [CIFRA], [HORARIO], [TELÉFONO].</li>
+<li><strong>Eco bilingüe:</strong> cada página va en un solo idioma (<code>/es/</code> o <code>/en/</code>). El otro idioma aparece como una sola línea en <code>lead</code> itálica, con <code>lang</code> correcto, y solo en el hero, el banner de cierre y el footer.</li>
+<li>Botones con verbo y destino claro: «Solicitar cita», «Llamar al instituto», «Ver estudios».</li>
+<li>La confirmación del formulario dice siempre que la cita aún no está confirmada.</li>
+</ul>
+<blockquote>
+<p>Consulta y estudios, en un mismo lugar.
+<em>Heart and vascular care, all in one place.</em></p>
+</blockquote>
+<h2>Color</h2>
+<ul>
+<li>El sitio se arma con tres fondos, que son los tres temas de este sistema: <strong>white</strong> (Masterbrand: home, servicios, condiciones, cita), <strong>ink</strong> (Institute: equipo, perfil del médico, footer) y <strong>red</strong> (solo el hub del ASC y su bloque en la home). Cada bloque pone <code>data-theme</code> y los componentes cambian solos.</li>
+<li>Proporción guía por pantalla: white 62 %, ink 12 %, rojo 8 %, stone 6 %, gold 6 %, resto 6 %. El rojo como acento no pasa del ~10 %.</li>
+<li>Texto en <code>text</code>; secundario en <code>text-muted</code>; labels y cifras en <code>text-accent</code>; enlaces en <code>link</code>, siempre subrayados.</li>
+<li><code>action</code> rellena el botón primario, uno por bloque. <code>vascardio-gold</code>, <code>cream</code> y <code>stone</code> nunca son texto sobre white.</li>
+<li><code>cream</code> nunca es fondo de sección. <code>heart-overlap</code> es solo del logo.</li>
+<li>Estados sin verde ni azul: error en <code>error</code> con borde <code>error-border</code>, aviso con línea <code>accent-line</code>, confirmación con contorno <code>border-strong</code>. Siempre con ícono y palabra.</li>
+<li><code>red-700</code> y <code>red-800</code> son derivados para hover y pulsado; no están en el manual y requieren visto bueno del cliente.</li>
+</ul>
+<h2>Tipografía</h2>
+<ul>
+<li><code>display</code> (Instrument Serif) para titulares: <code>display</code> solo en el hero, <code>h1</code> en titulares de página, <code>h2</code> en secciones, <code>h3</code> en servicios y pasos. <code>lead</code> en itálica para entradillas y el eco bilingüe.</li>
+<li><code>text</code> (Bricolage Grotesque) para todo el texto corrido: <code>body-lg</code>, <code>body</code> (17 px en móvil, 18 px desde 1024 px), <code>body-strong</code> para etiquetas de campo, <code>small</code> como piso absoluto de 16 px.</li>
+<li><code>mono</code> (DM Mono) en MAYÚSCULAS con espaciado: <code>label</code> para antetítulos y datos, <code>button</code> para botones, <code>nav</code> para el menú.</li>
+<li>Escala fluida entre 360 y 1440 px. Medida de línea 60–72 caracteres (max-width 38rem).</li>
+<li>Fuentes autoalojadas desde <code>fonts/</code> (TTF del paquete de marca).</li>
+</ul>
+<h2>Espacio y retícula</h2>
+<ul>
+<li>Base de 4 px: <code>space-1</code> a <code>space-11</code>.</li>
+<li>12 columnas desde 1024 px con <code>gutter</code> 32 px y <code>margin-desktop</code> 80 px; contenedor máximo <code>container-max</code> 1280 px. 8 columnas en tablet, 4 en móvil con margen de 16 px.</li>
+<li>Ritmo de sección <code>section-y</code> (160 px) en escritorio y <code>section-y-mobile</code> (64 px) en móvil: el blanco es parte de la marca.</li>
+</ul>
+<h2>Forma</h2>
+<ul>
+<li><code>radius-none</code> en todo: botones, campos, tarjetas, fotos y avisos. La única curva es la del corazón.</li>
+<li>Separación por filetes, no por sombras: cajas de servicio con filete de 1 px en <code>border-subtle</code>, divisores en <code>border-subtle</code>.</li>
+<li>Plano por defecto. <code>shadow-sticky</code> solo en el header fijo y la barra inferior; <code>shadow-overlay</code> en menús y diálogos.</li>
+</ul>
+<h2>Imagen y elementos gráficos</h2>
+<ul>
+<li>La foto del médico va dentro del corazón (set Photo frame) en el hero; el bloque ASC usa el overlay rojo. Máximo dos sets gráficos por layout.</li>
+<li>Duotono rojo solo sobre fondo rojo. No recortar el corazón ni teñirlo fuera de la paleta.</li>
+<li>Las fotos del banco profesional tienen marca de agua hasta que el cliente entregue los originales aprobados.</li>
+</ul>
+<h2>Iconografía</h2>
+<ul>
+<li>Íconos de marca: los 20 de pincel del grupo <strong>Iconos</strong>, a 48 px, siempre con texto al lado.</li>
+<li>Íconos de interfaz (teléfono, menú, cerrar, chevron, subir archivo, alerta, check): trazo de 2.25 px en <code>currentColor</code>, 20–24 px.</li>
+<li>WhatsApp usa su glifo oficial a un color. Sin emoji.</li>
+</ul>
+<h2>Movimiento</h2>
+<ul>
+<li><code>dur-fast</code> para hover, <code>dur-base</code> para desplegables, <code>dur-slow</code> para el menú móvil, siempre con <code>ease-out</code>.</li>
+<li>Sin parallax ni video en autoplay. Con <code>prefers-reduced-motion</code> todo pasa a 0.</li>
+</ul>
+<h2>Estados, foco y accesibilidad</h2>
+<ul>
+<li>Foco: contorno sólido de 3 px en <code>focus-ring</code>, separado 3 px. Se ve sobre white, ink y red.</li>
+<li>Objetivo táctil mínimo <code>touch-min</code> (48 px); botones y campos de <code>control-h</code> (56 px).</li>
+<li>Deshabilitado: 45 % de opacidad y cursor no permitido.</li>
+<li>Zona sin tracking en <code>/es/solicitar-cita/*</code> y <code>/en/request-appointment/*</code>: sin GTM, pixel, chat ni mapa embebido.</li>
+</ul>
+<h2>Logo</h2>
+<ul>
+<li>En el header: <code>VASCARDIO-HVI_Horizontal_FullColor_RGB.svg</code> sobre white. Sobre ink, <code>Reversed-Ink</code>; sobre rojo, <code>Reversed-Red</code>.</li>
+<li>Por debajo de 140 px de ancho se usa el masterbrand sin descriptor. El símbolo solo para favicon y avatar.</li>
+</ul>
+<h2>Usos incorrectos</h2>
+<ul>
+<li>Redondear esquinas o usar sombras difusas en tarjetas.</li>
+<li>Botones en minúscula o en Bricolage.</li>
+<li>Fondos de sección en cream o stone.</li>
+<li>Texto dorado sobre blanco.</li>
+<li>Más de un botón primario por bloque.</li>
+<li>Cifras sin verificar o promesas de resultados clínicos.</li>
+</ul></div></section>
+</div>
+</main>
+<footer class="foot"><div class="wrap"><span>Propuesta preparada por La Forja Digital · Octubre 2026 · Documento confidencial</span><a href="https://laforjadigital.com">laforjadigital.com</a></div></footer>
+</body>
+</html>

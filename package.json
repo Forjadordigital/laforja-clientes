@@ -1,0 +1,10 @@
+{
+  "name": "laforja-clientes",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Propuestas privadas de La Forja Digital para clientes",
+  "dependencies": {
+    "@vercel/functions": "3.9.8"
+  }
+}

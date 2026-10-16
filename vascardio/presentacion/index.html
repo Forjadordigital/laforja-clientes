@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Vascardio · Presentación</title>
+<link rel="icon" href="/vascardio/assets/logos/VASCARDIO_Symbol_FullColor_RGB.svg">
+<style>@font-face{font-family:"Instrument Serif";src:url("/vascardio/assets/fonts/InstrumentSerif-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Instrument Serif";src:url("/vascardio/assets/fonts/InstrumentSerif-Italic.ttf") format("truetype");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Bricolage Grotesque";src:url("/vascardio/assets/fonts/BricolageGrotesque-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Bricolage Grotesque";src:url("/vascardio/assets/fonts/BricolageGrotesque-Bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"DM Mono";src:url("/vascardio/assets/fonts/DMMono-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+
+:root{--red:#C82E30;--red-700:#A82528;--ink:#231C1B;--white:#FFFFFF;--stone:#D8CCBC;--umber:#6E5F50;--gold:#B6896D;--oxblood:#6B1612;--cream:#F1E6D6;
+--serif:"Instrument Serif","Iowan Old Style",Georgia,serif;--sans:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;--mono:"DM Mono",ui-monospace,Menlo,monospace}
+*{box-sizing:border-box}
+html{color-scheme:light}
+body{margin:0;background:var(--white);color:var(--ink);font:400 18px/1.6 var(--sans)}
+a{color:var(--red)}a:hover{color:var(--oxblood)}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.topbar{position:sticky;top:0;z-index:50;background:var(--white);box-shadow:0 1px 0 var(--stone)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px;flex-wrap:wrap;padding-block:8px}
+.topbar img{width:170px;height:auto;display:block}
+.topnav{display:flex;gap:4px;flex-wrap:wrap}
+.topnav a{color:var(--ink);text-decoration:none;font-size:15px;padding:10px 12px;min-height:44px;display:inline-flex;align-items:center}
+.topnav a[aria-current="page"]{font-weight:700;box-shadow:inset 0 -2px 0 var(--red)}
+.eyebrow{font-family:var(--mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--red);margin:0}
+h1,h2,h3{text-wrap:balance}
+.foot{background:var(--ink);color:var(--stone);margin-top:96px}
+.foot .wrap{padding-block:40px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:15px}
+.foot a{color:var(--white)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+<style>
+.deck-stage{background:#1a1514;padding-block:32px;display:flex;flex-direction:column;align-items:center;gap:16px}
+.deck-frame{width:min(100%,1200px);aspect-ratio:16/9;position:relative;overflow:hidden;background:#fff;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.deck-frame>section{position:absolute;left:0;top:0;width:1920px;height:1080px;box-sizing:border-box;transform-origin:0 0;overflow:hidden}
+.deck-frame>section[hidden]{display:none!important}
+.deck-frame section *{margin:0;box-sizing:border-box}
+.deck-frame section ul,.deck-frame section ol{padding-left:1.2em}
+.deck-frame section table{border-collapse:collapse;width:100%}
+.deck-frame section th,.deck-frame section td{padding:.35em .6em;border-bottom:1px solid #D8CCBC;text-align:left}
+.deck-bar{display:flex;align-items:center;gap:12px;color:#D8CCBC;font:400 15px var(--sans);flex-wrap:wrap;justify-content:center}
+.deck-bar button,.deck-bar a{min-height:44px;padding:0 18px;border:1px solid #6E5F50;background:transparent;color:#fff;font:700 15px var(--sans);cursor:pointer;display:inline-flex;align-items:center;text-decoration:none}
+.deck-bar a:hover,.deck-bar button:hover{border-color:#fff}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="wrap"><a href="/vascardio/" aria-label="Propuesta Vascardio, inicio"><img src="/vascardio/assets/logos/VASCARDIO-HVI_Horizontal_FullColor_RGB.svg" alt="Vascardio Heart &amp; Vascular Institute"></a><nav class="topnav" aria-label="Propuesta"><a href="/vascardio/">Inicio</a><a href="/vascardio/opcion-a/">Opción A</a><a href="/vascardio/opcion-b/">Opción B</a><a href="/vascardio/comparar/">Comparar</a><a href="/vascardio/presentacion/" aria-current="page">Presentación</a></nav></div></header>
+<main>
+<div class="deck-stage"><div class="deck-frame" id="frame"><section id="cover" data-transition="fade" style="background:#231C1B;color:#FFFFFF;font-family:'Bricolage Grotesque', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;justify-content:end;gap:32px">
+<img src="/vascardio/assets/logos/VASCARDIO-HVI_Horizontal_Reversed-Ink_RGB.svg" alt="Vascardio Heart and Vascular Institute" style="position:absolute;left:128px;top:112px;width:420px;height:108px;object-fit:contain">
+<p style="font-family:'DM Mono', 'Courier New', monospace;font-size:24px;letter-spacing:2px;text-transform:uppercase;color:#B6896D">Propuesta de design system · Octubre 2026</p>
+<h1 style="font-family:'Instrument Serif', Georgia, serif;font-size:132px;font-weight:400;line-height:1;color:#FFFFFF">Dos caminos para<br>el nuevo sitio</h1>
+<p style="font-size:32px;line-height:1.4;color:#D8CCBC;width:1100px">La misma marca v2.0, aplicada de dos maneras. Elijan la que mejor represente al instituto.</p>
+<div style="width:160px;height:8px;background:#C82E30"></div>
+<p style="position:absolute;right:128px;bottom:64px;width:600px;text-align:right;font-size:24px;color:#D8CCBC">La Forja Digital</p>
+
+</section>
+<section id="base" data-transition="fade" style="background:#FFFFFF;color:#231C1B;font-family:'Bricolage Grotesque', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'DM Mono', 'Courier New', monospace;font-size:24px;letter-spacing:2px;text-transform:uppercase;color:#C82E30">Lo que no cambia</p>
+<h2 style="font-family:'Instrument Serif', Georgia, serif;font-size:72px;font-weight:400;line-height:1.1">Las dos opciones parten de la misma base</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+<div style="display:flex;flex-direction:column;gap:12px;padding:40px;border-top:2px solid #231C1B">
+<h3 style="font-size:40px;font-weight:700;line-height:1.2">La marca v2.0, completa</h3>
+<p style="font-size:28px;line-height:1.45;color:#6E5F50">Paleta, Instrument Serif, Bricolage Grotesque, DM Mono, el logo oficial y los 20 íconos del paquete nuevo.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;padding:40px;border-top:2px solid #231C1B">
+<h3 style="font-size:40px;font-weight:700;line-height:1.2">Tres fondos, como dice el manual</h3>
+<p style="font-size:28px;line-height:1.45;color:#6E5F50">Blanco para la web, ink para el Institute y rojo solo para el centro quirúrgico. El rojo como acento no pasa del 10 %.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;padding:40px;border-top:2px solid #231C1B">
+<h3 style="font-size:40px;font-weight:700;line-height:1.2">El mismo contenido</h3>
+<p style="font-size:28px;line-height:1.45;color:#6E5F50">Mismos textos y mismas secciones. Español e inglés, y las cifras sin confirmar como [MARCADOR].</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;padding:40px;border-top:2px solid #231C1B">
+<h3 style="font-size:40px;font-weight:700;line-height:1.2">La misma base técnica</h3>
+<p style="font-size:28px;line-height:1.45;color:#6E5F50">Astro y Tailwind, contraste accesible y un formulario de cita sin herramientas de rastreo (HIPAA).</p>
+</div>
+</div>
+
+</section>
+<section id="opcion-a" data-transition="fade" style="background:#FFFFFF;color:#231C1B;font-family:'Bricolage Grotesque', Arial, sans-serif;padding:128px;display:flex;flex-direction:row;align-items:center;gap:64px">
+<div style="width:600px;display:flex;flex-direction:column;gap:28px">
+<p style="font-family:'DM Mono', 'Courier New', monospace;font-size:24px;letter-spacing:2px;text-transform:uppercase;color:#C82E30">Opción A</p>
+<h2 style="font-family:'Instrument Serif', Georgia, serif;font-size:112px;font-weight:400;line-height:1">Editorial</h2>
+<p style="font-size:32px;line-height:1.4">Un instituto con autoridad: mucho blanco, titulares grandes y la foto del médico dentro del corazón.</p>
+<ul style="font-size:28px;line-height:1.45;color:#6E5F50">
+<li>Botones y menú en DM Mono, en mayúsculas</li>
+<li>Esquinas rectas y filetes finos</li>
+<li>Íconos de pincel de la marca</li>
+<li>Sigue la maqueta web del manual al pie de la letra</li>
+</ul>
+</div>
+<img src="/vascardio/assets/deck/a-hero.jpg" alt="Home de la opción A en escritorio: titular grande en serif y foto del Dr. Dieguez dentro del corazón" style="width:1000px;height:680px;object-fit:cover;border:1px solid #D8CCBC">
+
+</section>
+<section id="detalle-a" data-transition="fade" style="background:#FFFFFF;color:#231C1B;font-family:'Bricolage Grotesque', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px">
+<h2 style="font-family:'Instrument Serif', Georgia, serif;font-size:72px;font-weight:400;line-height:1.1">Opción A en detalle</h2>
+<div style="display:flex;flex-direction:row;gap:64px;align-items:start">
+<div style="display:flex;flex-direction:column;gap:20px">
+<img src="/vascardio/assets/deck/a-servicios.jpg" alt="Servicios de la opción A: tres entradas con filete superior, títulos en serif y enlaces en mayúsculas" style="width:1000px;height:486px;object-fit:cover;border:1px solid #D8CCBC">
+<p style="font-size:28px;color:#6E5F50">Servicios en cajas de filete fino, sin sombras ni redondeos.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px">
+<img src="/vascardio/assets/deck/a-movil2.jpg" alt="Opción A en el teléfono: inicio con barra fija Llamar, WhatsApp y Agendar, y el paso 2 del formulario de cita" style="width:600px;height:618px;object-fit:contain;background:#FFFFFF">
+<p style="font-size:28px;color:#6E5F50">En el teléfono, barra fija con la cita siempre a un toque.</p>
+</div>
+</div>
+
+</section>
+<section id="opcion-b" data-transition="fade" style="background:#FFFFFF;color:#231C1B;font-family:'Bricolage Grotesque', Arial, sans-serif;padding:128px;display:flex;flex-direction:row;align-items:center;gap:64px">
+<div style="width:600px;display:flex;flex-direction:column;gap:28px">
+<p style="font-family:'DM Mono', 'Courier New', monospace;font-size:24px;letter-spacing:2px;text-transform:uppercase;color:#C82E30">Opción B</p>
+<h2 style="font-family:'Instrument Serif', Georgia, serif;font-size:112px;font-weight:400;line-height:1">Clínica</h2>
+<p style="font-size:32px;line-height:1.4">Una clínica cercana y fácil de usar: la cita empieza en la primera pantalla.</p>
+<ul style="font-size:28px;line-height:1.45;color:#6E5F50">
+<li>Botones en minúscula, como habla recepción</li>
+<li>Tarjetas blancas con esquinas suaves</li>
+<li>Fotos grandes y rectangulares del equipo</li>
+<li>Íconos sólidos a dos tintas de la marca</li>
+</ul>
+</div>
+<img src="/vascardio/assets/deck/b-hero.jpg" alt="Home de la opción B en escritorio: titular, foto grande del Dr. Dieguez y la tarjeta ¿Qué necesita hoy?" style="width:1000px;height:680px;object-fit:cover;border:1px solid #D8CCBC;border-radius:24px">
+
+</section>
+<section id="detalle-b" data-transition="fade" style="background:#FFFFFF;color:#231C1B;font-family:'Bricolage Grotesque', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px">
+<h2 style="font-family:'Instrument Serif', Georgia, serif;font-size:72px;font-weight:400;line-height:1.1">Opción B en detalle</h2>
+<div style="display:flex;flex-direction:row;gap:64px;align-items:start">
+<div style="display:flex;flex-direction:column;gap:20px">
+<img src="/vascardio/assets/deck/b-servicios.jpg" alt="Servicios de la opción B: tres tarjetas blancas con ícono en caja, título en negrita y enlace con flecha" style="width:1000px;height:486px;object-fit:cover;border:1px solid #D8CCBC;border-radius:24px">
+<p style="font-size:28px;color:#6E5F50">Servicios en tarjetas que se levantan al pasar el cursor.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px">
+<img src="/vascardio/assets/deck/b-movil2.jpg" alt="Opción B en el teléfono: inicio con la tarjeta de cita y barra flotante, y el paso 2 del formulario con opciones en tarjeta" style="width:600px;height:618px;object-fit:contain;background:#FFFFFF">
+<p style="font-size:28px;color:#6E5F50">En el teléfono, la primera pregunta de la cita ya está en la home.</p>
+</div>
+</div>
+
+</section>
+<section id="comparacion" data-transition="fade" style="background:#FFFFFF;color:#231C1B;font-family:'Bricolage Grotesque', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:40px">
+<h2 style="font-family:'Instrument Serif', Georgia, serif;font-size:72px;font-weight:400;line-height:1.1">Lado a lado</h2>
+<table style="font-size:28px;color:#231C1B">
+<tr><th style="width:24%;text-align:left">Elemento</th><th style="width:38%;text-align:left">Opción A · Editorial</th><th style="width:38%;text-align:left">Opción B · Clínica</th></tr>
+<tr><td>Botones</td><td>DM Mono en mayúsculas, rectos</td><td>Bricolage en minúscula, esquinas suaves</td></tr>
+<tr style="background:#F7F2EC"><td>Formas</td><td>Esquinas rectas y filetes finos</td><td>Tarjetas blancas con sombra suave</td></tr>
+<tr><td>Hero</td><td>Titular grande y foto en el corazón</td><td>Foto grande y tarjeta de cita</td></tr>
+<tr style="background:#F7F2EC"><td>Pedir cita</td><td>Botón que abre el formulario</td><td>La primera pregunta ya está en la home</td></tr>
+<tr><td>Íconos</td><td>Pincel, 48 px</td><td>Sólidos a dos tintas, 32 px</td></tr>
+<tr style="background:#F7F2EC"><td>Ritmo</td><td>Mucho blanco entre secciones</td><td>Más compacto, se llega antes a la acción</td></tr>
+<tr><td>Manual v2.0</td><td>Lo sigue al pie de la letra</td><td>Dos desvíos que el cliente debe aprobar</td></tr>
+</table>
+
+</section>
+<section id="elegir" data-transition="fade" style="background:#231C1B;color:#FFFFFF;font-family:'Bricolage Grotesque', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:64px">
+<h2 style="font-family:'Instrument Serif', Georgia, serif;font-size:96px;font-weight:400;line-height:1.05;color:#FFFFFF">¿Cómo quiere que se sienta Vascardio?</h2>
+<div style="display:flex;flex-direction:row;gap:64px">
+<div style="flex:1;display:flex;flex-direction:column;gap:20px;padding-top:32px;border-top:2px solid #B6896D">
+<p style="font-family:'DM Mono', 'Courier New', monospace;font-size:24px;letter-spacing:2px;text-transform:uppercase;color:#B6896D">Elija A si…</p>
+<p style="font-size:36px;line-height:1.35;color:#FFFFFF">…quiere transmitir prestigio de instituto, ante pacientes, médicos e inversionistas, y seguir el manual sin cambios.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:20px;padding-top:32px;border-top:2px solid #B6896D">
+<p style="font-family:'DM Mono', 'Courier New', monospace;font-size:24px;letter-spacing:2px;text-transform:uppercase;color:#B6896D">Elija B si…</p>
+<p style="font-size:36px;line-height:1.35;color:#FFFFFF">…su prioridad es que el paciente local pida la cita rápido y se sienta atendido desde la primera pantalla.</p>
+</div>
+</div>
+
+</section>
+<section id="pasos" data-transition="fade" style="background:#FFFFFF;color:#231C1B;font-family:'Bricolage Grotesque', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<h2 style="font-family:'Instrument Serif', Georgia, serif;font-size:72px;font-weight:400;line-height:1.1">Lo que necesitamos para avanzar</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+<div style="display:flex;flex-direction:row;gap:28px;padding:32px 0;border-top:2px solid #231C1B">
+<p style="font-family:'Instrument Serif', Georgia, serif;font-size:72px;line-height:1;color:#C82E30">1</p>
+<div style="display:flex;flex-direction:column;gap:8px"><h3 style="font-size:36px;font-weight:700;line-height:1.2">Elegir una opción</h3><p style="font-size:28px;line-height:1.45;color:#6E5F50">A, B o una combinación de las dos.</p></div>
+</div>
+<div style="display:flex;flex-direction:row;gap:28px;padding:32px 0;border-top:2px solid #231C1B">
+<p style="font-family:'Instrument Serif', Georgia, serif;font-size:72px;line-height:1;color:#C82E30">2</p>
+<div style="display:flex;flex-direction:column;gap:8px"><h3 style="font-size:36px;font-weight:700;line-height:1.2">Aprobar los tonos de hover</h3><p style="font-size:28px;line-height:1.45;color:#6E5F50">Dos rojos más oscuros para botones; en B, también los desvíos.</p></div>
+</div>
+<div style="display:flex;flex-direction:row;gap:28px;padding:32px 0;border-top:2px solid #231C1B">
+<p style="font-family:'Instrument Serif', Georgia, serif;font-size:72px;line-height:1;color:#C82E30">3</p>
+<div style="display:flex;flex-direction:column;gap:8px"><h3 style="font-size:36px;font-weight:700;line-height:1.2">Fotos originales</h3><p style="font-size:28px;line-height:1.45;color:#6E5F50">La selección aprobada, sin marca de agua.</p></div>
+</div>
+<div style="display:flex;flex-direction:row;gap:28px;padding:32px 0;border-top:2px solid #231C1B">
+<p style="font-family:'Instrument Serif', Georgia, serif;font-size:72px;line-height:1;color:#C82E30">4</p>
+<div style="display:flex;flex-direction:column;gap:8px"><h3 style="font-size:36px;font-weight:700;line-height:1.2">Datos reales</h3><p style="font-size:28px;line-height:1.45;color:#6E5F50">Cifras, horarios, teléfono y aseguradoras aceptadas.</p></div>
+</div>
+</div>
+<img src="/vascardio/assets/logos/VASCARDIO-HVI_Horizontal_FullColor_RGB.svg" alt="Vascardio Heart and Vascular Institute" style="position:absolute;left:128px;bottom:56px;width:240px;height:62px;object-fit:contain">
+<p style="position:absolute;right:128px;bottom:64px;width:600px;text-align:right;font-size:24px;color:#6E5F50">La Forja Digital · Octubre 2026</p>
+
+</section>
+</div>
+<div class="deck-bar"><button type="button" id="prev">Anterior</button><span id="count" aria-live="polite">1 / 9</span><button type="button" id="next">Siguiente</button><a href="/vascardio/presentacion/Vascardio-dos-caminos.pdf" download>Descargar PDF</a></div></div>
+<script>
+(function(){
+  var frame=document.getElementById('frame'),ss=[].slice.call(frame.children),i=0;
+  function fit(){var k=frame.clientWidth/1920;ss.forEach(function(s){s.style.transform='scale('+k+')';});}
+  function show(n){i=Math.max(0,Math.min(ss.length-1,n));ss.forEach(function(s,j){s.hidden=j!==i;});document.getElementById('count').textContent=(i+1)+' / '+ss.length;}
+  document.getElementById('prev').onclick=function(){show(i-1);};document.getElementById('next').onclick=function(){show(i+1);};
+  document.addEventListener('keydown',function(e){if(e.target.closest&&e.target.closest('input,textarea'))return;if(e.key==='ArrowRight'||e.key===' ')show(i+1);if(e.key==='ArrowLeft')show(i-1);});
+  var x0=null;frame.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;},{passive:true});frame.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40)show(i+(dx<0?1:-1));x0=null;});
+  window.addEventListener('resize',fit);fit();show(0);
+})();
+</script>
+</main>
+<footer class="foot"><div class="wrap"><span>Propuesta preparada por La Forja Digital · Octubre 2026 · Documento confidencial</span><a href="https://laforjadigital.com">laforjadigital.com</a></div></footer>
+</body>
+</html>
