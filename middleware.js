@@ -1,33 +1,29 @@
-// Protege cada carpeta de cliente con usuario y contraseña (Basic Auth).
-// Cada cliente tiene su variable de entorno en Vercel: CLIENTE_<CARPETA>_PASSWORD (ej. CLIENTE_VASCARDIO_PASSWORD).
-// El usuario es el nombre de la carpeta en minúsculas (ej. vascardio). Sin variable configurada, la carpeta queda cerrada.
+// Protege cada carpeta de cliente. Sin sesión válida, el visitante va a la pantalla de acceso
+// de su carpeta (/<cliente>/acceso/), que es pública. La sesión es una cookie creada por /api/acceso.
 
 import { next } from '@vercel/functions';
+import { CLIENTES, nombreCookie, passwordDe, huella, iguales, leerCookie } from './lib/acceso.js';
 
 export const config = { matcher: ['/vascardio', '/vascardio/:path*'] };
 
-const CLIENTES = ['vascardio'];
-
-export default function middleware(request) {
+export default async function middleware(request) {
   const url = new URL(request.url);
   const cliente = url.pathname.split('/')[1];
   if (!CLIENTES.includes(cliente)) return next();
 
-  const esperado = process.env['CLIENTE_' + cliente.toUpperCase() + '_PASSWORD'];
-  const header = request.headers.get('authorization') || '';
-  if (esperado && header.startsWith('Basic ')) {
-    try {
-      const [user, ...rest] = atob(header.slice(6)).split(':');
-      if (user === cliente && rest.join(':') === esperado) return next();
-    } catch (e) { /* credenciales mal formadas: se piden de nuevo */ }
+  // La pantalla de acceso y sus archivos son públicos.
+  if (url.pathname.startsWith('/' + cliente + '/acceso')) return next();
+
+  const password = passwordDe(cliente);
+  if (password) {
+    const esperado = await huella(cliente, password);
+    if (iguales(leerCookie(request, nombreCookie(cliente)), esperado)) return next();
   }
-  return new Response('Esta propuesta es privada. Ingrese el usuario y la contraseña que le enviamos.', {
-    status: 401,
-    headers: {
-      'WWW-Authenticate': 'Basic realm="Propuesta ' + cliente + '", charset="UTF-8"',
-      'Content-Type': 'text/plain; charset=utf-8',
-      'Cache-Control': 'no-store',
-      'X-Robots-Tag': 'noindex, nofollow'
-    }
+
+  const acceso = new URL('/' + cliente + '/acceso/', url);
+  acceso.searchParams.set('next', url.pathname + url.search);
+  return new Response(null, {
+    status: 302,
+    headers: { Location: acceso.pathname + acceso.search, 'Cache-Control': 'no-store', 'X-Robots-Tag': 'noindex, nofollow' }
   });
 }
