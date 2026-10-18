@@ -47,6 +47,13 @@ h1,h2,h3{text-wrap:balance}
 .notes div{padding:20px;box-shadow:inset 0 0 0 1px var(--stone);display:flex;flex-direction:column;gap:6px}
 .notes b{font:400 26px/1.1 var(--serif)}
 .notes p{margin:0;color:var(--umber);font-size:16px}
+.versions{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:16px;padding-top:28px}
+.ver{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;gap:8px;padding:24px;box-shadow:inset 0 0 0 1px var(--stone);color:var(--ink);font:400 16px/1.5 var(--sans);touch-action:manipulation}
+.ver b{font:400 34px/1.05 var(--serif)}
+.ver span:last-child{color:var(--umber)}
+.ver:hover{background:#FBF8F4}
+.ver[aria-pressed="true"]{box-shadow:inset 0 0 0 2.5px var(--red)}
+.ver:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
 .ctrls{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding-top:40px}
 .open{font-weight:700}
 </style>
@@ -57,17 +64,21 @@ h1,h2,h3{text-wrap:balance}
 <div class="wrap">
 <section style="padding-block:64px 8px;display:flex;flex-direction:column;gap:18px;max-width:54rem"><p class="eyebrow">Diseño · Página de inicio · Octubre 2026</p>
 <h1 style="margin:0;font:400 clamp(44px,7vw,88px)/.98 var(--serif);letter-spacing:-.01em">La nueva home de Vascardio</h1>
-<p style="margin:0;font-size:20px;line-height:1.5">Primero la estructura (wireframe) y después cómo se ve con el design system elegido (mockup). Revise ambas versiones en escritorio y en móvil, y déjenos sus comentarios sección por sección.</p></section>
+<p style="margin:0;font-size:20px;line-height:1.5">Dos propuestas de composición con el mismo design system, para que elijan la que mejor representa al instituto. Cada una tiene su estructura (wireframe) y cómo se ve (mockup), en escritorio y en móvil.</p></section>
+<section class="versions" aria-label="Las dos versiones">
+<button type="button" class="ver" data-ver="1" aria-pressed="true"><span class="eyebrow">Versión 1</span><b>La tarjeta</b><span>El hero lleva una tarjeta blanca con la cita. Debajo, secciones claras una tras otra: cifras, servicios, la visita, el doctor, el centro quirúrgico.</span></button>
+<button type="button" class="ver" data-ver="2" aria-pressed="false"><span class="eyebrow">Versión 2</span><b>El recorrido</b><span>El video a todo el ancho y una línea roja que acompaña el día del paciente: consulta, estudios, procedimiento y vuelta a casa el mismo día.</span></button>
+</section>
 
 <section class="notes" aria-label="Decisiones aplicadas">
 <div><span class="eyebrow">Design system</span><b>Opción B · Clínica</b><p>Tarjetas blancas, esquinas suaves y la cita desde la primera pantalla.</p></div>
 <div><span class="eyebrow">Hero</span><b>Video b-roll</b><p>Video de fondo en bucle, sin sonido y con botón de pausa. El clip actual es de muestra y se reemplaza por material propio.</p></div>
 <div><span class="eyebrow">Fotos</span><b>Nunca dentro del corazón</b><p>Las fotos van en marcos rectangulares. El corazón de pincel queda solo como firma gráfica.</p></div>
-<div><span class="eyebrow">Estructura</span><b>Arquitectura v2</b><p>Sigue su ejemplo de home, más dos bloques que proponemos: la visita en un día y la consulta de seguros.</p></div>
+<div><span class="eyebrow">Fases</span><b>Profesionales en fase 1</b><p>Referir un paciente, médicos, aseguradoras e inversionistas entran al lanzamiento con su propia barra. Pacientes internacionales pasa a la fase 2.</p></div>
 </section>
 
 <div class="ctrls">
-  <div class="seg" role="group" aria-label="Versión"><button type="button" data-v="wireframe" aria-pressed="false">Wireframe</button><button type="button" data-v="mockup" aria-pressed="true">Mockup</button></div>
+  <div class="seg" role="group" aria-label="Vista"><button type="button" data-v="wireframe" aria-pressed="false">Wireframe</button><button type="button" data-v="mockup" aria-pressed="true">Mockup</button></div>
   <div class="seg" role="group" aria-label="Dispositivo"><button type="button" data-d="desk" aria-pressed="true">Escritorio</button><button type="button" data-d="mob" aria-pressed="false">Móvil</button></div>
   <a class="open" id="open" href="/vascardio/home/mockup/" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a>
 </div>
@@ -75,6 +86,7 @@ h1,h2,h3{text-wrap:balance}
 
 <section style="padding-top:56px;max-width:54rem;display:flex;flex-direction:column;gap:12px"><h2 style="margin:0;font:400 36px/1.1 var(--serif)">Contenido provisional</h2>
 <ul style="margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;color:var(--umber)">
+<li><b style="color:var(--ink)">Profesionales:</b> las páginas de médicos, aseguradoras e inversionistas se diseñan después de aprobar la home.</li>
 <li><b style="color:var(--ink)">Fotos:</b> son las vistas previas del fotógrafo, con marca de agua. Se cambian por los originales aprobados.</li>
 <li><b style="color:var(--ink)">Video:</b> clip de banco de imágenes (Pexels) usado como muestra del b-roll.</li>
 <li><b style="color:var(--ink)">Historia de paciente:</b> caso ilustrativo. En el sitio irá un caso real con autorización por escrito.</li>
@@ -82,23 +94,30 @@ h1,h2,h3{text-wrap:balance}
 </ul></section>
 
 <section style="padding-top:40px;max-width:54rem;display:flex;flex-direction:column;gap:12px"><h2 style="margin:0;font:400 36px/1.1 var(--serif)">Lo que necesitamos de ustedes</h2>
-<ol style="margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px"><li>Aprobar la estructura (wireframe) o indicarnos qué cambiar.</li><li>Aprobar el mockup: tono, fotos y textos.</li><li>Material b-roll propio para el hero (clips de 10–20 s, horizontales y verticales).</li><li>Las fotos originales aprobadas, sin marca de agua.</li><li>Confirmar los datos y enviarnos la dirección y las aseguradoras aceptadas.</li></ol></section>
+<ol style="margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px"><li>Elegir la versión 1, la 2 o una combinación.</li><li>Aprobar la estructura (wireframe) y el mockup: tono, fotos y textos.</li><li>Cómo quieren recibir las referencias de otros médicos y quién atiende a las aseguradoras.</li><li>Material b-roll propio para el hero (clips de 10–20 s, horizontales y verticales).</li><li>Las fotos originales aprobadas, sin marca de agua.</li><li>Confirmar los datos y enviarnos la dirección y las aseguradoras aceptadas.</li></ol></section>
 </div>
 </main>
 <footer class="foot"><div class="wrap"><span>Propuesta preparada por La Forja Digital · Octubre 2026 · Documento confidencial</span><a href="https://laforjadigital.com">laforjadigital.com</a></div></footer>
 <script>
 (function(){
-  var f=document.getElementById('frame'),o=document.getElementById('open'),v='mockup',d='desk';
-  var sc=document.getElementById('scaler');
-  function fit(){var H=Math.round(window.innerHeight*.78);if(d==='desk'){var k=Math.min(1,sc.parentNode.clientWidth-40>0?(sc.parentNode.clientWidth-40)/1440:1);sc.style.width='';sc.style.height=H+'px';sc.style.boxShadow='';f.style.transform='scale('+k+')';f.style.height=Math.round(H/k)+'px';}else{sc.style.width='auto';sc.style.height='auto';sc.style.boxShadow='none';sc.style.overflow='visible';f.style.transform='';f.style.height=H+'px';}}
+  var f=document.getElementById('frame'),o=document.getElementById('open'),sc=document.getElementById('scaler');
+  var st={ver:'1',v:'mockup',d:'desk'};
+  try{var q=new URLSearchParams(location.search);['ver','v','d'].forEach(function(k){if(q.get(k))st[k]=q.get(k);});}catch(e){}
+  function url(){return '/vascardio/home/'+(st.ver==='2'?'v2/':'')+st.v+'/';}
+  function fit(){var H=Math.round(window.innerHeight*.78);
+    if(st.d==='desk'){var w=sc.parentNode.clientWidth-40;var k=Math.min(1,w>0?w/1440:1);sc.style.width='';sc.style.height=H+'px';sc.style.boxShadow='';sc.style.overflow='hidden';f.style.transform='scale('+k+')';f.style.height=Math.round(H/k)+'px';}
+    else{sc.style.width='auto';sc.style.height='auto';sc.style.boxShadow='none';sc.style.overflow='visible';f.style.transform='';f.style.height=H+'px';}}
+  function go(push){var u=url();if(f.getAttribute('src')!==u)f.src=u;o.href=u;f.className='frame '+st.d;
+    document.querySelectorAll('[data-ver]').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.ver===st.ver))});
+    document.querySelectorAll('[data-v]').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.v===st.v))});
+    document.querySelectorAll('[data-d]').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.d===st.d))});
+    fit();
+    if(push){try{history.replaceState(null,'','?ver='+st.ver+'&v='+st.v+'&d='+st.d);}catch(e){}}}
+  document.querySelectorAll('[data-ver]').forEach(function(b){b.addEventListener('click',function(){st.ver=b.dataset.ver;go(true)})});
+  document.querySelectorAll('[data-v]').forEach(function(b){b.addEventListener('click',function(){st.v=b.dataset.v;go(true)})});
+  document.querySelectorAll('[data-d]').forEach(function(b){b.addEventListener('click',function(){st.d=b.dataset.d;go(true)})});
   window.addEventListener('resize',fit);
-  function go(){var u='/vascardio/home/'+v+'/';if(f.getAttribute('src')!==u)f.src=u;o.href=u;f.className='frame '+d;sc.style.overflow=d==='desk'?'hidden':'visible';fit();
-    document.querySelectorAll('[data-v]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.v===v)});
-    document.querySelectorAll('[data-d]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.d===d)});}
-  document.querySelectorAll('[data-v]').forEach(function(b){b.onclick=function(){v=b.dataset.v;go()}});
-  document.querySelectorAll('[data-d]').forEach(function(b){b.onclick=function(){d=b.dataset.d;go()}});
-  try{var q=new URLSearchParams(location.search);if(q.get('v'))v=q.get('v');if(q.get('d'))d=q.get('d');}catch(e){}
-  go();
+  go(false);
 })();
 </script>
 </body>

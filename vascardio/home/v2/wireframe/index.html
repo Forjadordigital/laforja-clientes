@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FFFFFF">
+<title>Vascardio · Wireframe de la home, versión 2</title>
+<link rel="icon" href="/vascardio/assets/logos/VASCARDIO_Symbol_FullColor_RGB.svg">
+<link rel="preload" as="font" type="font/ttf" href="/vascardio/assets/fonts/BricolageGrotesque-Regular.ttf" crossorigin>
+<style>
+@font-face{font-family:"Instrument Serif";src:url("/vascardio/assets/fonts/InstrumentSerif-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Instrument Serif";src:url("/vascardio/assets/fonts/InstrumentSerif-Italic.ttf") format("truetype");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Bricolage Grotesque";src:url("/vascardio/assets/fonts/BricolageGrotesque-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
+@font-face{font-family:"Bricolage Grotesque";src:url("/vascardio/assets/fonts/BricolageGrotesque-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
+@font-face{font-family:"DM Mono";src:url("/vascardio/assets/fonts/DMMono-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
+
+:root{
+  --white:#FFFFFF;--ink:#231C1B;--red:#C82E30;--red-700:#A82528;--red-800:#8F1E21;
+  --stone:#D8CCBC;--umber:#6E5F50;--cream:#F1E6D6;--mist:#F7F2EB;
+  --serif:"Instrument Serif","Iowan Old Style",Georgia,serif;
+  --sans:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --mono:"DM Mono",ui-monospace,Menlo,monospace;
+  --r-s:12px;--r-m:16px;--r-l:24px;
+  --gut:40px;           /* margen lateral */
+  --rail:120px;         /* columna de la línea */
+  --p:0;                /* progreso de la línea (0–1) */
+}
+*{box-sizing:border-box}
+html{color-scheme:light;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--white);color:var(--ink);font:400 18px/1.6 var(--sans);-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:rgba(200,46,48,.15)}
+img,video{display:block;max-width:100%}
+img{height:auto}
+h1,h2,h3,p,dl,dd,figure,blockquote{margin:0}
+h1,h2,h3{text-wrap:balance;font-weight:400}
+a{color:var(--red);text-underline-offset:.18em;text-decoration-thickness:1.5px}
+a:hover{color:var(--red-800)}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:12px;top:-60px;z-index:100;padding:12px 16px;border-radius:var(--r-s);background:var(--ink);color:#fff;font-weight:700}
+.skip:focus{top:12px}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(var(--gut),env(safe-area-inset-left));padding-right:max(var(--gut),env(safe-area-inset-right))}
+.serif{font-family:var(--serif)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 24px;border-radius:var(--r-s);border:0;background:var(--red);color:var(--white);font:700 17px/1 var(--sans);text-decoration:none;cursor:pointer;white-space:nowrap;touch-action:manipulation;transition:background-color .15s}
+.btn:hover{background:var(--red-700);color:var(--white)}
+.btn:active{background:var(--red-800)}
+.btn.line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn.line:hover{background:var(--mist)}
+.more{font-weight:700}
+
+/* ---------- barra profesionales + header ---------- */
+.util{background:var(--ink);color:var(--stone)}
+.util .wrap{max-width:1320px;display:flex;justify-content:flex-end;align-items:center;gap:2px;min-height:40px;font-size:14px}
+.util span{margin-right:8px}
+.util a{color:var(--white);text-decoration:none;padding:8px 10px;border-radius:8px}
+.util a:hover{background:rgba(255,255,255,.1);color:var(--white)}
+.head{position:sticky;top:0;z-index:40;background:var(--white);box-shadow:0 1px 0 var(--stone)}
+.head .wrap{max-width:1320px;display:flex;align-items:center;gap:16px;min-height:76px}
+.head .logo img{width:172px;height:auto}
+.nav{display:flex;flex:1;justify-content:center}
+.nav a{min-height:48px;padding:0 10px;display:inline-flex;align-items:center;color:var(--ink);text-decoration:none;font-size:16px;white-space:nowrap;border-radius:8px}
+.nav a:hover{background:var(--mist);color:var(--ink)}
+.head-r{display:flex;align-items:center;gap:14px;flex:none}
+.tel{font-family:var(--mono);font-size:15px;color:var(--ink);text-decoration:none;white-space:nowrap}
+.lang{display:inline-flex;padding:3px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--stone)}
+.lang a{min-width:36px;min-height:32px;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none}
+.lang a[aria-current]{background:var(--ink);color:var(--white)}
+.burger{display:none;width:48px;height:48px;border-radius:var(--r-s);border:0;background:transparent;box-shadow:inset 0 0 0 1.5px var(--stone);align-items:center;justify-content:center;cursor:pointer}
+
+/* ---------- hero ---------- */
+.hero{position:relative;height:min(86vh,820px);min-height:560px;overflow:hidden;background:var(--ink);color:var(--white)}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:68% 35%}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(0deg,rgba(35,28,27,.82) 0%,rgba(35,28,27,.55) 30%,rgba(35,28,27,0) 62%),
+             linear-gradient(90deg,rgba(35,28,27,.45) 0%,rgba(35,28,27,0) 55%)}
+.hero .wrap{position:relative;z-index:1;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:132px}
+.hero h1{font-family:var(--serif);font-size:clamp(46px,6.4vw,92px);line-height:.98;letter-spacing:-.012em;max-width:13ch}
+.hero p{margin-top:20px;max-width:34rem;font-size:20px;line-height:1.5;color:rgba(255,255,255,.92)}
+.hero .en{display:block;margin-top:6px;font-family:var(--serif);font-style:italic;font-size:21px;color:rgba(255,255,255,.75)}
+.pause{position:absolute;right:max(var(--gut),env(safe-area-inset-right));top:24px;z-index:2;min-height:44px;padding:0 16px;border-radius:999px;border:0;background:rgba(255,255,255,.9);color:var(--ink);font:700 14px var(--sans);display:inline-flex;align-items:center;gap:8px;cursor:pointer;touch-action:manipulation}
+
+/* barra de cita acoplada al hero */
+.book-wrap{position:relative;z-index:5;margin-top:-72px}
+.book{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:24px;padding:18px 18px 18px 28px;border-radius:var(--r-m);background:var(--white);box-shadow:inset 0 0 0 1px var(--stone),0 18px 48px rgba(35,28,27,.22)}
+.book legend{float:left;padding:0;font-family:var(--serif);font-size:28px;line-height:1.1;white-space:nowrap}
+.book fieldset{margin:0;padding:0;border:0;display:contents}
+.seg{display:flex;gap:8px;flex-wrap:wrap}
+.opt{position:relative;display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 16px;border-radius:999px;box-shadow:inset 0 0 0 1.5px var(--stone);font-weight:700;font-size:16px;cursor:pointer;transition:box-shadow .15s,background-color .15s}
+.opt input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer}
+.opt:hover{box-shadow:inset 0 0 0 1.5px var(--umber)}
+.opt:has(input:checked){background:var(--ink);color:var(--white);box-shadow:none}
+.opt:has(input:focus-visible){outline:3px solid var(--ink);outline-offset:3px}
+.book-go{display:flex;flex-direction:column;align-items:stretch;gap:6px;text-align:center}
+.book-go a{font-weight:700;font-size:15px;white-space:nowrap}
+
+/* ---------- el recorrido ---------- */
+.route{position:relative;padding:112px 0 40px}
+.route .wrap{position:relative}
+.track,.fill{position:absolute;top:-112px;bottom:0;left:calc(max(var(--gut),env(safe-area-inset-left)) + 27px);width:4px;border-radius:4px}
+.track{background:var(--cream)}
+.fill{background:var(--red);transform-origin:top;transform:scaleY(var(--p));will-change:transform}
+.stop{position:relative;display:grid;grid-template-columns:var(--rail) minmax(0,1fr) minmax(0,1fr);column-gap:48px;align-items:start;padding-bottom:128px}
+.stop:last-of-type{padding-bottom:96px}
+.node{position:relative;margin:30px 0 0 15px;width:28px;height:28px;border-radius:999px;background:var(--white);box-shadow:inset 0 0 0 4px var(--stone);transition:box-shadow .3s,background-color .3s}
+.stop.on .node{box-shadow:inset 0 0 0 4px var(--red);background:var(--white)}
+.stop.on .node::after{content:"";position:absolute;inset:8px;border-radius:999px;background:var(--red)}
+.stop h2{font-family:var(--serif);font-size:clamp(64px,9vw,136px);line-height:.9;letter-spacing:-.02em;grid-column:2 / 4;margin-bottom:28px}
+.stop h2 small{display:block;margin-bottom:12px;font-family:var(--sans);font-size:16px;font-weight:700;letter-spacing:0;color:var(--umber)}
+.stop .txt{grid-column:2;display:flex;flex-direction:column;gap:18px;max-width:31rem}
+.stop .txt p{font-size:19px;line-height:1.6}
+.stop .media{grid-column:3;position:relative}
+.stop .media img{width:100%;border-radius:var(--r-l);object-fit:cover}
+.stop.flip .txt{grid-column:3;grid-row:2}
+.stop.flip .media{grid-column:2;grid-row:2}
+.fact{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;padding-top:18px;border-top:1px solid var(--stone)}
+.fact b{font-family:var(--serif);font-weight:400;font-size:56px;line-height:1;color:var(--red);white-space:nowrap;font-variant-numeric:tabular-nums}
+.fact span{flex:1 1 12rem;min-width:0;font-size:16px;line-height:1.4;color:var(--umber)}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--stone)}
+.facts div{padding:16px 16px 0 0}
+.facts div + div{padding-left:16px;box-shadow:-1px 0 0 var(--stone)}
+.facts b{display:block;font-family:var(--serif);font-weight:400;font-size:44px;line-height:1;color:var(--red);font-variant-numeric:tabular-nums}
+.facts span{display:block;margin-top:6px;font-size:15px;line-height:1.35;color:var(--umber)}
+.name-tag{position:absolute;left:20px;bottom:20px;padding:12px 16px;border-radius:var(--r-s);background:var(--white);box-shadow:0 10px 28px rgba(35,28,27,.22)}
+.name-tag b{display:block;font-size:16px}
+.name-tag span{font-size:14px;color:var(--umber)}
+.links{display:flex;gap:24px;flex-wrap:wrap}
+
+/* final del recorrido: historia */
+.story{position:relative;background:var(--cream)}
+.story .wrap{position:relative;display:grid;grid-template-columns:var(--rail) minmax(0,1fr);column-gap:48px;padding-top:88px;padding-bottom:96px}
+.story .end{position:absolute;top:0;left:calc(max(var(--gut),env(safe-area-inset-left)) + 27px);width:4px;height:88px;background:var(--red);border-radius:0 0 4px 4px}
+.story figure{grid-column:2;max-width:46rem}
+.story blockquote{font-family:var(--serif);font-size:clamp(34px,4.2vw,54px);line-height:1.1;letter-spacing:-.005em}
+.story figcaption{margin-top:24px;font-size:17px}
+.story figcaption b{display:block}
+.story figcaption span{color:var(--umber)}
+.story .note{display:inline-block;margin-top:20px;font-size:14px;color:var(--umber);padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.6)}
+
+/* ---------- antes de su cita ---------- */
+.before{padding-top:112px}
+.before h2{font-family:var(--serif);font-size:clamp(44px,5vw,64px);line-height:1;letter-spacing:-.01em;margin-bottom:40px}
+.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.cols > section{padding:0 32px 8px}
+.cols > section:first-child{padding-left:0}
+.cols > section + section{box-shadow:-1px 0 0 var(--stone)}
+.cols h3{font-weight:700;font-size:22px;line-height:1.3;margin-bottom:12px}
+.cols p{font-size:17px;color:var(--umber)}
+.search{display:flex;gap:8px;margin-top:18px}
+.search input{flex:1;min-width:0;min-height:52px;padding:0 16px;border:0;border-radius:var(--r-s);box-shadow:inset 0 0 0 1.5px var(--umber);font:400 17px var(--sans);color:var(--ink);background:var(--white)}
+.search input::placeholder{color:var(--umber)}
+.search input:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.small{margin-top:12px;font-size:14px !important}
+.cond{list-style:none;margin:0;padding:0}
+.cond li + li{border-top:1px solid var(--stone)}
+.cond a{display:flex;justify-content:space-between;align-items:center;min-height:52px;color:var(--ink);text-decoration:none;font-size:18px}
+.cond a:hover{color:var(--red)}
+.cond a svg{flex:none;color:var(--red)}
+.where img{width:100%;aspect-ratio:3/2;object-fit:cover;object-position:50% 60%;border-radius:var(--r-m);margin-bottom:16px}
+.where dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:17px}
+.where dt{color:var(--umber)}
+.where dd a{color:var(--ink);font-family:var(--mono);text-decoration:none}
+
+/* ---------- cierre ---------- */
+.close{padding:120px 0}
+.close .wrap{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap}
+.close h2{font-family:var(--serif);font-size:clamp(48px,6.4vw,92px);line-height:.98;letter-spacing:-.012em;max-width:14ch}
+.close p{margin-top:16px;font-size:19px;color:var(--umber)}
+.close .row{display:flex;gap:12px;flex-wrap:wrap}
+
+/* ---------- profesionales ---------- */
+.pros{background:var(--ink);color:var(--white)}
+.pros .wrap{padding-top:96px;padding-bottom:88px}
+.pros h2{font-family:var(--serif);font-size:clamp(40px,4.4vw,56px);line-height:1.02;margin-bottom:12px}
+.pros > .wrap > p{max-width:40rem;color:var(--stone);font-size:18px}
+.doors{margin-top:48px;display:grid;grid-template-columns:1.3fr 1fr 1fr;border-top:1px solid rgba(216,204,188,.3)}
+.doors > div{padding:32px 32px 0 0;display:flex;flex-direction:column;gap:14px}
+.doors > div + div{padding-left:32px;box-shadow:-1px 0 0 rgba(216,204,188,.3)}
+.doors h3{font-family:var(--serif);font-size:36px;line-height:1.05}
+.doors p{font-size:17px;color:var(--stone)}
+.doors a{color:var(--white)}
+.doors a:hover{color:var(--cream)}
+.doors .btn{align-self:flex-start;color:var(--white)}
+.doors .actions{display:flex;flex-direction:column;align-items:flex-start;gap:10px;margin-top:4px}
+
+/* ---------- footer ---------- */
+.foot{background:var(--ink);color:var(--stone)}
+.foot .wrap{padding-top:0;padding-bottom:48px}
+.foot .top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:32px;padding-top:56px;border-top:1px solid rgba(216,204,188,.3)}
+.foot img{width:196px;margin-bottom:16px}
+.foot p{font-size:15px;line-height:1.7}
+.foot b{display:block;color:var(--white);font-size:15px;margin-bottom:10px}
+.foot nav a{display:block;padding:5px 0;font-size:15px;color:var(--stone);text-decoration:none}
+.foot nav a:hover{color:var(--white)}
+.foot .legal{margin-top:40px;padding-top:24px;border-top:1px solid rgba(216,204,188,.2);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14px}
+.foot .legal a{color:var(--stone)}
+.disc{margin-top:28px;font-size:14px;max-width:46rem}
+
+.bar{display:none}
+
+/* ---------- responsive ---------- */
+@media (max-width:1400px){.tel{display:none}}
+@media (max-width:1240px){.nav{display:none}.burger{display:inline-flex}.head-r{margin-left:auto}.tel{display:inline}}
+@media (max-width:1080px){
+  .book{grid-template-columns:1fr;gap:16px}
+  .book legend{float:none;margin-bottom:12px}
+  .book fieldset{display:block}
+  .stop{grid-template-columns:72px minmax(0,1fr);column-gap:24px}
+  .stop h2,.stop .txt,.stop .media,.stop.flip .txt,.stop.flip .media{grid-column:2;grid-row:auto}
+  .stop .media{margin-top:32px}
+  .story .wrap{grid-template-columns:72px minmax(0,1fr);column-gap:24px}
+  .cols{grid-template-columns:1fr 1fr;row-gap:48px}
+  .cols > section:nth-child(3){grid-column:1 / -1;padding-left:0;box-shadow:none;padding-top:40px;border-top:1px solid var(--stone)}
+  .doors{grid-template-columns:1fr}
+  .doors > div,.doors > div + div{padding:28px 0;box-shadow:none;border-bottom:1px solid rgba(216,204,188,.3)}
+  .foot .top{grid-template-columns:1fr 1fr}
+  .foot .top > div:first-child{grid-column:1 / -1}
+}
+@media (max-width:720px){
+  :root{--gut:20px}
+  body{font-size:17px}
+  .util{display:none}
+  .head .wrap{min-height:64px;gap:10px}
+  .head .logo img{width:148px}
+  .tel,.head-r > .btn{display:none}
+  .hero{height:auto;min-height:0;aspect-ratio:4/5.6}
+  .hero video{object-position:50% 25%}
+  .hero .wrap{padding-bottom:28px}
+  .hero h1{font-size:44px}
+  .hero p{font-size:17px;margin-top:12px}
+  .hero .en{font-size:18px}
+  .pause{top:12px;min-height:40px;padding:0 12px;font-size:13px}
+  .book-wrap{margin-top:16px}
+  .book{padding:20px;box-shadow:inset 0 0 0 1px var(--stone),0 8px 24px rgba(35,28,27,.12)}
+  .book legend{font-size:28px}
+  .seg{flex-direction:column}
+  .opt{border-radius:var(--r-s)}
+  .book-go{flex-direction:column;align-items:stretch;text-align:center}
+  .route{padding-top:72px}
+  .track,.fill{top:-72px;left:calc(var(--gut) + 9px);width:3px}
+  .stop{grid-template-columns:22px minmax(0,1fr);column-gap:18px;padding-bottom:88px}
+  .node{margin:12px 0 0 0;width:22px;height:22px;box-shadow:inset 0 0 0 3px var(--stone)}
+  .stop.on .node{box-shadow:inset 0 0 0 3px var(--red)}
+  .node::after{inset:6px}
+  .stop h2{font-size:min(60px,14.5vw);margin-bottom:20px}
+  .stop .txt p{font-size:17px}
+  .fact b{font-size:44px}
+  .facts b{font-size:34px}
+  .facts span{font-size:13px}
+  .facts div{padding-right:10px}.facts div + div{padding-left:10px}
+  .story .wrap{grid-template-columns:22px minmax(0,1fr);column-gap:18px;padding-top:64px;padding-bottom:72px}
+  .story .end{left:calc(var(--gut) + 9px);width:3px;height:64px}
+  .before{padding-top:72px}
+  .cols{grid-template-columns:minmax(0,1fr)}
+  .cols > section,.cols > section:nth-child(3){padding:32px 0 0;box-shadow:none;border-top:1px solid var(--stone);grid-column:auto}
+  .cols > section:first-child{border-top:0;padding-top:0}
+  .close{padding:80px 0}
+  .pros .wrap{padding-top:64px}
+  .foot .wrap{padding-bottom:120px}
+  .bar{display:grid;grid-template-columns:1fr 1fr 1.25fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:var(--white);box-shadow:0 -1px 0 var(--stone),0 -8px 24px rgba(35,28,27,.08)}
+  .bar a{min-height:52px;border-radius:var(--r-s);display:flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:15px;text-decoration:none;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--stone);touch-action:manipulation}
+  .bar a:last-child{background:var(--red);color:var(--white);box-shadow:none}
+}
+@media (max-width:374px){.facts{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.facts div:nth-child(3){grid-column:1 / -1;padding-left:0;box-shadow:none;border-top:1px solid var(--stone);margin-top:12px;padding-top:12px}}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+  :root{--p:1}
+}
+</style>
+
+<style>
+/* ===== capa wireframe: grises, sin serif, cajas en lugar de fotos ===== */
+:root{--white:#FFFFFF;--ink:#3A3A3A;--red:#3A3A3A;--red-700:#2B2B2B;--red-800:#222;--stone:#CFCFCF;--umber:#6B6B6B;--cream:#ECECEC;--mist:#F3F3F3;--serif:"Bricolage Grotesque",system-ui,sans-serif}
+body{color:#2B2B2B}
+h1,h2,h3,.stop h2,.hero h1,.close h2,.before h2,.pros h2,.doors h3,.story blockquote{font-weight:700 !important;letter-spacing:-.01em !important}
+.stop h2{font-size:clamp(48px,6vw,88px)}
+.hero{background:#DADADA;color:#2B2B2B}
+.hero::after{background:none}
+.hero p,.hero .en{color:#3A3A3A}
+.ph.hero-ph{position:absolute;inset:0;border-radius:0;background:#DADADA}
+.ph{position:relative;background:#ECECEC;border-radius:24px;display:flex;align-items:center;justify-content:center;min-height:160px;width:100%;overflow:hidden;color:#6B6B6B;font:400 12px/1.4 var(--mono);text-align:center;padding:12px}
+.ph::before{content:"";position:absolute;inset:0;background:linear-gradient(to top right,transparent calc(50% - .5px),#CFCFCF 50%,transparent calc(50% + .5px)),linear-gradient(to bottom right,transparent calc(50% - .5px),#CFCFCF 50%,transparent calc(50% + .5px))}
+.ph span{position:relative;background:#ECECEC;padding:4px 8px;border-radius:6px;max-width:80%}
+.ph.hero-ph span{position:absolute;right:24px;bottom:24px;background:#DADADA}
+.ph.hero-ph::before{opacity:.6}
+.pros .btn{background:#fff;color:#2B2B2B !important}
+.where .ph{aspect-ratio:3/2;margin-bottom:16px;border-radius:16px}
+.logo-ph{display:inline-flex;align-items:center;justify-content:center;width:150px;height:36px;border-radius:8px;background:#DCDCDC;font:400 12px var(--mono);color:#6B6B6B}
+.pros .logo-ph,.foot .logo-ph{background:#555;color:#ddd;margin-bottom:16px}
+.pros,.foot,.util{background:#3A3A3A}
+.fill{background:#2B2B2B}.track{background:#DCDCDC}
+.stop.on .node{box-shadow:inset 0 0 0 4px #2B2B2B}.stop.on .node::after{background:#2B2B2B}
+.story .end{background:#2B2B2B}
+.note{display:flex;gap:12px;align-items:flex-start;margin:0 0 20px;padding:12px 16px;border-radius:12px;background:#FFF2EA;border-left:4px solid #E8692C;font:400 14px/1.5 var(--sans);color:#5A3420;max-width:none;letter-spacing:0}
+.note b{color:#E8692C;font:400 13px var(--mono);text-transform:uppercase;letter-spacing:.04em}
+.note .n{flex:none;width:26px;height:26px;border-radius:999px;background:#E8692C;color:#fff;display:flex;align-items:center;justify-content:center;font:400 13px var(--mono)}
+.note .add{display:inline-block;margin-left:6px;padding:1px 8px;border-radius:999px;background:#E8692C;color:#fff;font:400 11px var(--mono);text-transform:uppercase}
+.notes-row{padding-top:20px}
+.stop .note,.story .note-w{grid-column:2 / 4}
+body.sin-notas .note{display:none}
+.toggle{position:fixed;right:16px;bottom:16px;z-index:60;min-height:44px;padding:0 16px;border-radius:999px;border:0;background:#E8692C;color:#fff;font:700 14px var(--sans);box-shadow:0 6px 20px rgba(0,0,0,.18);cursor:pointer}
+@media (max-width:1080px){.stop .note{grid-column:2}}
+@media (max-width:720px){.toggle{bottom:84px}.stop h2{font-size:min(44px,10.5vw)!important}.facts b{font-size:26px!important}.hero h1{font-size:36px!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#cita">Saltar a pedir cita</a>
+
+<div class="util"><div class="wrap"><span>Profesionales:</span><nav aria-label="Profesionales"><a href="#profesionales">Referir un paciente</a><a href="#profesionales">Para médicos</a><a href="#profesionales">Aseguradoras</a><a href="#profesionales">Inversionistas</a></nav></div></div>
+<header class="head">
+  <div class="wrap">
+    <a class="logo" href="#" aria-label="Vascardio, inicio"><span class="logo-ph">LOGO HVI</span></a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#">Para pacientes</a><a href="#">Condiciones</a><a href="#">Servicios</a><a href="#">Quiénes somos</a><a href="#">Centro quirúrgico</a><a href="#">Contacto</a>
+    </nav>
+    <div class="head-r">
+      <a class="tel" href="tel:+13055751776">(305) 575-1776</a>
+      <span class="lang"><a href="#" aria-current="true" aria-label="Español">ES</a><a href="#" lang="en" aria-label="English">EN</a></span>
+      <a class="btn" href="#cita">Pedir cita</a>
+      <button class="burger" type="button" aria-label="Abrir menú" aria-expanded="false"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#231C1B" stroke-width="2.25" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<div class="wrap notes-row"><div class="note"><span class="n">0</span><div><b>Header y barra para profesionales</b> <span class="add">Fase 1</span><br>Arriba, una barra oscura con las puertas para profesionales (fase 1): referir un paciente, médicos, aseguradoras e inversionistas. Debajo, el menú para el paciente local. Pacientes internacionales queda para la fase 2.</div></div><div class="note"><span class="n">1</span><div><b>Hero a todo el ancho</b><br>El b-roll ocupa todo el ancho y el titular va directo sobre el video, sin tarjeta. Botón de pausa arriba a la derecha.</div></div></div>
+<!-- HERO -->
+<section class="hero" aria-labelledby="h1">
+  <div class="ph hero-ph"><span>B-ROLL · CLÍNICA EN MOVIMIENTO</span></div>
+  <button class="pause" id="pause" type="button" aria-pressed="false"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg><span>Pausar video</span></button>
+  <div class="wrap">
+    <h1 id="h1">De la primera consulta al alta, sin cambiar de lugar.</h1>
+    <p>Cardiología y salud vascular en Hialeah, con el Dr. Francisco J. Dieguez Jr. Le atendemos en español y en inglés.<span class="en" lang="en">From first visit to discharge, in one place.</span></p>
+  </div>
+</section>
+
+<div class="book-wrap" id="cita"><div class="wrap">
+  <form class="book" action="#" onsubmit="return false">
+    <fieldset>
+      <legend>¿Qué necesita hoy?</legend>
+      <div class="seg">
+        <label class="opt"><input type="radio" name="motivo" value="consulta" checked>Primera consulta</label>
+        <label class="opt"><input type="radio" name="motivo" value="estudio">Un estudio</label>
+        <label class="opt"><input type="radio" name="motivo" value="seguimiento">Seguimiento</label>
+        <label class="opt"><input type="radio" name="motivo" value="segunda-opinion">Segunda opinión</label>
+      </div>
+    </fieldset>
+    <div class="book-go">
+      <button class="btn" type="submit">Pedir cita</button>
+      <a href="tel:+13055751776">o llame al (305) 575-1776</a>
+    </div>
+  </form>
+</div></div>
+
+<!-- EL RECORRIDO -->
+<div class="wrap" style="padding-top:40px"><div class="note"><span class="n">2</span><div><b>Barra de cita acoplada</b><br>La cita empieza en la primera pantalla: motivo de la visita (4 opciones del flujo de cita) y «Pedir cita», con el teléfono como alternativa.</div></div><div class="note"><span class="n">3</span><div><b>El recorrido</b><br>Una línea continua une las cuatro paradas del día del paciente: Consulta → Estudios → Procedimiento → A casa. Cada dato (24 h, 2 quirófanos, 2,500 al año, alta el mismo día) aparece en la parada que respalda. La línea se dibuja al bajar por la página (una sola animación; con «reducir movimiento» aparece completa).</div></div></div>
+<div class="route" id="route">
+  <div class="wrap">
+    <span class="track" aria-hidden="true"></span><span class="fill" aria-hidden="true"></span>
+    <h2 class="vh">Su visita, paso a paso</h2>
+
+    <section class="stop" aria-labelledby="s1">
+      <span class="node" aria-hidden="true"></span>
+      <h2 id="s1"><small>Primero</small>Consulta</h2>
+      <div class="txt">
+        <p>Le recibe el Dr. Francisco J. Dieguez Jr., cardiólogo intervencionista con más de 20&nbsp;años de práctica. Le explica qué le pasa y qué sigue, en español o en inglés.</p>
+        <div class="links"><a class="more" href="#">Conocer al Dr. Dieguez</a><a class="more" href="#cita">Pedir una consulta</a></div>
+      </div>
+      <div class="media">
+        <div class="ph" style="aspect-ratio:4/5;object-position:50% 22%"><span>FOTO · EL DR. FRANCISCO J. DIEGUEZ JR. EN EL PASILLO DEL INSTITUTO</span></div>
+        <div class="name-tag"><b>Dr. Francisco J. Dieguez Jr.</b><span>Cardiología intervencionista</span></div>
+      </div>
+    </section>
+
+    <section class="stop flip" aria-labelledby="s2">
+      <span class="node" aria-hidden="true"></span>
+      <h2 id="s2"><small>El mismo día, si su médico los indica</small>Estudios</h2>
+      <div class="media">
+        <div class="ph" style="aspect-ratio:1/1;object-position:50% 38%"><span>FOTO · EL DR. DIEGUEZ REVISA UN ESTUDIO EN EL MONITOR</span></div>
+      </div>
+      <div class="txt">
+        <p>Ecocardiograma, prueba de esfuerzo y estudios vasculares, en la misma sede y sin pedir otra cita. Usted sale sabiendo qué se le hizo y cuándo tendrá sus resultados.</p>
+        <div class="fact"><b>24&nbsp;h</b><span>para la interpretación oficial de sus estudios</span></div>
+        <div class="links"><a class="more" href="#">Ver estudios</a></div>
+      </div>
+    </section>
+
+    <section class="stop" aria-labelledby="s3">
+      <span class="node" aria-hidden="true"></span>
+      <h2 id="s3"><small>Si lo necesita</small>Procedimiento</h2>
+      <div class="txt">
+        <p>Stents coronarios, marcapasos, desfibriladores e intervenciones vasculares periféricas, en nuestro propio centro quirúrgico ambulatorio y con el mismo equipo de la consulta.</p>
+        <div class="facts">
+          <div><b>2</b><span>quirófanos</span></div>
+          <div><b>1</b><span>sala de cateterismo</span></div>
+          <div><b>2,500</b><span>procedimientos al año</span></div>
+        </div>
+        <div class="links"><a class="more" href="#">Ver procedimientos</a><a class="more" href="#">Recorrer el centro</a></div>
+      </div>
+      <div class="media">
+        <div class="ph" style="aspect-ratio:4/3"><span>FOTO · SALA DE CATETERISMO DEL CENTRO QUIRÚRGICO AMBULATORIO</span></div>
+      </div>
+    </section>
+
+    <section class="stop flip" aria-labelledby="s4">
+      <span class="node" aria-hidden="true"></span>
+      <h2 id="s4"><small>Y al final del día</small>A casa</h2>
+      <div class="media">
+        <div class="ph" style="aspect-ratio:4/3;object-position:50% 55%"><span>FOTO · SALA DE RECUPERACIÓN CON CAMA Y MONITOR</span></div>
+      </div>
+      <div class="txt">
+        <p>Se recupera en una de nuestras 8&nbsp;camas, con un familiar a su lado, y vuelve a casa el mismo día con indicaciones claras para su seguimiento.</p>
+        <div class="fact"><b>Mismo día</b><span>alta tras su procedimiento ambulatorio</span></div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<section class="story" aria-label="Historia de una paciente">
+  <div class="wrap">
+    <span class="end" aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <figure>
+      <blockquote>“Llevaba meses sin poder caminar dos cuadras. Hoy voy sola al mercado, y sin dolor.”</blockquote>
+      <figcaption><b>Marta R., 71 años, de Hialeah</b><span>Angioplastia periférica en nuestro centro quirúrgico</span></figcaption>
+      <span class="note-w" style="display:inline-block;margin-top:16px;font-size:14px">Historia ilustrativa para la maqueta. En el sitio irá un caso real con autorización.</span>
+    </figure>
+  </div>
+</section>
+
+<!-- ANTES DE SU CITA -->
+<section class="before" aria-labelledby="antes"><div class="wrap"><div class="note"><span class="n">4</span><div><b>Final del recorrido: historia</b><br>La línea termina en el resultado: la historia de un paciente. En la maqueta es un caso de ejemplo.</div></div><div class="note"><span class="n">5</span><div><b>Antes de su cita</b><br>Las tres dudas que más frenan una cita, en tres columnas: seguro, condiciones (como busca el paciente) y ubicación. Sin mapa embebido.</div></div>
+  <h2 id="antes">Antes de su cita</h2>
+  <div class="cols">
+    <section aria-labelledby="c1">
+      <h3 id="c1">¿Aceptan mi seguro?</h3>
+      <p>Busque su aseguradora o su plan. Si no aparece, llámenos y le orientamos.</p>
+      <form class="search" role="search" action="#" onsubmit="return false">
+        <label class="vh" for="seg">Aseguradora o plan</label>
+        <input id="seg" name="seguro" type="search" autocomplete="off" spellcheck="false" placeholder="Ej.: Humana, Aetna…">
+        <button class="btn" type="submit">Buscar</button>
+      </form>
+      <p class="small">La cobertura se confirma siempre con el equipo administrativo.</p>
+    </section>
+    <section aria-labelledby="c2">
+      <h3 id="c2">¿Qué le preocupa?</h3>
+      <ul class="cond">
+        <li><a href="#">Dolor en el pecho<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a></li>
+        <li><a href="#">Presión alta<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a></li>
+        <li><a href="#">Arritmias<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a></li>
+        <li><a href="#">Várices<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a></li>
+        <li><a href="#">Dolor al caminar o mala circulación<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a></li>
+      </ul>
+    </section>
+    <section class="where" aria-labelledby="c3">
+      <h3 id="c3">Dónde estamos</h3>
+      <div class="ph" style=""><span>FOTO · ENTRADA DE VASCARDIO Y SU CENTRO QUIRÚRGICO AMBULATORIO</span></div>
+      <dl>
+        <dt>Dirección</dt><dd>[Dirección], Hialeah, FL</dd>
+        <dt>Horario</dt><dd>Lun–Vie, 8:00 a.&nbsp;m.–5:00 p.&nbsp;m.</dd>
+        <dt>Teléfono</dt><dd><a href="tel:+13055751776">(305) 575-1776</a></dd>
+      </dl>
+      <p style="margin-top:14px"><a class="more" href="#">Cómo llegar</a></p>
+    </section>
+  </div>
+</div></section>
+
+<!-- CIERRE -->
+<section class="close" aria-labelledby="cierre"><div class="wrap" style="flex-direction:column;align-items:stretch"><div class="note"><span class="n">6</span><div><b>Cierre</b><br>Una sola acción: pedir la cita, con el teléfono como alternativa.</div></div><div style="display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap">
+  <div>
+    <h2 id="cierre">Su recorrido empieza con una consulta.</h2>
+    <p>Pídala en línea o llámenos. El equipo le contacta para coordinar fecha y horario.</p>
+  </div>
+  <div class="row"><a class="btn" href="#cita">Pedir cita</a><a class="btn line" href="tel:+13055751776">Llamar al (305) 575-1776</a></div>
+</div></div></section>
+</main>
+
+<!-- PROFESIONALES (fase 1) -->
+<section class="pros" id="profesionales" aria-labelledby="pros-h"><div class="wrap"><div class="note"><span class="n">7</span><div><b>Para profesionales</b> <span class="add">Fase 1</span><br>Banda para las audiencias B2B que pasan a la fase 1. Cada columna lleva a su hub. Inversionistas: solo contacto, sin cifras (revisión legal).</div></div>
+  <h2 id="pros-h">Para profesionales</h2>
+  <p>Médicos, aseguradoras e inversionistas tienen su propia página, con la información y el contacto que necesitan.</p>
+  <div class="doors">
+    <div>
+      <h3>Médicos</h3>
+      <p>Refiera a su paciente en línea y le mantenemos al tanto de su atención. Si es cardiólogo, conozca cómo operar en nuestro centro.</p>
+      <div class="actions"><a class="btn" href="#">Referir un paciente</a><a class="more" href="#">Operar en nuestro centro</a></div>
+    </div>
+    <div>
+      <h3>Aseguradoras</h3>
+      <p>Capacidad del centro, procedimientos habilitados y contacto con el área de contratos.</p>
+      <div class="actions"><a class="more" href="#">Contactar al área de contratos</a></div>
+    </div>
+    <div>
+      <h3>Inversionistas</h3>
+      <p>La información sobre el instituto se comparte solo en privado.</p>
+      <div class="actions"><a class="more" href="#">Escribirnos</a></div>
+    </div>
+  </div>
+</div></section>
+
+<footer class="foot"><div class="wrap"><div class="note"><span class="n">8</span><div><b>Footer</b><br>Contacto, enlaces por audiencia y aviso legal. En móvil, barra fija inferior con Llamar · WhatsApp · Pedir cita.</div></div>
+  <div class="top">
+    <div>
+      <span class="logo-ph">LOGO HVI</span>
+      <p>[Dirección], Hialeah, FL<br>(305) 575-1776<br>Lun–Vie, 8:00 a.&nbsp;m.–5:00 p.&nbsp;m.</p>
+    </div>
+    <nav aria-label="Pacientes (pie)"><b>Pacientes</b><a href="#cita">Pedir una cita</a><a href="#">Condiciones</a><a href="#">Servicios</a><a href="#">Seguros y formularios</a></nav>
+    <nav aria-label="Instituto (pie)"><b>Instituto</b><a href="#">Quiénes somos</a><a href="#">Centro quirúrgico</a><a href="#">Historias de pacientes</a><a href="#">Contacto</a></nav>
+    <nav aria-label="Profesionales (pie)"><b>Profesionales</b><a href="#">Referir un paciente</a><a href="#">Operar en nuestro centro</a><a href="#">Aseguradoras</a><a href="#">Inversionistas</a></nav>
+  </div>
+  <p class="disc">La información de este sitio es orientativa y no sustituye la consulta médica. En caso de emergencia, llame al 911.</p>
+  <div class="legal"><span>© 2026 <span translate="no">Vascardio Heart &amp; Vascular Institute</span></span><span style="display:flex;gap:20px;flex-wrap:wrap"><a href="#">Privacidad y HIPAA</a><a href="#">Accesibilidad</a><a href="#">No discriminación</a><a href="#" lang="en">English</a></span></div>
+</div></footer>
+
+<nav class="bar" aria-label="Acciones rápidas">
+  <a href="tel:+13055751776"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Llamar</a>
+  <a href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>WhatsApp</a>
+  <a href="#cita"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Pedir cita</a>
+</nav>
+
+<button class="toggle" type="button" aria-pressed="true" onclick="document.body.classList.toggle('sin-notas');var o=document.body.classList.contains('sin-notas');this.setAttribute('aria-pressed',String(!o));this.textContent=o?'Mostrar notas':'Ocultar notas'">Ocultar notas</button>
+<script>
+/* Video del hero: fuente según pantalla, pausa accesible, respeta «reducir movimiento». */
+(function(){
+  var v=document.getElementById('broll'), btn=document.getElementById('pause');
+  if(!v) return;
+  var k=window.matchMedia('(max-width: 720px)').matches?'mob':'desk';
+  v.poster=v.dataset[k+'Poster'];
+  [['Webm','video/webm'],['Mp4','video/mp4']].forEach(function(t){
+    var s=document.createElement('source'); s.src=v.dataset[k+t[0]]; s.type=t[1]; v.appendChild(s);
+  });
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function set(playing){
+    btn.setAttribute('aria-pressed', String(!playing));
+    btn.querySelector('span').textContent = playing?'Pausar video':'Reproducir video';
+    btn.querySelector('svg').innerHTML = playing?'<rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/>':'<path d="M7 5v14l12-7z"/>';
+  }
+  v.load();
+  if(reduce){ set(false); } else { var p=v.play(); if(p&&p.catch) p.catch(function(){ set(false); }); set(true); }
+  btn.addEventListener('click', function(){ if(v.paused){ v.play(); set(true);} else { v.pause(); set(false);} });
+})();
+
+/* La línea del recorrido se dibuja al bajar. Una sola animación, ligada al scroll. */
+(function(){
+  var route=document.getElementById('route'); if(!route) return;
+  var stops=[].slice.call(route.querySelectorAll('.stop'));
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce){ stops.forEach(function(s){ s.classList.add('on'); }); return; }
+  var ticking=false;
+  function update(){
+    ticking=false;
+    var r=route.getBoundingClientRect(), vh=window.innerHeight, mark=vh*0.6;
+    var p=Math.min(1,Math.max(0,(mark-r.top)/r.height));
+    route.style.setProperty('--p',p.toFixed(4));
+    stops.forEach(function(s){ var n=s.querySelector('.node').getBoundingClientRect(); s.classList.toggle('on', n.top < mark); });
+  }
+  window.addEventListener('scroll',function(){ if(!ticking){ ticking=true; requestAnimationFrame(update);} },{passive:true});
+  window.addEventListener('resize',update);
+  update();
+})();
+</script>
+</body>
+</html>
