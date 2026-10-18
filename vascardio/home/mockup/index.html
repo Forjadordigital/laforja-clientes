@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Vascardio · Mockup de la home</title>
+<link rel="icon" href="/vascardio/assets/logos/VASCARDIO_Symbol_FullColor_RGB.svg">
+<link rel="preload" as="image" href="/vascardio/assets/broll/hero-poster.jpg">
+<style>
+@font-face{font-family:"Instrument Serif";src:url("/vascardio/assets/fonts/InstrumentSerif-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Instrument Serif";src:url("/vascardio/assets/fonts/InstrumentSerif-Italic.ttf") format("truetype");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Bricolage Grotesque";src:url("/vascardio/assets/fonts/BricolageGrotesque-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
+@font-face{font-family:"Bricolage Grotesque";src:url("/vascardio/assets/fonts/BricolageGrotesque-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
+@font-face{font-family:"DM Mono";src:url("/vascardio/assets/fonts/DMMono-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
+:root{
+  --white:#FFFFFF;--ink:#231C1B;--red:#C82E30;--red-700:#A82528;--red-800:#8F1E21;--oxblood:#6B1612;
+  --stone:#D8CCBC;--umber:#6E5F50;--cream:#F1E6D6;--mist:#F7F2EB;
+  --serif:"Instrument Serif","Iowan Old Style",Georgia,serif;
+  --sans:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --mono:"DM Mono",ui-monospace,Menlo,monospace;
+  --r-s:12px;--r-m:16px;--r-l:24px;
+  --sh-card:inset 0 0 0 1px var(--stone),0 1px 2px rgba(35,28,27,.06),0 6px 20px rgba(35,28,27,.07);
+  --sh-float:inset 0 0 0 1px var(--stone),0 12px 32px rgba(35,28,27,.16);
+}
+*{box-sizing:border-box}
+html{color-scheme:light;scroll-behavior:smooth}
+body{margin:0;background:var(--white);color:var(--ink);font:400 18px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+img,video{display:block;max-width:100%}
+a{color:var(--red)}a:hover{color:var(--oxblood)}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{text-wrap:balance}
+.wrap{max-width:1200px;margin:0 auto;padding:0 40px}
+.sec{padding-top:96px}
+.eyebrow{font-weight:700;font-size:16px;color:var(--red)}
+.h2{font-family:var(--serif);font-weight:400;font-size:48px;line-height:1.06;letter-spacing:-.005em}
+.lead{font-size:19px;line-height:1.55;color:var(--umber)}
+.en{font-family:var(--serif);font-style:italic;font-size:21px;color:var(--umber)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 22px;border-radius:var(--r-s);border:0;background:var(--red);color:var(--white);font:700 17px/1 var(--sans);text-decoration:none;cursor:pointer;white-space:nowrap}
+.btn:hover{background:var(--red-700);color:var(--white)}
+.btn:active{background:var(--red-800)}
+.btn.sec-btn{background:var(--white);color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn.sec-btn:hover{background:var(--mist)}
+.tlink{display:inline-flex;align-items:center;gap:8px;min-height:48px;font-weight:700;text-decoration:none}
+.tlink:hover{text-decoration:underline;text-underline-offset:4px}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.chip{display:inline-flex;align-items:center;min-height:36px;padding:0 14px;border-radius:999px;font-size:15px;font-weight:700}
+.tag{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--umber)}
+
+/* header */
+.head{position:sticky;top:0;z-index:40;background:var(--white);box-shadow:0 1px 0 var(--stone),0 8px 24px rgba(35,28,27,.06)}
+.head .wrap{max-width:1320px;display:flex;align-items:center;gap:16px;min-height:76px}
+.head .logo img{width:172px;height:auto}
+.nav{display:flex;flex:1;justify-content:center}
+.nav a{min-height:48px;padding:0 8px;display:inline-flex;align-items:center;color:var(--ink);text-decoration:none;font-size:15px;white-space:nowrap;border-radius:8px}
+.nav a:hover{background:var(--mist)}
+.head-r{display:flex;align-items:center;gap:14px;flex:none}
+.tel{font-family:var(--mono);font-size:15px;color:var(--ink);text-decoration:none;white-space:nowrap}
+.lang{display:inline-flex;padding:3px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--stone)}
+.lang a{min-width:36px;min-height:32px;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none}
+.lang a[aria-current]{background:var(--ink);color:var(--white)}
+.burger{display:none;width:48px;height:48px;border-radius:var(--r-s);border:0;background:transparent;box-shadow:inset 0 0 0 1.5px var(--stone);align-items:center;justify-content:center}
+
+/* hero */
+.hero{padding-top:24px}
+.hero-box{position:relative;border-radius:var(--r-l);overflow:hidden;min-height:680px;display:flex;align-items:center;padding:48px 0;background:var(--cream)}
+.hero-media{position:absolute;inset:0}
+.hero-media video,.hero-media img{width:100%;height:100%;object-fit:cover;object-position:70% 30%}
+.hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(35,28,27,.28) 0%,rgba(35,28,27,.08) 45%,rgba(35,28,27,0) 70%),linear-gradient(0deg,rgba(35,28,27,.25) 0%,rgba(35,28,27,0) 30%)}
+.hero-card{position:relative;margin-left:48px;width:min(500px,calc(100% - 96px));padding:32px;border-radius:var(--r-m);background:var(--white);box-shadow:var(--sh-float);display:flex;flex-direction:column;gap:16px}
+.hero-card h1{font-family:var(--serif);font-weight:400;font-size:52px;line-height:1.02;letter-spacing:-.01em}
+.hero-card h1 em{font-style:italic;color:var(--red)}
+.hero-card .lead{font-size:18px}
+.pick{margin:4px 0 0;padding:0;border:0;display:flex;flex-direction:column;gap:8px}
+.pick legend{font-weight:700;font-size:17px;margin-bottom:8px;padding:0}
+.opt{position:relative;display:flex;align-items:center;gap:12px;min-height:54px;padding:0 48px 0 14px;border-radius:var(--r-s);box-shadow:inset 0 0 0 1.5px var(--umber);font-weight:700;font-size:16px;cursor:pointer;transition:box-shadow .15s}
+.opt input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer}
+.opt img{width:26px;height:26px}
+.opt .dot{position:absolute;right:14px;width:22px;height:22px;border-radius:999px;box-shadow:inset 0 0 0 1.5px var(--umber);display:flex;align-items:center;justify-content:center}
+.opt .dot svg{opacity:0}
+.opt:has(input:checked){box-shadow:inset 0 0 0 2.5px var(--red)}
+.opt:has(input:checked) .dot{background:var(--red);box-shadow:none}
+.opt:has(input:checked) .dot svg{opacity:1}
+.opt:has(input:focus-visible){outline:3px solid var(--ink);outline-offset:2px}
+.hero-ctas{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:4px}
+.hero-ctas .btn{flex:1 1 auto}
+.hero-ctas a.call{font-weight:700;font-size:16px;text-decoration:none}
+.pause{position:absolute;right:24px;bottom:24px;z-index:2;min-height:44px;padding:0 16px;border-radius:999px;border:0;background:rgba(255,255,255,.92);color:var(--ink);font:700 14px var(--sans);display:inline-flex;align-items:center;gap:8px;cursor:pointer;box-shadow:0 4px 16px rgba(35,28,27,.18)}
+.demo-tag{position:absolute;left:24px;bottom:24px;z-index:2;padding:6px 10px;border-radius:8px;background:rgba(35,28,27,.6);color:#fff;font-family:var(--mono);font-size:11px;letter-spacing:.03em;display:none}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.stat{padding:28px 30px;border-radius:var(--r-m);background:var(--white);box-shadow:var(--sh-card);display:flex;flex-direction:column;gap:6px}
+.stat b{font-family:var(--serif);font-weight:400;font-size:60px;line-height:1;color:var(--red)}
+.stat span{font-size:17px;color:var(--umber)}
+
+/* services */
+.sechead{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:36px}
+.sechead > div{display:flex;flex-direction:column;gap:10px}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.svc{padding:28px;border-radius:var(--r-m);background:var(--white);box-shadow:var(--sh-card);display:flex;flex-direction:column;gap:12px;transition:transform .2s,box-shadow .2s}
+.svc:hover{transform:translateY(-2px);box-shadow:inset 0 0 0 1px var(--stone),0 2px 4px rgba(35,28,27,.08),0 14px 36px rgba(35,28,27,.12)}
+.ibox{width:56px;height:56px;border-radius:var(--r-s);box-shadow:inset 0 0 0 1.5px var(--stone);display:flex;align-items:center;justify-content:center}
+.ibox img{width:32px;height:32px}
+.svc h3{margin-top:4px;font-size:22px;line-height:1.3}
+.svc p{font-size:17px;line-height:1.55;color:var(--umber)}
+.svc .tlink{margin-top:auto}
+
+/* visit */
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:64px;align-items:center}
+.photo{width:100%;object-fit:cover;border-radius:var(--r-l)}
+.steps{list-style:none;margin:0;padding:0}
+.steps li{display:grid;grid-template-columns:48px minmax(0,1fr);gap:14px;align-items:start;padding:16px 0;border-top:1px solid var(--stone)}
+.steps li:last-child{border-bottom:1px solid var(--stone)}
+.steps .n{width:36px;height:36px;border-radius:999px;background:var(--ink);color:var(--white);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px}
+.steps li.hl .n{background:var(--red)}
+.steps b{display:block;font-size:18px}
+.steps span span{font-size:16px;color:var(--umber)}
+
+/* doctor */
+.dark{background:var(--ink);color:var(--white)}
+.doctor{margin-top:96px}
+.doctor .wrap{padding-top:96px;padding-bottom:96px}
+.doctor .split{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}
+.doctor .eyebrow{color:#F0A3A0}
+.doctor .lead{color:var(--stone)}
+.doctor .chip{box-shadow:inset 0 0 0 1.5px rgba(216,204,188,.55);color:var(--white);font-weight:400}
+.doc-photo{position:relative}
+.doc-photo img{aspect-ratio:4/5;object-position:50% 20%}
+.doc-label{position:absolute;left:-24px;bottom:32px;padding:14px 18px;border-radius:var(--r-s);background:var(--red);color:var(--white);box-shadow:0 12px 32px rgba(0,0,0,.3);display:flex;flex-direction:column}
+.doc-label b{font-size:16px}
+.doc-label span{font-size:14px;opacity:.9}
+.doctor .btn.sec-btn{background:transparent;color:var(--white);box-shadow:inset 0 0 0 1.5px var(--white)}
+.doctor .btn.sec-btn:hover{background:rgba(255,255,255,.08)}
+
+/* story */
+.story{background:var(--mist)}
+.story .wrap{padding-top:96px;padding-bottom:96px}
+.quote{max-width:820px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center;gap:20px}
+.quote .mark{font-family:var(--serif);font-size:120px;line-height:.5;color:var(--red);height:48px}
+.quote blockquote{margin:0;font-family:var(--serif);font-size:42px;line-height:1.15}
+.quote cite{font-style:normal;font-weight:700;font-size:17px}
+.quote cite span{display:block;font-weight:400;color:var(--umber)}
+.demo-note{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--stone);background:var(--white)}
+
+/* asc */
+.asc{border-radius:var(--r-l);background:var(--red);color:var(--white);padding:56px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
+.asc .eyebrow{color:var(--white);opacity:.85}
+.asc .lead{color:rgba(255,255,255,.9)}
+.asc .chip{box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.6);color:var(--white)}
+.asc .btn{background:var(--white);color:var(--red)}
+.asc .btn:hover{background:var(--cream);color:var(--red-800)}
+.asc .tlink{color:var(--white)}
+.asc .photo{aspect-ratio:4/3;border-radius:var(--r-m);box-shadow:0 16px 40px rgba(0,0,0,.25)}
+
+/* plan */
+.plan{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:48px;align-items:start}
+.search{display:flex;gap:8px}
+.search input{flex:1;min-width:0;min-height:52px;padding:0 16px;border:0;border-radius:var(--r-s);box-shadow:inset 0 0 0 1.5px var(--umber);font-size:17px;color:var(--ink)}
+.search input::placeholder{color:var(--umber)}
+.ins{list-style:none;margin:0;padding:0}
+.ins li{display:flex;justify-content:space-between;gap:12px;padding:14px 0;border-bottom:1px solid var(--stone);font-size:16px}
+.ok{display:inline-flex;align-items:center;gap:6px;font-weight:700;color:#2E6B3F}
+.ask{display:inline-flex;align-items:center;gap:6px;font-weight:700;color:var(--umber)}
+.visit-card{border-radius:var(--r-m);background:var(--white);box-shadow:var(--sh-card);overflow:hidden}
+.visit-card img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:50% 60%}
+.visit-card .body{padding:24px 28px 28px;display:flex;flex-direction:column;gap:10px}
+.visit-card h3{font-family:var(--serif);font-weight:400;font-size:32px;line-height:1.1}
+.vline{display:flex;gap:12px;align-items:center;font-size:16px}
+.vline img{width:24px;height:24px}
+
+/* library */
+.lib{border-radius:var(--r-m);overflow:hidden;background:var(--white);box-shadow:var(--sh-card);display:flex;flex-direction:column;text-decoration:none;color:var(--ink);transition:transform .2s}
+.lib:hover{transform:translateY(-2px);color:var(--ink)}
+.lib img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.lib .body{padding:20px 24px 24px;display:flex;flex-direction:column;gap:8px}
+.lib .cat{font-weight:700;font-size:14px;color:var(--red)}
+.lib h3{font-size:20px;line-height:1.3}
+.phase{display:inline-flex;align-items:center;min-height:28px;padding:0 10px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--stone);font-family:var(--mono);font-size:12px;color:var(--umber);vertical-align:middle}
+
+/* cta */
+.cta{position:relative;overflow:hidden;border-radius:var(--r-l);background:var(--ink);color:var(--white);padding:56px;display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap}
+.cta h2{font-family:var(--serif);font-weight:400;font-size:48px;line-height:1.05}
+.cta p{color:var(--stone)}
+.cta .en{color:var(--stone)}
+.cta .btn.sec-btn{background:transparent;color:var(--white);box-shadow:inset 0 0 0 1.5px var(--white)}
+.cta .heart{position:absolute;right:-30px;top:-40px;width:220px;opacity:.12;pointer-events:none}
+
+/* footer */
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:64px}
+.trio a{min-height:64px;border-radius:999px;box-shadow:inset 0 0 0 1.5px var(--stone);display:flex;align-items:center;justify-content:center;gap:12px;text-decoration:none;color:var(--ink);font-weight:700;font-size:17px;transition:background .15s}
+.trio a:hover{background:var(--mist)}
+.trio a span{font-family:var(--mono);font-weight:400;font-size:14px;color:var(--red)}
+.foot{margin-top:64px;background:var(--ink);color:var(--stone)}
+.foot .wrap{padding-top:64px;padding-bottom:48px}
+.fcols{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px}
+.fcols img{width:200px;margin-bottom:18px}
+.fcols p{font-size:15px;line-height:1.7}
+.fcols b{display:block;font-weight:700;font-size:15px;color:var(--white);margin-bottom:10px}
+.fcols a{display:block;padding:4px 0;font-size:15px;color:var(--stone);text-decoration:none}
+.fcols a:hover{color:var(--white)}
+.legal{margin-top:40px;padding-top:24px;border-top:1px solid rgba(216,204,188,.25);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14px}
+.legal a{color:var(--stone)}
+.disc{margin-top:24px;font-size:14px;max-width:760px}
+
+.bar{display:none}
+
+@media (max-width:1400px){.tel{display:none}}
+@media (max-width:1260px){.nav{display:none}.burger{display:inline-flex}.head-r{margin-left:auto}.tel{display:inline}}
+@media (max-width:980px){
+  .split,.doctor .split,.asc,.plan{grid-template-columns:1fr}
+  .asc{gap:32px}
+}
+@media (max-width:820px){
+  body{font-size:17px}
+  .wrap{padding:0 16px}
+  .sec{padding-top:64px}
+  .h2{font-size:36px}
+  .head .wrap{min-height:64px;gap:10px}
+  .head .logo img{width:148px}
+  .tel,.head-r > .btn{display:none}
+  .hero{padding-top:12px}
+  .hero-box{display:block;min-height:0;padding:0;overflow:visible;background:none}
+  .hero-media{position:relative;inset:auto;aspect-ratio:4/5;border-radius:20px;overflow:hidden}
+  .hero-media video,.hero-media img{object-position:50% 30%}
+  .hero-media::after{background:linear-gradient(0deg,rgba(35,28,27,.25) 0%,rgba(35,28,27,0) 35%)}
+  .hero-card{margin:-88px 10px 0;width:auto;padding:22px}
+  .hero-card h1{font-size:38px}
+  .pause{top:12px;right:12px;bottom:auto;min-height:40px;padding:0 12px;font-size:13px}
+  .demo-tag{left:12px;bottom:auto;top:16px}
+  .stats,.cards,.trio{grid-template-columns:1fr}
+  .stats{gap:12px}
+  .stat{flex-direction:row;align-items:center;gap:16px;padding:20px}
+  .stat b{font-size:40px;min-width:132px;white-space:nowrap}
+  .split{gap:32px}
+  .visit-photo{aspect-ratio:4/3 !important}
+  .doctor{margin-top:64px}
+  .doctor .wrap,.story .wrap{padding-top:64px;padding-bottom:64px}
+  .doc-label{left:12px;bottom:12px}
+  .quote blockquote{font-size:30px}
+  .asc{padding:28px 20px}
+  .cta{padding:32px 24px}
+  .cta h2{font-size:36px}
+  .fcols{grid-template-columns:1fr 1fr}
+  .fcols > div:first-child{grid-column:1/-1}
+  .foot .wrap{padding-bottom:120px}
+  .bar{display:grid;grid-template-columns:1fr 1fr 1.25fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:var(--white);box-shadow:0 -1px 0 var(--stone),0 -8px 24px rgba(35,28,27,.08)}
+  .bar a{min-height:52px;border-radius:var(--r-s);display:flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:15px;text-decoration:none;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--stone)}
+  .bar a:last-child{background:var(--red);color:var(--white);box-shadow:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="head">
+  <div class="wrap">
+    <a class="logo" href="#" aria-label="Vascardio, inicio"><img src="/vascardio/assets/logos/VASCARDIO-HVI_Horizontal_FullColor_RGB.svg" alt="Vascardio Heart &amp; Vascular Institute"></a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#">Para pacientes</a><a href="#">Condiciones</a><a href="#">Servicios</a><a href="#">Quiénes somos</a><a href="#">Para médicos</a><a href="#">ASC</a><a href="#">Internacional</a>
+    </nav>
+    <div class="head-r">
+      <a class="tel" href="tel:+13055751776">(305) 575-1776</a>
+      <span class="lang"><a href="#" aria-current="true">ES</a><a href="#" lang="en">EN</a></span>
+      <a class="btn" href="#cita"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Pedir cita</a>
+      <button class="burger" type="button" aria-label="Abrir menú"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#231C1B" stroke-width="2.25" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="cita"><div class="wrap">
+  <div class="hero-box">
+    <div class="hero-media">
+      <video id="broll" muted loop playsinline preload="metadata" poster="/vascardio/assets/broll/hero-poster.jpg" aria-hidden="true"
+        data-desk-mp4="/vascardio/assets/broll/hero-1600.mp4" data-desk-webm="/vascardio/assets/broll/hero-1600.webm" data-desk-poster="/vascardio/assets/broll/hero-poster.jpg"
+        data-mob-mp4="/vascardio/assets/broll/hero-movil.mp4" data-mob-webm="/vascardio/assets/broll/hero-movil.webm" data-mob-poster="/vascardio/assets/broll/hero-movil-poster.jpg"></video>
+    </div>
+    <span class="demo-tag">B-roll de muestra · se reemplaza por material de Vascardio</span>
+    <button class="pause" id="pause" type="button" aria-pressed="false"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg><span>Pausar video</span></button>
+
+    <form class="hero-card" onsubmit="return false">
+      <span class="eyebrow">Instituto cardiovascular · Hialeah, FL</span>
+      <h1>De la primera consulta al procedimiento, <em>en un solo lugar.</em></h1>
+      <p class="lead">Diagnóstico, consulta y procedimiento en nuestro propio centro quirúrgico, con el Dr. Francisco J. Dieguez Jr.</p>
+      <fieldset class="pick">
+        <legend>¿Qué necesita hoy?</legend>
+        <label class="opt"><input type="radio" name="motivo" checked><img src="/vascardio/assets/icons-solid/VASCARDIO_Icon_01_Cardiology.svg" alt="">Primera consulta<span class="dot"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 12 4 4 8-9"/></svg></span></label>
+        <label class="opt"><input type="radio" name="motivo"><img src="/vascardio/assets/icons-solid/VASCARDIO_Icon_09_Same-day-discharge.svg" alt="">Estudio diagnóstico<span class="dot"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 12 4 4 8-9"/></svg></span></label>
+        <label class="opt"><input type="radio" name="motivo"><img src="/vascardio/assets/icons-solid/VASCARDIO_Icon_16_Recovery.svg" alt="">Seguimiento<span class="dot"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 12 4 4 8-9"/></svg></span></label>
+      </fieldset>
+      <div class="hero-ctas">
+        <button class="btn" type="submit">Pedir cita <span aria-hidden="true">→</span></button>
+        <a class="call" href="tel:+13055751776">o llame al (305) 575-1776</a>
+      </div>
+      <p class="en" lang="en" style="font-size:18px">From first visit to intervention. One place.</p>
+    </form>
+  </div>
+</div></section>
+
+<!-- CIFRAS -->
+<section class="sec" style="padding-top:40px" aria-label="Vascardio en cifras"><div class="wrap">
+  <div class="stats">
+    <div class="stat"><b>20+</b><span>años de práctica detrás de Vascardio</span></div>
+    <div class="stat"><b>2,500</b><span>procedimientos al año en nuestro propio laboratorio</span></div>
+    <div class="stat"><b>Mismo día</b><span>alta en nuestro centro quirúrgico</span></div>
+  </div>
+</div></section>
+
+<!-- SERVICIOS -->
+<section class="sec"><div class="wrap">
+  <div class="sechead">
+    <div><span class="eyebrow">Servicios</span><h2 class="h2">Atención cardiovascular completa.</h2></div>
+    <a class="tlink" href="#">Todos los servicios <span aria-hidden="true">→</span></a>
+  </div>
+  <div class="cards">
+    <article class="svc"><span class="ibox"><img src="/vascardio/assets/icons-solid/VASCARDIO_Icon_01_Cardiology.svg" alt=""></span><h3>Diagnóstico no invasivo</h3><p>Ecocardiogramas, pruebas de esfuerzo y estudios vasculares, con interpretación oficial en 24 horas.</p><a class="tlink" href="#">Ver estudios <span aria-hidden="true">→</span></a></article>
+    <article class="svc"><span class="ibox"><img src="/vascardio/assets/icons-solid/VASCARDIO_Icon_07_Interventional-radiology.svg" alt=""></span><h3>Stents coronarios y dispositivos</h3><p>Intervenciones coronarias, marcapasos y desfibriladores en nuestro centro quirúrgico ambulatorio.</p><a class="tlink" href="#">Ver procedimientos <span aria-hidden="true">→</span></a></article>
+    <article class="svc"><span class="ibox"><img src="/vascardio/assets/icons-solid/VASCARDIO_Icon_02_Vascular.svg" alt=""></span><h3>Intervenciones vasculares periféricas</h3><p>La línea vascular de nuestro laboratorio propio, para mejorar la circulación de piernas y brazos.</p><a class="tlink" href="#">Ver intervenciones <span aria-hidden="true">→</span></a></article>
+  </div>
+</div></section>
+
+<!-- SU VISITA -->
+<section class="sec"><div class="wrap">
+  <div class="split">
+    <img class="photo visit-photo" src="/vascardio/assets/fotos-previa/doctor-monitor.jpg" alt="El Dr. Dieguez revisa un estudio en el monitor del consultorio" style="aspect-ratio:4/5;object-position:50% 35%" loading="lazy">
+    <div style="display:flex;flex-direction:column;gap:22px">
+      <span class="eyebrow">Su visita</span>
+      <h2 class="h2">Consulta y estudios, el mismo día.</h2>
+      <ol class="steps">
+        <li><span class="n">1</span><span><b>Llegada y registro</b><span>Recepción confirma sus datos y su seguro.</span></span></li>
+        <li><span class="n">2</span><span><b>Consulta con el especialista</b><span>Evaluación y explicación en su idioma.</span></span></li>
+        <li class="hl"><span class="n">3</span><span><b>Estudios en la misma sede</b><span>Si su médico los indica, sin otra cita.</span></span></li>
+        <li><span class="n">4</span><span><b>Plan y próximos pasos</b><span>Sale con indicaciones claras y su seguimiento.</span></span></li>
+      </ol>
+      <p style="font-size:15px;color:var(--umber)">El orden y los estudios dependen siempre de la indicación de su médico.</p>
+      <div><a class="tlink" href="#">Cómo es su visita <span aria-hidden="true">→</span></a></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- DOCTOR -->
+<section class="doctor dark"><div class="wrap">
+  <div class="split">
+    <div style="display:flex;flex-direction:column;gap:22px">
+      <span class="eyebrow">Nuestro doctor</span>
+      <h2 class="h2">Dr. Francisco J. Dieguez Jr.</h2>
+      <p class="lead">El cardiólogo que dirige Vascardio y su centro quirúrgico ambulatorio, con más de 20 años de práctica. Atiende a cada paciente en español o en inglés, de la primera consulta al procedimiento.</p>
+      <div class="row" style="gap:8px"><span class="chip">Cardiología clínica e intervencionista</span><span class="chip">Ecocardiografía y cardiología nuclear</span><span class="chip">Español e inglés</span></div>
+      <div class="row" style="margin-top:8px"><a class="btn" href="#">Pedir cita con el Dr. Dieguez</a><a class="btn sec-btn" href="#">Conocer al doctor</a></div>
+    </div>
+    <div class="doc-photo">
+      <img class="photo" src="/vascardio/assets/fotos-previa/doctor-pasillo.jpg" alt="El Dr. Francisco J. Dieguez Jr. en el pasillo del instituto" loading="lazy">
+      <div class="doc-label"><b>Dr. Francisco J. Dieguez Jr.</b><span>Cardiología intervencionista</span></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- HISTORIA -->
+<section class="story"><div class="wrap">
+  <figure class="quote" style="margin:0 auto">
+    <span class="mark" aria-hidden="true">“</span>
+    <blockquote>Llevaba meses sin poder caminar dos cuadras. Hoy voy sola al mercado, y sin dolor.</blockquote>
+    <figcaption><cite>Marta R., 71 años · Hialeah<span>Angioplastia periférica en nuestro centro quirúrgico</span></cite></figcaption>
+    <span class="demo-note tag">Historia ilustrativa para la maqueta · en el sitio irá un caso real con autorización</span>
+    <a class="tlink" href="#">Más historias de pacientes <span aria-hidden="true">→</span></a>
+  </figure>
+</div></section>
+
+<!-- ASC -->
+<section class="sec"><div class="wrap">
+  <div class="asc">
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <span class="eyebrow">Centro quirúrgico ambulatorio</span>
+      <h2 class="h2">Cirugía cardiovascular, sin quedarse en el hospital.</h2>
+      <p class="lead">El mismo equipo que le atiende en consulta le acompaña en el quirófano, en una sola sede en Hialeah.</p>
+      <div class="row" style="gap:8px"><span class="chip">2 quirófanos</span><span class="chip">Sala de cateterismo</span><span class="chip">8 camas de recuperación</span><span class="chip">Alta el mismo día</span></div>
+      <div class="row" style="margin-top:8px"><a class="btn" href="#">Recorrer el centro</a><a class="tlink" href="#">¿Es médico? Refiera un paciente <span aria-hidden="true">→</span></a></div>
+    </div>
+    <img class="photo" src="/vascardio/assets/fotos-previa/asc-cateterismo.jpg" alt="Sala de cateterismo del centro quirúrgico ambulatorio" loading="lazy">
+  </div>
+</div></section>
+
+<!-- SEGURO + VISITA -->
+<section class="sec"><div class="wrap">
+  <div class="plan">
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <span class="eyebrow">Seguros</span>
+      <h2 class="h2">¿Aceptan mi seguro?</h2>
+      <p class="lead">Busque su aseguradora o su plan. Si no aparece, llámenos: recepción le orienta sin compromiso.</p>
+      <form class="search" role="search" onsubmit="return false"><label for="seg" style="position:absolute;width:1px;height:1px;overflow:hidden">Aseguradora o plan</label><input id="seg" placeholder="Aseguradora o plan"><button class="btn" type="submit">Buscar</button></form>
+      <ul class="ins">
+        <li><span>[Aseguradora] · [Plan]</span><span class="ok"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 12 4 4 8-9"/></svg>Aceptado</span></li>
+        <li><span>[Aseguradora] · [Plan]</span><span class="ok"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 12 4 4 8-9"/></svg>Aceptado</span></li>
+        <li><span>[Aseguradora] · [Plan]</span><span class="ask"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M12 8v5M12 16.5v.01"/></svg>Consultar</span></li>
+      </ul>
+      <p style="font-size:15px;color:var(--umber)">La cobertura se confirma siempre con el equipo administrativo.</p>
+    </div>
+    <div class="visit-card">
+      <img src="/vascardio/assets/fotos-previa/entrada.jpg" alt="Entrada de Vascardio y su centro quirúrgico ambulatorio" loading="lazy">
+      <div class="body">
+        <span class="eyebrow">Planifique su visita</span>
+        <h3>Una sola sede, en Hialeah.</h3>
+        <span class="vline"><img src="/vascardio/assets/icons-solid/VASCARDIO_Icon_12_Location.svg" alt="">[Dirección] · Hialeah, FL</span>
+        <span class="vline"><img src="/vascardio/assets/icons-solid/VASCARDIO_Icon_13_Call-us.svg" alt=""><a href="tel:+13055751776" style="color:var(--ink);text-decoration:none;font-family:var(--mono)">(305) 575-1776</a></span>
+        <span class="vline"><img src="/vascardio/assets/icons-solid/VASCARDIO_Icon_11_Appointments.svg" alt="">Lun–Vie, 8:00 a. m.–5:00 p. m.</span>
+        <div class="row" style="margin-top:10px"><a class="btn" href="#">Cómo llegar</a><a class="btn sec-btn" href="tel:+13055751776">Llamar</a></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- BIBLIOTECA -->
+<section class="sec"><div class="wrap">
+  <div class="sechead">
+    <div><span class="eyebrow">Biblioteca de salud <span class="phase">Fase 2</span></span><h2 class="h2">Entienda su corazón.</h2></div>
+    <a class="tlink" href="#">Ver todas las condiciones <span aria-hidden="true">→</span></a>
+  </div>
+  <div class="cards">
+    <a class="lib" href="#"><img src="/vascardio/assets/fotos-previa/recuperacion.jpg" alt="" loading="lazy" style="object-position:50% 45%"><div class="body"><span class="cat">Diagnóstico</span><h3>Prueba de esfuerzo: qué es y cómo prepararse</h3></div></a>
+    <a class="lib" href="#"><img src="/vascardio/assets/fotos-previa/doctor-equipo.jpg" alt="" loading="lazy" style="object-position:50% 40%"><div class="body"><span class="cat">Diagnóstico</span><h3>Ecocardiograma: su corazón en movimiento</h3></div></a>
+    <a class="lib" href="#"><img src="/vascardio/assets/fotos-previa/asc-carm.jpg" alt="" loading="lazy"><div class="body"><span class="cat">Condiciones</span><h3>Enfermedad arterial periférica: señales y tratamiento</h3></div></a>
+  </div>
+</div></section>
+
+<!-- CTA -->
+<section class="sec"><div class="wrap">
+  <div class="cta">
+    <img class="heart" src="/vascardio/assets/graphics/VASCARDIO_BrushHeart_OnInk.svg" alt="">
+    <div style="position:relative;display:flex;flex-direction:column;gap:10px;max-width:620px">
+      <h2>Su primera visita empieza aquí.</h2>
+      <p>Pida su cita en línea o llámenos al (305) 575-1776. El equipo le contacta para coordinar fecha y horario.</p>
+      <p class="en" lang="en">Your next visit starts here.</p>
+    </div>
+    <div class="row" style="position:relative"><a class="btn" href="#cita">Pedir cita</a><a class="btn sec-btn" href="tel:+13055751776">Llamar</a></div>
+  </div>
+
+  <nav class="trio" aria-label="Accesos rápidos"><a href="#cita"><span>01</span>Pedir una cita</a><a href="#"><span>02</span>Centro quirúrgico (ASC)</a><a href="#"><span>03</span>Biblioteca de salud</a></nav>
+</div></section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="fcols">
+      <div>
+        <img src="/vascardio/assets/logos/VASCARDIO-HVI_Horizontal_Reversed-Ink_RGB.svg" alt="Vascardio Heart &amp; Vascular Institute">
+        <p>[Dirección] · Hialeah, FL<br>(305) 575-1776 · Lun–Vie, 8:00 a. m.–5:00 p. m.</p>
+        <p class="en" lang="en" style="color:var(--stone);margin-top:8px">Heart care, close to home.</p>
+      </div>
+      <nav aria-label="Pacientes"><b>Pacientes</b><a href="#">Pedir cita</a><a href="#">Condiciones</a><a href="#">Servicios</a><a href="#">Seguros y formularios</a><a href="#">Pacientes internacionales</a></nav>
+      <nav aria-label="Profesionales"><b>Profesionales</b><a href="#">Referir un paciente</a><a href="#">Centro quirúrgico</a><a href="#">Para médicos</a></nav>
+      <nav aria-label="Instituto"><b>Instituto</b><a href="#">Quiénes somos</a><a href="#">Nuestro doctor</a><a href="#">Historias de pacientes</a><a href="#">Contacto</a></nav>
+    </div>
+    <p class="disc">La información de este sitio es orientativa y no sustituye la consulta médica. En caso de emergencia, llame al 911.</p>
+    <div class="legal"><span>© 2026 Vascardio Heart &amp; Vascular Institute</span><span class="row" style="gap:20px"><a href="#">Privacidad · HIPAA</a><a href="#">Accesibilidad</a><a href="#">No discriminación</a><a href="#">ES | EN</a></span></div>
+  </div>
+</footer>
+
+<nav class="bar" aria-label="Acciones rápidas">
+  <a href="tel:+13055751776"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Llamar</a>
+  <a href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>WhatsApp</a>
+  <a href="#cita"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Pedir cita</a>
+</nav>
+
+<script>
+(function(){
+  var v=document.getElementById('broll'), btn=document.getElementById('pause');
+  if(!v) return;
+  var mob=window.matchMedia('(max-width: 820px)').matches;
+  var k=mob?'mob':'desk';
+  v.poster=v.dataset[k+'Poster'];
+  [['webm','video/webm'],['mp4','video/mp4']].forEach(function(t){
+    var s=document.createElement('source'); s.src=v.dataset[k+t[0].charAt(0).toUpperCase()+t[0].slice(1)]; s.type=t[1]; v.appendChild(s);
+  });
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function setState(playing){
+    btn.setAttribute('aria-pressed', playing?'false':'true');
+    btn.querySelector('span').textContent = playing?'Pausar video':'Reproducir video';
+    btn.querySelector('svg').innerHTML = playing?'<rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/>':'<path d="M7 5v14l12-7z"/>';
+  }
+  v.load();
+  if(reduce){ setState(false); }
+  else { var p=v.play(); if(p&&p.catch) p.catch(function(){ setState(false); }); setState(true); }
+  btn.addEventListener('click', function(){ if(v.paused){ v.play(); setState(true);} else { v.pause(); setState(false);} });
+  if(new URLSearchParams(location.search).has('demo')) document.querySelector('.demo-tag').style.display='block';
+})();
+</script>
+</body>
+</html>

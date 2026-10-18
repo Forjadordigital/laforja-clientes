@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Vascardio · Home: wireframe y mockup</title>
+<link rel="icon" href="/vascardio/assets/logos/VASCARDIO_Symbol_FullColor_RGB.svg">
+<style>@font-face{font-family:"Instrument Serif";src:url("/vascardio/assets/fonts/InstrumentSerif-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Instrument Serif";src:url("/vascardio/assets/fonts/InstrumentSerif-Italic.ttf") format("truetype");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Bricolage Grotesque";src:url("/vascardio/assets/fonts/BricolageGrotesque-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Bricolage Grotesque";src:url("/vascardio/assets/fonts/BricolageGrotesque-Bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"DM Mono";src:url("/vascardio/assets/fonts/DMMono-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+
+:root{--red:#C82E30;--red-700:#A82528;--ink:#231C1B;--white:#FFFFFF;--stone:#D8CCBC;--umber:#6E5F50;--gold:#B6896D;--oxblood:#6B1612;--cream:#F1E6D6;
+--serif:"Instrument Serif","Iowan Old Style",Georgia,serif;--sans:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;--mono:"DM Mono",ui-monospace,Menlo,monospace}
+*{box-sizing:border-box}
+html{color-scheme:light}
+body{margin:0;background:var(--white);color:var(--ink);font:400 18px/1.6 var(--sans)}
+a{color:var(--red)}a:hover{color:var(--oxblood)}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.topbar{position:sticky;top:0;z-index:50;background:var(--white);box-shadow:0 1px 0 var(--stone)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px;flex-wrap:wrap;padding-block:8px}
+.topbar img{width:170px;height:auto;display:block}
+.topnav{display:flex;gap:4px;flex-wrap:wrap}
+.topnav a{color:var(--ink);text-decoration:none;font-size:15px;padding:10px 12px;min-height:44px;display:inline-flex;align-items:center}
+.topnav a[aria-current="page"]{font-weight:700;box-shadow:inset 0 -2px 0 var(--red)}
+.eyebrow{font-family:var(--mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--red);margin:0}
+h1,h2,h3{text-wrap:balance}
+.foot{background:var(--ink);color:var(--stone);margin-top:96px}
+.foot .wrap{padding-block:40px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:15px}
+.foot a{color:var(--white)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<style>
+.seg{display:inline-flex;padding:4px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--stone);gap:4px;flex-wrap:wrap}
+.seg button{min-height:44px;padding:0 18px;border:0;border-radius:999px;background:transparent;color:var(--ink);font:700 15px var(--sans);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--white)}
+.stage{margin-top:20px;border-radius:16px;background:#EFE9E1;padding:20px;display:flex;justify-content:center}
+.frame{background:#fff;border:0;display:block;box-shadow:0 12px 40px rgba(35,28,27,.18)}
+.scaler{width:100%;overflow:hidden;border-radius:10px;box-shadow:0 12px 40px rgba(35,28,27,.18)}
+.frame.desk{width:1440px;transform-origin:0 0;box-shadow:none}
+.frame.mob{width:390px;max-width:100%;height:78vh;border-radius:28px;box-shadow:0 0 0 10px #231C1B,0 20px 50px rgba(35,28,27,.3)}
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:16px;padding-top:24px}
+.notes div{padding:20px;box-shadow:inset 0 0 0 1px var(--stone);display:flex;flex-direction:column;gap:6px}
+.notes b{font:400 26px/1.1 var(--serif)}
+.notes p{margin:0;color:var(--umber);font-size:16px}
+.ctrls{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding-top:40px}
+.open{font-weight:700}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="wrap"><a href="/vascardio/" aria-label="Propuesta Vascardio, inicio"><img src="/vascardio/assets/logos/VASCARDIO-HVI_Horizontal_FullColor_RGB.svg" alt="Vascardio Heart &amp; Vascular Institute"></a><nav class="topnav" aria-label="Propuesta"><a href="/vascardio/">Inicio</a><a href="/vascardio/home/" aria-current="page">Home</a><a href="/vascardio/opcion-b/">Design system</a><a href="/vascardio/comparar/">Comparar</a><a href="/vascardio/presentacion/">Presentación</a></nav></div></header>
+<main>
+<div class="wrap">
+<section style="padding-block:64px 8px;display:flex;flex-direction:column;gap:18px;max-width:54rem"><p class="eyebrow">Diseño · Página de inicio · Octubre 2026</p>
+<h1 style="margin:0;font:400 clamp(44px,7vw,88px)/.98 var(--serif);letter-spacing:-.01em">La nueva home de Vascardio</h1>
+<p style="margin:0;font-size:20px;line-height:1.5">Primero la estructura (wireframe) y después cómo se ve con el design system elegido (mockup). Revise ambas versiones en escritorio y en móvil, y déjenos sus comentarios sección por sección.</p></section>
+
+<section class="notes" aria-label="Decisiones aplicadas">
+<div><span class="eyebrow">Design system</span><b>Opción B · Clínica</b><p>Tarjetas blancas, esquinas suaves y la cita desde la primera pantalla.</p></div>
+<div><span class="eyebrow">Hero</span><b>Video b-roll</b><p>Video de fondo en bucle, sin sonido y con botón de pausa. El clip actual es de muestra y se reemplaza por material propio.</p></div>
+<div><span class="eyebrow">Fotos</span><b>Nunca dentro del corazón</b><p>Las fotos van en marcos rectangulares. El corazón de pincel queda solo como firma gráfica.</p></div>
+<div><span class="eyebrow">Estructura</span><b>Arquitectura v2</b><p>Sigue su ejemplo de home, más dos bloques que proponemos: la visita en un día y la consulta de seguros.</p></div>
+</section>
+
+<div class="ctrls">
+  <div class="seg" role="group" aria-label="Versión"><button type="button" data-v="wireframe" aria-pressed="false">Wireframe</button><button type="button" data-v="mockup" aria-pressed="true">Mockup</button></div>
+  <div class="seg" role="group" aria-label="Dispositivo"><button type="button" data-d="desk" aria-pressed="true">Escritorio</button><button type="button" data-d="mob" aria-pressed="false">Móvil</button></div>
+  <a class="open" id="open" href="/vascardio/home/mockup/" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a>
+</div>
+<div class="stage"><div class="scaler" id="scaler"><iframe id="frame" class="frame desk" src="/vascardio/home/mockup/" title="Vista previa de la home"></iframe></div></div>
+
+<section style="padding-top:56px;max-width:54rem;display:flex;flex-direction:column;gap:12px"><h2 style="margin:0;font:400 36px/1.1 var(--serif)">Contenido provisional</h2>
+<ul style="margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;color:var(--umber)">
+<li><b style="color:var(--ink)">Fotos:</b> son las vistas previas del fotógrafo, con marca de agua. Se cambian por los originales aprobados.</li>
+<li><b style="color:var(--ink)">Video:</b> clip de banco de imágenes (Pexels) usado como muestra del b-roll.</li>
+<li><b style="color:var(--ink)">Historia de paciente:</b> caso ilustrativo. En el sitio irá un caso real con autorización por escrito.</li>
+<li><b style="color:var(--ink)">Datos:</b> cifras, teléfono y horario tomados de su ejemplo de home. La dirección y las aseguradoras siguen pendientes.</li>
+</ul></section>
+
+<section style="padding-top:40px;max-width:54rem;display:flex;flex-direction:column;gap:12px"><h2 style="margin:0;font:400 36px/1.1 var(--serif)">Lo que necesitamos de ustedes</h2>
+<ol style="margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px"><li>Aprobar la estructura (wireframe) o indicarnos qué cambiar.</li><li>Aprobar el mockup: tono, fotos y textos.</li><li>Material b-roll propio para el hero (clips de 10–20 s, horizontales y verticales).</li><li>Las fotos originales aprobadas, sin marca de agua.</li><li>Confirmar los datos y enviarnos la dirección y las aseguradoras aceptadas.</li></ol></section>
+</div>
+</main>
+<footer class="foot"><div class="wrap"><span>Propuesta preparada por La Forja Digital · Octubre 2026 · Documento confidencial</span><a href="https://laforjadigital.com">laforjadigital.com</a></div></footer>
+<script>
+(function(){
+  var f=document.getElementById('frame'),o=document.getElementById('open'),v='mockup',d='desk';
+  var sc=document.getElementById('scaler');
+  function fit(){var H=Math.round(window.innerHeight*.78);if(d==='desk'){var k=Math.min(1,sc.parentNode.clientWidth-40>0?(sc.parentNode.clientWidth-40)/1440:1);sc.style.width='';sc.style.height=H+'px';sc.style.boxShadow='';f.style.transform='scale('+k+')';f.style.height=Math.round(H/k)+'px';}else{sc.style.width='auto';sc.style.height='auto';sc.style.boxShadow='none';sc.style.overflow='visible';f.style.transform='';f.style.height=H+'px';}}
+  window.addEventListener('resize',fit);
+  function go(){var u='/vascardio/home/'+v+'/';if(f.getAttribute('src')!==u)f.src=u;o.href=u;f.className='frame '+d;sc.style.overflow=d==='desk'?'hidden':'visible';fit();
+    document.querySelectorAll('[data-v]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.v===v)});
+    document.querySelectorAll('[data-d]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.d===d)});}
+  document.querySelectorAll('[data-v]').forEach(function(b){b.onclick=function(){v=b.dataset.v;go()}});
+  document.querySelectorAll('[data-d]').forEach(function(b){b.onclick=function(){d=b.dataset.d;go()}});
+  try{var q=new URLSearchParams(location.search);if(q.get('v'))v=q.get('v');if(q.get('d'))d=q.get('d');}catch(e){}
+  go();
+})();
+</script>
+</body>
+</html>
