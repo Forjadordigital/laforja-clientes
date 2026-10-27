@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Vascardio · Rutas de captación</title>
+<link rel="icon" href="/vascardio/assets/logos/VASCARDIO_Symbol_FullColor_RGB.svg">
+<style>
+@font-face{font-family:"Instrument Serif";src:url("/vascardio/assets/fonts/InstrumentSerif-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
+@font-face{font-family:"Instrument Serif";src:url("/vascardio/assets/fonts/InstrumentSerif-Italic.ttf") format("truetype");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Bricolage Grotesque";src:url("/vascardio/assets/fonts/BricolageGrotesque-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
+@font-face{font-family:"Bricolage Grotesque";src:url("/vascardio/assets/fonts/BricolageGrotesque-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
+@font-face{font-family:"DM Mono";src:url("/vascardio/assets/fonts/DMMono-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
+:root{--red:#C72D2F;--red-700:#A82528;--ink:#231C1B;--white:#FFFFFF;--stone:#D8CCBC;--umber:#6E5F50;--gold:#B6896D;--oxblood:#6B1612;--cream:#F1E6D6;--mist:#F7F2EB;
+--serif:"Instrument Serif","Iowan Old Style",Georgia,serif;--sans:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;--mono:"DM Mono",ui-monospace,Menlo,monospace}
+*{box-sizing:border-box}
+html{color-scheme:light}
+body{margin:0;background:var(--white);color:var(--ink);font:400 18px/1.6 var(--sans)}
+a{color:var(--red)}a:hover{color:var(--oxblood)}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.eyebrow{font-family:var(--mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--red);margin:0}
+h1,h2,h3{text-wrap:balance;font-weight:400}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+<style>
+.topbar{position:sticky;top:0;z-index:50;background:var(--white);box-shadow:0 1px 0 var(--stone)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px;flex-wrap:wrap;padding-block:8px}
+.topbar img{width:170px;height:auto;display:block}
+.topnav{display:flex;gap:4px;flex-wrap:wrap}
+.topnav a{color:var(--ink);text-decoration:none;font-size:15px;padding:10px 12px;min-height:44px;display:inline-flex;align-items:center}
+.topnav a[aria-current="page"]{font-weight:700;box-shadow:inset 0 -2px 0 var(--red)}
+.foot{background:var(--ink);color:var(--stone);margin-top:96px}
+.foot .wrap{padding-block:40px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:15px}
+.foot a{color:var(--white)}
+.seg{display:inline-flex;padding:4px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--stone);gap:4px;flex-wrap:wrap}
+.seg button{min-height:44px;padding:0 18px;border:0;border-radius:999px;background:transparent;color:var(--ink);font:700 15px var(--sans);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--white)}
+.seg.routes{border-radius:18px}
+.stage{margin-top:20px;border-radius:16px;background:#EFE9E1;padding:20px;display:flex;justify-content:center}
+.frame{background:#fff;border:0;display:block}
+.scaler{width:100%;overflow:hidden;border-radius:10px;box-shadow:0 12px 40px rgba(35,28,27,.18)}
+.frame.desk{width:1440px;transform-origin:0 0}
+.frame.mob{width:390px;max-width:100%;height:78vh;border-radius:28px;box-shadow:0 0 0 10px #231C1B,0 20px 50px rgba(35,28,27,.3)}
+.versions{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:16px;padding-top:28px}
+.ver{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;gap:8px;padding:24px;box-shadow:inset 0 0 0 1px var(--stone);color:var(--ink);font:400 16px/1.5 var(--sans)}
+.ver b{font:400 34px/1.05 var(--serif)}
+.ver span:last-child{color:var(--umber)}
+.ver:hover{background:#FBF8F4}
+.ver[aria-pressed="true"]{box-shadow:inset 0 0 0 2.5px var(--red)}
+.ver:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.ctrls{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding-top:16px}
+.ctrls.first{padding-top:40px}
+.ctrls label{font:400 13px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--umber);min-width:88px}
+.open{font-weight:700;margin-left:auto}
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:16px;padding-top:24px}
+.notes div{padding:20px;box-shadow:inset 0 0 0 1px var(--stone);display:flex;flex-direction:column;gap:6px}
+.notes b{font:400 26px/1.1 var(--serif)}
+.notes p{margin:0;color:var(--umber);font-size:16px}
+.cmp{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:20px}
+.cmp div{padding:22px;background:var(--mist);border-radius:16px}
+.cmp h3{margin:0 0 8px;font:400 28px/1.1 var(--serif)}
+.cmp ul{margin:0;padding-left:1.1em;font-size:16px;display:flex;flex-direction:column;gap:4px}
+.cmp .con{color:var(--umber)}
+@media (max-width:760px){.cmp{grid-template-columns:1fr}.ctrls label{min-width:0;flex-basis:100%}.open{margin-left:0}}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="wrap"><a href="/vascardio/" aria-label="Propuesta Vascardio, inicio"><img src="/vascardio/assets/logos/VASCARDIO-HVI_Horizontal_FullColor_RGB.svg" alt="Vascardio Heart &amp; Vascular Institute"></a><nav class="topnav" aria-label="Propuesta"><a href="/vascardio/">Inicio</a><a href="/vascardio/home/">Home</a><a href="/vascardio/captacion/" aria-current="page">Captación</a><a href="/vascardio/opcion-b/">Design system</a><a href="/vascardio/comparar/">Comparar</a><a href="/vascardio/presentacion/">Presentación</a></nav></div></header>
+<main>
+<div class="wrap">
+<section style="padding-block:64px 8px;display:flex;flex-direction:column;gap:18px;max-width:56rem"><p class="eyebrow">Diseño · Rutas de captación · Octubre 2026</p>
+<h1 style="margin:0;font:400 clamp(44px,7vw,88px)/.98 var(--serif);letter-spacing:-.01em">Cómo llega cada persona a Vascardio</h1>
+<p style="margin:0;font-size:20px;line-height:1.5">Las cinco rutas de la fase 1: pacientes, médicos que refieren, médicos que quieren operar en el centro, aseguradoras e inversionistas. Dos formas de resolverlas con el mismo design system, cada una con su mapa UX y sus pantallas en escritorio y en móvil.</p></section>
+
+<section class="versions" aria-label="Las dos variantes">
+<button type="button" class="ver" data-ver="1" aria-pressed="true"><span class="eyebrow">Variante 1</span><b>Flujo guiado</b><span>Cada ruta abre su propia pantalla, sin menú: una pregunta por paso, con la línea roja del recorrido como barra de progreso.</span></button>
+<button type="button" class="ver" data-ver="2" aria-pressed="false"><span class="eyebrow">Variante 2</span><b>En la página</b><span>El formulario vive dentro del servicio o del hub, en un panel que acompaña la lectura. El contexto responde la primera pregunta.</span></button>
+</section>
+
+<div class="ctrls first"><label id="l-r">Ruta</label><div class="seg routes" role="group" aria-labelledby="l-r"><button type="button" data-r="paciente" aria-pressed="true">Paciente</button><button type="button" data-r="referir" aria-pressed="false">Referir un paciente</button><button type="button" data-r="operar" aria-pressed="false">Operar en el centro</button><button type="button" data-r="aseguradoras" aria-pressed="false">Aseguradoras</button><button type="button" data-r="inversionistas" aria-pressed="false">Inversionistas</button></div></div>
+<div class="ctrls"><label id="l-v">Vista</label><div class="seg" role="group" aria-labelledby="l-v"><button type="button" data-v="mapa" aria-pressed="false">Mapa UX</button><button type="button" data-v="mockup" aria-pressed="true">Mockup</button></div>
+<div class="seg" role="group" aria-label="Dispositivo"><button type="button" data-d="desk" aria-pressed="true">Escritorio</button><button type="button" data-d="mob" aria-pressed="false">Móvil</button></div></div>
+<div class="ctrls" id="stepsrow"><label id="l-s">Pantalla</label><div class="seg" role="group" aria-labelledby="l-s" id="steps"></div><a class="open" id="open" href="#" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></div>
+<div class="stage"><div class="scaler" id="scaler"><iframe id="frame" class="frame desk" src="about:blank" title="Vista previa de la ruta"></iframe></div></div>
+
+<section style="padding-top:56px"><h2 style="margin:0;font:400 36px/1.1 var(--serif)">¿Cuándo conviene cada una?</h2>
+<div class="cmp"><div><h3>Flujo guiado</h3><ul><li>Máxima concentración: nada compite con el formulario.</li><li>Una decisión por pantalla, ideal en el celular y para personas mayores.</li><li>Se mide paso a paso: se ve exactamente dónde se abandona.</li><li class="con">Saca a la persona de la página que estaba leyendo.</li></ul></div>
+<div><h3>En la página</h3><ul><li>Pide la cita sin perder el contexto del servicio.</li><li>El motivo ya viene elegido por la página: un paso menos.</li><li>El médico o la aseguradora ve información y contacto juntos.</li><li class="con">El panel compite con el contenido; en móvil se apila.</li></ul></div></div>
+<p style="margin:16px 0 0;color:var(--umber)">También se pueden combinar: por ejemplo, el panel en las páginas de servicio y el flujo guiado desde el botón «Pedir cita».</p></section>
+
+<section class="notes" aria-label="Reglas aplicadas"><div><span class="eyebrow">Regla</span><b>Solo contacto</b><p>Sin seguro, sin foto de tarjeta y sin información médica.</p></div><div><span class="eyebrow">Regla</span><b>Sin WhatsApp</b><p>Las salidas son «Llamar» y la acción principal.</p></div><div><span class="eyebrow">Regla</span><b>Siempre un teléfono</b><p>Cada pantalla tiene una salida para llamar.</p></div><div><span class="eyebrow">Regla</span><b>Sin promesas de tiempo</b><p>Plazos solo cuando la oficina los confirme.</p></div><div><span class="eyebrow">Regla</span><b>Sin píxeles de publicidad</b><p>Estas páginas no llevan Meta Pixel ni etiquetas de anuncios (HIPAA).</p></div><div><span class="eyebrow">Regla</span><b>Proveedor con BAA</b><p>Los envíos llegan a un servicio que firma el acuerdo HIPAA.</p></div></section>
+
+<section style="padding-top:56px;max-width:56rem;display:flex;flex-direction:column;gap:12px"><h2 style="margin:0;font:400 36px/1.1 var(--serif)">Contenido provisional</h2>
+<ul style="margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;color:var(--umber)">
+<li><b style="color:var(--ink)">Textos y campos:</b> parten del material que enviaron. El diseño y la experiencia son una propuesta nueva.</li>
+<li><b style="color:var(--ink)">Marcas amarillas (⚑):</b> datos que la oficina debe confirmar antes de publicar.</li>
+<li><b style="color:var(--ink)">Fotos:</b> vistas previas del fotógrafo, con marca de agua.</li>
+<li><b style="color:var(--ink)">Envíos:</b> las maquetas no envían nada; puede probar los pasos, las validaciones y las confirmaciones.</li>
+</ul></section>
+
+<section style="padding-top:40px;max-width:56rem;display:flex;flex-direction:column;gap:12px"><h2 style="margin:0;font:400 36px/1.1 var(--serif)">Lo que necesitamos de ustedes</h2>
+<ol style="margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px"><li>Elegir la variante 1, la 2 o una combinación (por ruta, si lo prefieren).</li><li>Plazo real de respuesta de cada ruta (por ejemplo, «le llamamos en un día hábil»).</li><li>Quién responde cada ruta: coordinación de citas, referidos, dirección médica, contratos y dirección.</li><li>Confirmar las cifras para médicos (48–72 h, 24 h) y la lista de las 7 especialidades del centro.</li><li>Requisitos para operar en el centro y la duración y preparación de los estudios.</li></ol></section>
+</div>
+</main>
+<footer class="foot"><div class="wrap"><span>Propuesta preparada por La Forja Digital · Octubre 2026 · Documento confidencial</span><a href="https://laforjadigital.com">laforjadigital.com</a></div></footer>
+<script>
+(function(){
+  var STEPS={"1": {"paciente": [["1", "Paso 1"], ["2", "Paso 2"], ["listo", "Listo"]], "referir": [["1", "Paso 1"], ["2", "Paso 2"], ["3", "Paso 3"], ["listo", "Listo"]], "operar": [["1", "Paso 1"], ["2", "Paso 2"], ["listo", "Listo"]], "aseguradoras": [["1", "Paso 1"], ["2", "Paso 2"], ["listo", "Listo"]], "inversionistas": [["1", "Paso 1"], ["2", "Paso 2"], ["listo", "Listo"]]}, "2": {"paciente": [["form", "Formulario"], ["listo", "Enviado"]], "referir": [], "operar": [["form", "Formulario"], ["listo", "Enviado"]], "aseguradoras": [["form", "Formulario"], ["listo", "Enviado"]], "inversionistas": [["form", "Formulario"], ["listo", "Enviado"]]}}, ERR={"1": {"paciente": "2", "referir": "1", "operar": "2", "aseguradoras": "2", "inversionistas": "2"}, "2": {"paciente": "form", "operar": "form", "aseguradoras": "form", "inversionistas": "form"}};
+  var f=document.getElementById('frame'),o=document.getElementById('open'),sc=document.getElementById('scaler'),sw=document.getElementById('steps'),row=document.getElementById('stepsrow');
+  var st={ver:'1',r:'paciente',v:'mockup',d:'desk',p:''};
+  try{var q=new URLSearchParams(location.search);['ver','r','v','d','p'].forEach(function(k){if(q.get(k))st[k]=q.get(k);});}catch(e){}
+  function url(){
+    var b='/vascardio/captacion/v'+st.ver+'/';
+    if(st.v==='mapa') return b+'mapa/#'+st.r;
+    var u=b+st.r+'/';
+    if(st.p==='err') return u+'?paso='+ERR[st.ver][st.r]+'&err=1';
+    if(st.p) return u+'?paso='+st.p;
+    return u;
+  }
+  function steps(){
+    var list=(STEPS[st.ver][st.r]||[]).slice(); var e=ERR[st.ver][st.r]; if(e){var at=list.findIndex(function(x){return x[0]===e;}); list.splice(at+1,0,['err','Con errores']);}
+    if(st.p && !list.some(function(x){return x[0]===st.p;})) st.p='';
+    sw.innerHTML=list.map(function(x,i){var on=st.p?st.p===x[0]:i===0;return '<button type="button" data-p="'+x[0]+'" aria-pressed="'+on+'">'+x[1]+'</button>';}).join('');
+    sw.parentNode.querySelector('label').style.visibility=(list.length&&st.v==='mockup')?'visible':'hidden';
+    sw.style.display=(list.length&&st.v==='mockup')?'':'none';
+    sw.querySelectorAll('button').forEach(function(b,i){b.addEventListener('click',function(){st.p=i===0?'':b.dataset.p;go(true);});});
+  }
+  function fit(){var H=Math.round(window.innerHeight*.78);
+    if(st.d==='desk'){var w=sc.parentNode.clientWidth-40;var k=Math.min(1,w>0?w/1440:1);sc.style.width='';sc.style.height=H+'px';sc.style.boxShadow='';sc.style.overflow='hidden';f.style.transform='scale('+k+')';f.style.height=Math.round(H/k)+'px';}
+    else{sc.style.width='auto';sc.style.height='auto';sc.style.boxShadow='none';sc.style.overflow='visible';f.style.transform='';f.style.height=H+'px';}}
+  function go(push){
+    steps();
+    var u=url(); if(f.getAttribute('src')!==u) f.src=u; o.href=u; f.className='frame '+st.d;
+    [['ver','ver'],['r','r'],['v','v'],['d','d']].forEach(function(p){document.querySelectorAll('[data-'+p[0]+']').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset[p[0]]===st[p[1]]));});});
+    fit();
+    if(push){try{history.replaceState(null,'','?ver='+st.ver+'&r='+st.r+'&v='+st.v+'&d='+st.d+(st.p?'&p='+st.p:''));}catch(e){}}
+  }
+  document.querySelectorAll('[data-ver]').forEach(function(b){b.addEventListener('click',function(){st.ver=b.dataset.ver;st.p='';go(true);});});
+  document.querySelectorAll('[data-r]').forEach(function(b){b.addEventListener('click',function(){st.r=b.dataset.r;st.p='';go(true);});});
+  document.querySelectorAll('[data-v]').forEach(function(b){b.addEventListener('click',function(){st.v=b.dataset.v;go(true);});});
+  document.querySelectorAll('[data-d]').forEach(function(b){b.addEventListener('click',function(){st.d=b.dataset.d;go(true);});});
+  window.addEventListener('resize',fit);
+  go(false);
+})();
+</script>
+</body>
+</html>

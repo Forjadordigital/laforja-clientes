@@ -1,0 +1,98 @@
+/* Variante 1 · Flujo guiado: pantalla propia, una pregunta por paso */
+body.v1{background:var(--white)}
+.fhead{position:sticky;top:0;z-index:40;background:var(--white);box-shadow:0 1px 0 var(--stone)}
+.fhead .wrap{max-width:1320px;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:32px;min-height:80px}
+.fhead .logo img{width:164px}
+.fhead .prog{max-width:560px;width:100%;justify-self:center}
+.fhead .r{display:flex;align-items:center;gap:8px}
+.fhead .tel{padding:0 8px}
+.exit{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 14px;border-radius:999px;color:var(--ink);text-decoration:none;font-weight:700;font-size:15px;box-shadow:inset 0 0 0 1.5px var(--stone)}
+.exit:hover{background:var(--mist);color:var(--ink)}
+
+.focus{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(380px,.9fr);min-height:calc(100vh - 80px)}
+.fmain{padding:64px max(var(--gut),env(safe-area-inset-left)) 96px;display:flex;justify-content:center}
+.fmain > div{width:100%;max-width:640px}
+.step{display:flex;flex-direction:column;gap:28px}
+.step:focus{outline:none}
+.step header{display:flex;flex-direction:column;gap:14px}
+.step h1{font-family:var(--serif);font-size:clamp(44px,4.6vw,68px);line-height:1;letter-spacing:-.012em}
+.step h1 em{font-style:italic;color:var(--red)}
+.step header p:not(.eyebrow){font-size:19px;line-height:1.55;color:var(--umber);max-width:34rem}
+.actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding-top:4px}
+.actions .alt{margin-left:auto;font-size:15.5px;color:var(--umber)}
+.actions .alt a{font-weight:700}
+.hint{font-size:15.5px;color:var(--umber)}
+
+/* columna de apoyo */
+.faside{background:var(--mist);padding:40px max(var(--gut),env(safe-area-inset-right)) 48px 40px;border-left:1px solid var(--stone)}
+.faside > div{position:sticky;top:112px;display:flex;flex-direction:column;gap:24px;max-width:460px}
+.faside .ph{position:relative}
+.faside .ph img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r-l)}
+.faside .tag{position:absolute;left:16px;bottom:16px;padding:10px 14px;border-radius:var(--r-s);background:var(--white);box-shadow:0 10px 28px rgba(35,28,27,.2);font-size:14px;line-height:1.35}
+.faside .tag b{display:block;font-size:15px}
+.faside h2{font-family:var(--serif);font-size:32px;line-height:1.05}
+.how{list-style:none;padding:0;display:flex;flex-direction:column;gap:14px;counter-reset:h}
+.how li{display:grid;grid-template-columns:32px minmax(0,1fr);gap:12px;font-size:16px;line-height:1.45;counter-increment:h}
+.how li::before{content:counter(h);width:32px;height:32px;border-radius:999px;background:var(--white);box-shadow:inset 0 0 0 1.5px var(--stone);display:grid;place-items:center;font-family:var(--mono);font-size:14px;color:var(--red)}
+.how b{display:block}
+.how span{color:var(--umber)}
+.trust{list-style:none;padding:0;display:flex;flex-direction:column;gap:10px;font-size:15.5px}
+.trust li{display:flex;gap:10px;align-items:center}
+.trust img{width:24px;height:24px;flex:none}
+.callbox{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 18px;border-radius:var(--r-m);background:var(--white);box-shadow:inset 0 0 0 1px var(--stone)}
+.callbox span{font-size:15px;color:var(--umber);line-height:1.35}
+.callbox a{font-family:var(--mono);font-size:17px;color:var(--ink);text-decoration:none;white-space:nowrap;font-weight:400}
+.callbox a:hover{color:var(--red)}
+
+/* tono ink (inversionistas) */
+.faside.ink{background:var(--ink);color:var(--white);border-left:0}
+.faside.ink .muted,.faside.ink .how span,.faside.ink .callbox span{color:var(--stone)}
+.faside.ink .how li::before{background:transparent;box-shadow:inset 0 0 0 1.5px rgba(216,204,188,.5);color:var(--gold)}
+.faside.ink .eyebrow{color:var(--gold)}
+.faside.ink .callbox{background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 1px rgba(216,204,188,.25)}
+.faside.ink .callbox a{color:var(--white)}
+
+/* confirmación */
+.step.done header{gap:20px}
+.done-grid{display:flex;flex-direction:column;gap:28px}
+.after{padding:24px;border-radius:var(--r-l);box-shadow:inset 0 0 0 1px var(--stone)}
+.after h2{font:700 18px/1.3 var(--sans);margin-bottom:18px}
+.prep{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;padding:18px 20px;border-radius:var(--r-m);border:1.5px dashed var(--stone);font-size:15.5px;line-height:1.5}
+
+/* intro de ruta (paso 0 de audiencias profesionales) */
+.points{list-style:none;padding:0;display:grid;gap:0;border-top:1px solid var(--stone)}
+.points li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:16px;padding:18px 0;border-bottom:1px solid var(--stone);align-items:start}
+.points img{width:32px;height:32px;margin-top:2px}
+.points b{display:block;font-size:18px}
+.points span{color:var(--umber);font-size:16px}
+
+/* responsive */
+@media (max-width:1080px){
+  .focus{grid-template-columns:minmax(0,1fr)}
+  .faside{border-left:0;border-top:1px solid var(--stone);padding:40px var(--gut) 56px}
+  .faside > div{position:static;max-width:640px;margin:0 auto}
+  .fmain{padding-top:48px}
+}
+@media (max-width:860px){
+  .fhead .wrap{grid-template-columns:auto auto;gap:12px;min-height:64px}
+  .fhead .logo img{width:140px}
+  .fhead .prog{grid-column:1 / -1;grid-row:2;max-width:none;padding-bottom:12px}
+  .fhead .r .tel{display:none}
+  .fhead .r{justify-self:end}
+}
+@media (max-width:720px){
+  .fmain{padding:28px var(--gut) 132px}
+  .step{gap:24px}
+  .step h1{font-size:40px}
+  .step header p:not(.eyebrow){font-size:17px}
+  .prog li{font-size:12.5px}
+  .prog li:not([aria-current="step"]) .lbl{color:var(--umber)}
+  /* acción fija abajo en móvil */
+  .actions{position:fixed;left:0;right:0;bottom:0;z-index:30;padding:12px var(--gut) calc(12px + env(safe-area-inset-bottom));background:var(--white);box-shadow:0 -1px 0 var(--stone),0 -8px 24px rgba(35,28,27,.08);display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px}
+  .actions .btn{width:100%}
+  .actions .alt{display:none}
+  .actions .textbtn{min-height:52px;padding:0 6px}
+  .actions.solo{grid-template-columns:minmax(0,1fr)}
+  .faside{padding:32px var(--gut) 140px}
+  .faside .ph{display:none}
+}

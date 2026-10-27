@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow">
+<title>Vascardio · Mapa de rutas · Variante 1</title><link rel="icon" href="/vascardio/assets/logos/VASCARDIO_Symbol_FullColor_RGB.svg">
+<style>
+@font-face{font-family:"Instrument Serif";src:url("/vascardio/assets/fonts/InstrumentSerif-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
+@font-face{font-family:"Instrument Serif";src:url("/vascardio/assets/fonts/InstrumentSerif-Italic.ttf") format("truetype");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Bricolage Grotesque";src:url("/vascardio/assets/fonts/BricolageGrotesque-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
+@font-face{font-family:"Bricolage Grotesque";src:url("/vascardio/assets/fonts/BricolageGrotesque-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
+@font-face{font-family:"DM Mono";src:url("/vascardio/assets/fonts/DMMono-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
+:root{--red:#C72D2F;--red-700:#A82528;--ink:#231C1B;--white:#FFFFFF;--stone:#D8CCBC;--umber:#6E5F50;--gold:#B6896D;--oxblood:#6B1612;--cream:#F1E6D6;--mist:#F7F2EB;
+--serif:"Instrument Serif","Iowan Old Style",Georgia,serif;--sans:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;--mono:"DM Mono",ui-monospace,Menlo,monospace}
+*{box-sizing:border-box}
+html{color-scheme:light}
+body{margin:0;background:var(--white);color:var(--ink);font:400 18px/1.6 var(--sans)}
+a{color:var(--red)}a:hover{color:var(--oxblood)}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.eyebrow{font-family:var(--mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--red);margin:0}
+h1,h2,h3{text-wrap:balance;font-weight:400}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+<style>
+body{background:var(--mist)}
+.top{padding:48px 0 24px;display:flex;flex-direction:column;gap:12px;max-width:52rem}
+.top h1{font:400 clamp(44px,5vw,64px)/1 var(--serif);margin:0}
+.top p:not(.eyebrow){margin:0;color:var(--umber);font-size:19px}
+.route{background:var(--white);border-radius:24px;box-shadow:inset 0 0 0 1px var(--stone);padding:28px;margin-top:20px}
+.route header{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 20px;margin-bottom:20px}
+.route header .eyebrow{flex-basis:100%}
+.route h2{font:400 38px/1.05 var(--serif);margin:0}
+.see{margin-left:auto;font-weight:700;font-size:16px}
+.cols{display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:0}
+.cols section{padding:0 24px}
+.cols section:first-child{padding-left:0}
+.cols section + section{box-shadow:-1px 0 0 var(--stone)}
+.cols h3{font:400 13px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--umber);margin:0 0 14px}
+.ent{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.ent li{padding:8px 12px;border-radius:10px;background:var(--mist);font-size:15.5px;line-height:1.35}
+.line{list-style:none;padding:0;margin:0;position:relative}
+.line li{position:relative;display:grid;grid-template-columns:26px minmax(0,1fr);gap:12px;padding-bottom:18px;font-size:16px;line-height:1.35;font-weight:700}
+.line li::before{content:"";position:absolute;left:11.5px;top:22px;bottom:-2px;width:3px;background:var(--red);border-radius:3px}
+.line li.end::before{display:none}
+.line li.end{font-weight:400;color:var(--umber);padding-bottom:0}
+.nd{width:26px;height:26px;border-radius:999px;background:var(--white);box-shadow:inset 0 0 0 3px var(--red);position:relative;z-index:1}
+.line li.end .nd{background:var(--red);box-shadow:none}
+.cols p{margin:0 0 14px;font-size:16px;line-height:1.5}
+dl{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 12px;font-size:14.5px;line-height:1.4}
+dt{color:var(--umber)}dd{margin:0}
+.mono{font-family:var(--mono);font-size:13px}
+.states{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}
+.states div{background:var(--white);border-radius:16px;box-shadow:inset 0 0 0 1px var(--stone);padding:18px}
+.states b{font:400 24px/1.1 var(--serif)}
+.states p{margin:6px 0 0;font-size:15px;color:var(--umber);line-height:1.45}
+h2.sub{font:400 40px/1.05 var(--serif);margin:56px 0 0}
+.pad{padding-bottom:72px}
+@media (max-width:900px){.cols{grid-template-columns:1fr}.cols section,.cols section:first-child{padding:18px 0 0;box-shadow:none;border-top:1px solid var(--stone);margin-top:18px}.cols section:first-child{border-top:0;margin-top:0;padding-top:0}.states{grid-template-columns:1fr}.route{padding:20px}.see{margin-left:0}}
+</style></head>
+<body><main class="wrap pad">
+<section class="top"><p class="eyebrow">Mapa UX · Variante 1 · Flujo guiado</p><h1>Cinco rutas, una acción por audiencia</h1><p>Cada ruta abre su propia pantalla, sin menú ni distracciones: una pregunta por paso, con la línea roja del recorrido como progreso.</p></section>
+<article class="route" id="paciente">
+  <header><p class="eyebrow">Paciente local</p><h2>Paciente · Pedir cita</h2><a class="see" href="/vascardio/captacion/v1/paciente/" target="_top">Ver mockup →</a></header>
+  <div class="cols">
+    <section><h3>Entradas</h3><ul class="ent"><li>Botón «Pedir cita» del header</li><li>Barra de cita de la home</li><li>Páginas de servicio y de condición</li><li>Barra fija en móvil</li><li>Google Maps y búsqueda local</li><li>Llamada directa (siempre visible)</li></ul></section>
+    <section><h3>Pantallas · Flujo guiado</h3><ol class="line"><li><span class="nd" aria-hidden="true"></span><span>Qué necesita: 3 opciones grandes</span></li><li><span class="nd" aria-hidden="true"></span><span>Sus datos: solo contacto</span></li><li><span class="nd" aria-hidden="true"></span><span>Listo: qué pasa ahora</span></li><li class="end"><span class="nd" aria-hidden="true"></span><span>Solicitud registrada</span></li></ol></section>
+    <section><h3>Después del envío</h3><p>Una coordinadora llama, agenda la cita y verifica el seguro. Pre-registro opcional por enlace seguro.</p><dl><dt>Responsable</dt><dd>Coordinación y recepción</dd><dt>Se mide</dt><dd>Solicitudes válidas → citas confirmadas → citas atendidas · tiempo al primer contacto</dd><dt>Eventos</dt><dd class="mono">cita_inicio · cita_paso_1 · cita_enviada</dd></dl></section>
+  </div>
+</article><article class="route" id="referir">
+  <header><p class="eyebrow">Médico que refiere</p><h2>Médicos · Referir un paciente</h2><a class="see" href="/vascardio/captacion/v1/referir/" target="_top">Ver mockup →</a></header>
+  <div class="cols">
+    <section><h3>Entradas</h3><ul class="ent"><li>Barra Profesionales: «Referir un paciente»</li><li>Hub Para médicos</li><li>Footer</li><li>Enlace directo para enviar a consultorios</li></ul></section>
+    <section><h3>Pantallas · Flujo guiado</h3><ol class="line"><li><span class="nd" aria-hidden="true"></span><span>El paciente: servicio y prioridad</span></li><li><span class="nd" aria-hidden="true"></span><span>El envío: PDF y lista de adjuntos</span></li><li><span class="nd" aria-hidden="true"></span><span>El fax: número para copiar (+ llamada si es urgente)</span></li><li><span class="nd" aria-hidden="true"></span><span>Listo: qué pasa ahora</span></li><li class="end"><span class="nd" aria-hidden="true"></span><span>Solicitud registrada</span></li></ol></section>
+    <section><h3>Después del envío</h3><p>Coordinación confirma la recepción con el consultorio, llama al paciente y envía los reportes al médico.</p><dl><dt>Responsable</dt><dd>Coordinación de referidos</dd><dt>Se mide</dt><dd>Referidos recibidos → pacientes atendidos · referidos por consultorio</dd><dt>Eventos</dt><dd class="mono">referido_inicio · referido_pdf · referido_fax_copiado</dd></dl></section>
+  </div>
+</article><article class="route" id="operar">
+  <header><p class="eyebrow">Médico especialista</p><h2>Médicos · Operar en el centro</h2><a class="see" href="/vascardio/captacion/v1/operar/" target="_top">Ver mockup →</a></header>
+  <div class="cols">
+    <section><h3>Entradas</h3><ul class="ent"><li>Barra Profesionales: «Para médicos»</li><li>Hub Para médicos</li><li>Página del centro quirúrgico</li></ul></section>
+    <section><h3>Pantallas · Flujo guiado</h3><ol class="line"><li><span class="nd" aria-hidden="true"></span><span>Su interés: operar, unirse o visitar</span></li><li><span class="nd" aria-hidden="true"></span><span>Sobre usted</span></li><li><span class="nd" aria-hidden="true"></span><span>Listo: cómo seguimos</span></li><li class="end"><span class="nd" aria-hidden="true"></span><span>Solicitud registrada</span></li></ol></section>
+    <section><h3>Después del envío</h3><p>Dirección médica agenda la reunión y la visita; sigue la habilitación (credenciales y acuerdos) y el primer caso.</p><dl><dt>Responsable</dt><dd>Dirección médica</dd><dt>Se mide</dt><dd>Reuniones solicitadas → colaboraciones activas</dd><dt>Eventos</dt><dd class="mono">reunion_inicio · reunion_solicitada</dd></dl></section>
+  </div>
+</article><article class="route" id="aseguradoras">
+  <header><p class="eyebrow">Aseguradora</p><h2>Aseguradoras · Contratos</h2><a class="see" href="/vascardio/captacion/v1/aseguradoras/" target="_top">Ver mockup →</a></header>
+  <div class="cols">
+    <section><h3>Entradas</h3><ul class="ent"><li>Barra Profesionales: «Aseguradoras»</li><li>Footer</li><li>Búsqueda directa</li></ul></section>
+    <section><h3>Pantallas · Flujo guiado</h3><ol class="line"><li><span class="nd" aria-hidden="true"></span><span>Tema: nuevo convenio, vigente, credenciales u otro</span></li><li><span class="nd" aria-hidden="true"></span><span>Contacto</span></li><li><span class="nd" aria-hidden="true"></span><span>Listo: cómo seguimos</span></li><li class="end"><span class="nd" aria-hidden="true"></span><span>Solicitud registrada</span></li></ol></section>
+    <section><h3>Después del envío</h3><p>Contratos responde, comparte el dossier del instituto y evalúa condiciones.</p><dl><dt>Responsable</dt><dd>Área de contratos</dd><dt>Se mide</dt><dd>Contactos → convenios vigentes</dd><dt>Eventos</dt><dd class="mono">contratos_inicio · contratos_contacto</dd></dl></section>
+  </div>
+</article><article class="route" id="inversionistas">
+  <header><p class="eyebrow">Inversionista</p><h2>Inversionistas · Contacto privado</h2><a class="see" href="/vascardio/captacion/v1/inversionistas/" target="_top">Ver mockup →</a></header>
+  <div class="cols">
+    <section><h3>Entradas</h3><ul class="ent"><li>Barra Profesionales: «Inversionistas»</li><li>Footer</li></ul></section>
+    <section><h3>Pantallas · Flujo guiado</h3><ol class="line"><li><span class="nd" aria-hidden="true"></span><span>Perfil</span></li><li><span class="nd" aria-hidden="true"></span><span>Contacto</span></li><li><span class="nd" aria-hidden="true"></span><span>Listo: cómo seguimos</span></li><li class="end"><span class="nd" aria-hidden="true"></span><span>Solicitud registrada</span></li></ol></section>
+    <section><h3>Después del envío</h3><p>Dirección conversa en privado. La información se comparte solo bajo confidencialidad y con revisión legal.</p><dl><dt>Responsable</dt><dd>Dirección</dd><dt>Se mide</dt><dd>Contactos calificados</dd><dt>Eventos</dt><dd class="mono">inversion_contacto</dd></dl></section>
+  </div>
+</article>
+<h2 class="sub">Estados que cubre el diseño</h2>
+<div class="states"><div><b>Validación</b><p>Resumen de errores arriba y mensaje en cada campo. El foco va al resumen.</p></div><div><b>Enviando</b><p>El botón muestra «Enviando…» y evita el doble envío.</p></div><div><b>Fuera de horario</b><p>La confirmación lo dice y no promete una hora.</p></div><div><b>Error de envío</b><p>Mensaje claro y teléfono a la vista. Los datos no se pierden.</p></div><div><b>Sin JavaScript</b><p>El formulario funciona igual, con los mismos campos.</p></div><div><b>Emergencia</b><p>«Llame al 911» visible en cada formulario de paciente.</p></div></div>
+</main></body></html>
