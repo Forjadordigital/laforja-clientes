@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="robots" content="noindex, nofollow">
+<title>Vascardio · Plantillas de servicio y condición</title><link rel="icon" href="/vascardio/assets/logos/VASCARDIO_Symbol_FullColor_RGB.svg">
+<style>
+@font-face{font-family:"Instrument Serif";src:url("/vascardio/assets/fonts/InstrumentSerif-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
+@font-face{font-family:"Instrument Serif";src:url("/vascardio/assets/fonts/InstrumentSerif-Italic.ttf") format("truetype");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Bricolage Grotesque";src:url("/vascardio/assets/fonts/BricolageGrotesque-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
+@font-face{font-family:"Bricolage Grotesque";src:url("/vascardio/assets/fonts/BricolageGrotesque-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
+@font-face{font-family:"DM Mono";src:url("/vascardio/assets/fonts/DMMono-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
+:root{--red:#C72D2F;--red-700:#A82528;--ink:#231C1B;--white:#FFFFFF;--stone:#D8CCBC;--umber:#6E5F50;--gold:#B6896D;--oxblood:#6B1612;--cream:#F1E6D6;--mist:#F7F2EB;
+--serif:"Instrument Serif","Iowan Old Style",Georgia,serif;--sans:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;--mono:"DM Mono",ui-monospace,Menlo,monospace}
+*{box-sizing:border-box}
+html{color-scheme:light}
+body{margin:0;background:var(--white);color:var(--ink);font:400 18px/1.6 var(--sans)}
+a{color:var(--red)}a:hover{color:var(--oxblood)}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.eyebrow{font-family:var(--mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--red);margin:0}
+h1,h2,h3{text-wrap:balance;font-weight:400}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+<style>
+.topbar{position:sticky;top:0;z-index:50;background:var(--white);box-shadow:0 1px 0 var(--stone)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px;flex-wrap:wrap;padding-block:8px}
+.topbar img{width:170px;height:auto;display:block}
+.topnav{display:flex;gap:4px;flex-wrap:wrap}
+.topnav a{color:var(--ink);text-decoration:none;font-size:15px;padding:10px 12px;min-height:44px;display:inline-flex;align-items:center}
+.topnav a[aria-current="page"]{font-weight:700;box-shadow:inset 0 -2px 0 var(--red)}
+.foot{background:var(--ink);color:var(--stone);margin-top:96px}
+.foot .wrap{padding-block:40px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:15px}
+.foot a{color:var(--white)}
+.seg{display:inline-flex;padding:4px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--stone);gap:4px;flex-wrap:wrap}
+.seg button{min-height:44px;padding:0 18px;border:0;border-radius:999px;background:transparent;color:var(--ink);font:700 15px var(--sans);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--white)}
+.stage{margin-top:20px;border-radius:16px;background:#EFE9E1;padding:20px;display:flex;justify-content:center}
+.frame{background:#fff;border:0;display:block}
+.scaler{width:100%;overflow:hidden;border-radius:10px;box-shadow:0 12px 40px rgba(35,28,27,.18)}
+.frame.desk{width:1440px;transform-origin:0 0}
+.frame.mob{width:390px;max-width:100%;height:78vh;border-radius:28px;box-shadow:0 0 0 10px #231C1B,0 20px 50px rgba(35,28,27,.3)}
+.versions{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:16px;padding-top:28px}
+.ver{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;gap:8px;padding:24px;box-shadow:inset 0 0 0 1px var(--stone);color:var(--ink);font:400 16px/1.5 var(--sans)}
+.ver b{font:400 34px/1.05 var(--serif)}
+.ver span:last-child{color:var(--umber)}
+.ver:hover{background:#FBF8F4}
+.ver[aria-pressed="true"]{box-shadow:inset 0 0 0 2.5px var(--red)}
+.ver:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.ctrls{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding-top:40px}
+.ctrls > div{display:flex;gap:12px;flex-wrap:wrap}
+.open{font-weight:700}
+</style></head>
+<body>
+<header class="topbar"><div class="wrap"><a href="/vascardio/" aria-label="Propuesta Vascardio, inicio"><img src="/vascardio/assets/logos/VASCARDIO-HVI_Horizontal_FullColor_RGB.svg" alt="Vascardio Heart &amp; Vascular Institute"></a><nav class="topnav" aria-label="Propuesta"><a href="/vascardio/">Inicio</a><a href="/vascardio/home/">Home</a><a href="/vascardio/captacion/">Captación</a><a href="/vascardio/plantillas/" aria-current="page">Plantillas</a><a href="/vascardio/opcion-b/">Design system</a></nav></div></header>
+<main><div class="wrap">
+<section style="padding-block:64px 8px;display:flex;flex-direction:column;gap:18px;max-width:56rem"><p class="eyebrow">Diseño · Plantillas · Octubre 2026</p>
+<h1 style="margin:0;font:400 clamp(44px,7vw,88px)/.98 var(--serif);letter-spacing:-.01em">Una página para cada servicio y cada condición</h1>
+<p style="margin:0;font-size:20px;line-height:1.5">Dos plantillas que se repiten en todo el sitio: la de servicio (los 18) y la de condición. Las mostramos con un par real que se enlaza entre sí: la condición «Dolor en las piernas al caminar» lleva al servicio «Evaluación de circulación (PAD)». Cada una en dos variantes, con sus textos aprobados.</p></section>
+<section class="versions" aria-label="Las dos variantes">
+<button type="button" class="ver" data-ver="a" aria-pressed="true"><span class="eyebrow">Variante A</span><b>Ficha</b><span>Modular y fácil de escanear: cifras en tarjetas, un índice fijo al costado con la cita siempre a mano y secciones claras una tras otra.</span></button>
+<button type="button" class="ver" data-ver="b" aria-pressed="false"><span class="eyebrow">Variante B</span><b>Recorrido</b><span>La línea roja de la home recorre la página: de lo que siente la persona a la evaluación, los estudios y el tratamiento.</span></button>
+</section>
+<div class="ctrls"><div><div class="seg" role="group" aria-label="Plantilla"><button type="button" data-t="servicio" aria-pressed="true">Servicio</button><button type="button" data-t="condicion" aria-pressed="false">Condición</button></div>
+<div class="seg" role="group" aria-label="Dispositivo"><button type="button" data-d="desk" aria-pressed="true">Escritorio</button><button type="button" data-d="mob" aria-pressed="false">Móvil</button></div></div>
+<a class="open" id="open" href="#" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></div>
+<div class="stage"><div class="scaler" id="scaler"><iframe id="frame" class="frame desk" src="about:blank" title="Vista previa de la plantilla"></iframe></div></div>
+<section style="padding-top:56px;max-width:56rem;display:flex;flex-direction:column;gap:12px"><h2 style="margin:0;font:400 36px/1.1 var(--serif)">Qué trae cada plantilla</h2>
+<ul style="margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;color:var(--umber)">
+<li><b style="color:var(--ink)">Servicio:</b> entrada con botones y línea de confianza, datos rápidos, ¿es para usted?, frase del doctor, cómo funciona, así será su visita, dónde se hace, qué traer, preguntas, servicios relacionados y cierre. El aviso de emergencia (911) aparece solo en los servicios que lo llevan.</li>
+<li><b style="color:var(--ink)">Condición:</b> síntomas para que la persona se reconozca, aviso de emergencia, la ruta en Vascardio (empiece por, estudios, tratamiento) enlazada a los servicios, qué pasa si sale positivo, preguntas y otras molestias.</li>
+</ul></section>
+<section style="padding-top:40px;max-width:56rem;display:flex;flex-direction:column;gap:12px"><h2 style="margin:0;font:400 36px/1.1 var(--serif)">Lo que necesitamos de ustedes</h2>
+<ol style="margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px"><li>Elegir la variante A, la B o una combinación (por ejemplo, A para servicios y B para condiciones).</li><li>Las frases finales del doctor (hoy son borradores).</li><li>Validar con el doctor los textos clínicos de las condiciones.</li><li>Las fotos finales de cada servicio.</li></ol></section>
+</div></main>
+<footer class="foot"><div class="wrap"><span>Propuesta preparada por La Forja Digital · Octubre 2026 · Documento confidencial</span><a href="https://laforjadigital.com">laforjadigital.com</a></div></footer>
+<script>
+(function(){
+  var f=document.getElementById('frame'),o=document.getElementById('open'),sc=document.getElementById('scaler');
+  var st={ver:'a',t:'servicio',d:'desk'};
+  try{var q=new URLSearchParams(location.search);['ver','t','d'].forEach(function(k){if(q.get(k))st[k]=q.get(k);});}catch(e){}
+  function url(){return '/vascardio/plantillas/'+st.ver+'/'+st.t+'/';}
+  function fit(){var H=Math.round(window.innerHeight*.78);
+    if(st.d==='desk'){var w=sc.parentNode.clientWidth-40;var k=Math.min(1,w>0?w/1440:1);sc.style.width='';sc.style.height=H+'px';sc.style.boxShadow='';sc.style.overflow='hidden';f.style.transform='scale('+k+')';f.style.height=Math.round(H/k)+'px';}
+    else{sc.style.width='auto';sc.style.height='auto';sc.style.boxShadow='none';sc.style.overflow='visible';f.style.transform='';f.style.height=H+'px';}}
+  function go(push){var u=url();if(f.getAttribute('src')!==u)f.src=u;o.href=u;f.className='frame '+st.d;
+    ['ver','t','d'].forEach(function(k){document.querySelectorAll('[data-'+k+']').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset[k]===st[k]));});});
+    fit(); if(push){try{history.replaceState(null,'','?ver='+st.ver+'&t='+st.t+'&d='+st.d);}catch(e){}}}
+  ['ver','t','d'].forEach(function(k){document.querySelectorAll('[data-'+k+']').forEach(function(b){b.addEventListener('click',function(){st[k]=b.dataset[k];go(true);});});});
+  window.addEventListener('resize',fit); go(false);
+})();
+</script>
+</body></html>
