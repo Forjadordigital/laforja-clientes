@@ -39,6 +39,12 @@ h1,h2,h3{text-wrap:balance;font-weight:400}
 .frame.mob{width:390px;max-width:100%;height:78vh;border-radius:28px;box-shadow:0 0 0 10px #231C1B,0 20px 50px rgba(35,28,27,.3)}
 .ctrls{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding-top:28px}
 .open{font-weight:700}
+.ver{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;gap:8px;padding:24px;box-shadow:inset 0 0 0 1px var(--stone);color:var(--ink);font:400 16px/1.5 var(--sans)}
+.ver b{font:400 34px/1.05 var(--serif)}
+.ver span:last-child{color:var(--umber)}
+.ver:hover{background:#FBF8F4}
+.ver[aria-pressed="true"]{box-shadow:inset 0 0 0 2.5px var(--red)}
+.ver:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
 .marker-demo{display:inline;padding:1px 6px;border-radius:6px;background:#FFF3C4;box-shadow:inset 0 0 0 1px #E8C95A}
 </style></head>
 <body>
@@ -46,7 +52,11 @@ h1,h2,h3{text-wrap:balance;font-weight:400}
 <main><div class="wrap">
 <section style="padding-block:64px 8px;display:flex;flex-direction:column;gap:18px;max-width:56rem"><p class="eyebrow">Diseño · Páginas del sitio · Octubre 2026</p>
 <h1 style="margin:0;font:400 clamp(44px,7vw,88px)/.98 var(--serif);letter-spacing:-.01em">El resto del sitio</h1>
-<p style="margin:0;font-size:20px;line-height:1.5">Su visita, equipo, centro quirúrgico, contacto, el hub para médicos, legales y la página de error. Donde todavía no tenemos la información, va un contenido de referencia <span class="marker-demo">marcado en amarillo</span> que se reemplaza antes de publicar.</p></section>
+<p style="margin:0;font-size:20px;line-height:1.5">Su visita, equipo, centro quirúrgico, contacto, el hub para médicos, legales y la página de error, en dos variantes. Donde todavía no tenemos la información, va un contenido de referencia <span class="marker-demo">marcado en amarillo</span> que se reemplaza antes de publicar.</p></section>
+<section class="versions" aria-label="Las dos variantes" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:16px;padding-top:28px">
+<button type="button" class="ver" data-ver="a" aria-pressed="true"><span class="eyebrow">Variante A</span><b>Ficha</b><span>Secciones claras, columna lateral con la cita y los datos a mano, tarjetas modulares.</span></button>
+<button type="button" class="ver" data-ver="b" aria-pressed="false"><span class="eyebrow">Variante B</span><b>Recorrido</b><span>Fotos a todo el ancho y la línea roja como hilo de cada página, con bandas oscuras para las frases.</span></button>
+</section>
 <div class="ctrls"><div class="seg" role="group" aria-label="Página"><button type="button" data-p="seguros" aria-pressed="true">Seguros aceptados</button><button type="button" data-p="preparacion" aria-pressed="false">Preparación para estudios</button><button type="button" data-p="ubicacion" aria-pressed="false">Ubicación y horarios</button><button type="button" data-p="equipo" aria-pressed="false">Equipo</button><button type="button" data-p="equipo/dieguez" aria-pressed="false">Perfil del Dr. Dieguez</button><button type="button" data-p="centro-quirurgico" aria-pressed="false">Centro quirúrgico</button><button type="button" data-p="contacto" aria-pressed="false">Contacto</button><button type="button" data-p="medicos" aria-pressed="false">Para médicos</button><button type="button" data-p="legal" aria-pressed="false">Legales (plantilla)</button><button type="button" data-p="404" aria-pressed="false">Página 404</button></div></div>
 <div class="ctrls"><div class="seg" role="group" aria-label="Dispositivo"><button type="button" data-d="desk" aria-pressed="true">Escritorio</button><button type="button" data-d="mob" aria-pressed="false">Móvil</button></div><a class="open" id="open" href="#" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></div>
 <div class="stage"><div class="scaler" id="scaler"><iframe id="frame" class="frame desk" src="about:blank" title="Vista previa de la página"></iframe></div></div>
@@ -57,16 +67,16 @@ h1,h2,h3{text-wrap:balance;font-weight:400}
 <script>
 (function(){
   var f=document.getElementById('frame'),o=document.getElementById('open'),sc=document.getElementById('scaler');
-  var st={p:'seguros',d:'desk'};
-  try{var q=new URLSearchParams(location.search);['p','d'].forEach(function(k){if(q.get(k))st[k]=q.get(k);});}catch(e){}
-  function url(){return '/vascardio/paginas/'+st.p+'/';}
+  var st={ver:'a',p:'seguros',d:'desk'};
+  try{var q=new URLSearchParams(location.search);['ver','p','d'].forEach(function(k){if(q.get(k))st[k]=q.get(k);});}catch(e){}
+  function url(){return '/vascardio/paginas/'+(st.ver==='b'?'b/':'')+st.p+'/';}
   function fit(){var H=Math.round(window.innerHeight*.78);
     if(st.d==='desk'){var w=sc.parentNode.clientWidth-40;var k=Math.min(1,w>0?w/1440:1);sc.style.width='';sc.style.height=H+'px';sc.style.boxShadow='';sc.style.overflow='hidden';f.style.transform='scale('+k+')';f.style.height=Math.round(H/k)+'px';}
     else{sc.style.width='auto';sc.style.height='auto';sc.style.boxShadow='none';sc.style.overflow='visible';f.style.transform='';f.style.height=H+'px';}}
   function go(push){var u=url();if(f.getAttribute('src')!==u)f.src=u;o.href=u;f.className='frame '+st.d;
-    ['p','d'].forEach(function(k){document.querySelectorAll('[data-'+k+']').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset[k]===st[k]));});});
-    fit(); if(push){try{history.replaceState(null,'','?p='+st.p+'&d='+st.d);}catch(e){}}}
-  ['p','d'].forEach(function(k){document.querySelectorAll('[data-'+k+']').forEach(function(b){b.addEventListener('click',function(){st[k]=b.dataset[k];go(true);});});});
+    ['ver','p','d'].forEach(function(k){document.querySelectorAll('[data-'+k+']').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset[k]===st[k]));});});
+    fit(); if(push){try{history.replaceState(null,'','?ver='+st.ver+'&p='+st.p+'&d='+st.d);}catch(e){}}}
+  ['ver','p','d'].forEach(function(k){document.querySelectorAll('[data-'+k+']').forEach(function(b){b.addEventListener('click',function(){st[k]=b.dataset[k];go(true);});});});
   window.addEventListener('resize',fit); go(false);
 })();
 </script>
