@@ -52,18 +52,20 @@ h1,h2,h3{text-wrap:balance;font-weight:400}
 <header class="topbar"><div class="wrap"><a href="/vascardio/" aria-label="Propuesta Vascardio, inicio"><img src="/vascardio/assets/logos/VASCARDIO-HVI_Horizontal_FullColor_RGB.svg" alt="Vascardio Heart &amp; Vascular Institute"></a><nav class="topnav" aria-label="Propuesta"><a href="/vascardio/">Inicio</a><a href="/vascardio/home/">Home</a><a href="/vascardio/captacion/">Captación</a><a href="/vascardio/plantillas/" aria-current="page">Plantillas</a><a href="/vascardio/opcion-b/">Design system</a></nav></div></header>
 <main><div class="wrap">
 <section style="padding-block:64px 8px;display:flex;flex-direction:column;gap:18px;max-width:56rem"><p class="eyebrow">Diseño · Plantillas · Octubre 2026</p>
-<h1 style="margin:0;font:400 clamp(44px,7vw,88px)/.98 var(--serif);letter-spacing:-.01em">Una página para cada servicio y cada condición</h1>
-<p style="margin:0;font-size:20px;line-height:1.5">Dos plantillas que se repiten en todo el sitio: la de servicio (los 18) y la de condición. Las mostramos con un par real que se enlaza entre sí: la condición «Dolor en las piernas al caminar» lleva al servicio «Evaluación de circulación (PAD)». Cada una en dos variantes, con sus textos aprobados.</p></section>
+<h1 style="margin:0;font:400 clamp(44px,7vw,88px)/.98 var(--serif);letter-spacing:-.01em">Servicios y condiciones</h1>
+<p style="margin:0;font-size:20px;line-height:1.5">Los índices de Servicios y Condiciones, y las dos plantillas que se repiten en todo el sitio: la de servicio (los 18) y la de condición. Desde los índices se puede navegar hasta las plantillas. Las mostramos con un par real que se enlaza entre sí: la condición «Dolor en las piernas al caminar» lleva al servicio «Evaluación de circulación (PAD)». Cada una en dos variantes, con sus textos aprobados.</p></section>
 <section class="versions" aria-label="Las dos variantes">
 <button type="button" class="ver" data-ver="a" aria-pressed="true"><span class="eyebrow">Variante A</span><b>Ficha</b><span>Modular y fácil de escanear: cifras en tarjetas, un índice fijo al costado con la cita siempre a mano y secciones claras una tras otra.</span></button>
 <button type="button" class="ver" data-ver="b" aria-pressed="false"><span class="eyebrow">Variante B</span><b>Recorrido</b><span>La línea roja de la home recorre la página: de lo que siente la persona a la evaluación, los estudios y el tratamiento.</span></button>
 </section>
-<div class="ctrls"><div><div class="seg" role="group" aria-label="Plantilla"><button type="button" data-t="servicio" aria-pressed="true">Servicio</button><button type="button" data-t="condicion" aria-pressed="false">Condición</button></div>
+<div class="ctrls"><div><div class="seg" role="group" aria-label="Plantilla"><button type="button" data-t="servicios" aria-pressed="true">Índice de servicios</button><button type="button" data-t="servicio" aria-pressed="false">Servicio</button><button type="button" data-t="condiciones" aria-pressed="false">Índice de condiciones</button><button type="button" data-t="condicion" aria-pressed="false">Condición</button></div>
 <div class="seg" role="group" aria-label="Dispositivo"><button type="button" data-d="desk" aria-pressed="true">Escritorio</button><button type="button" data-d="mob" aria-pressed="false">Móvil</button></div></div>
 <a class="open" id="open" href="#" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></div>
 <div class="stage"><div class="scaler" id="scaler"><iframe id="frame" class="frame desk" src="about:blank" title="Vista previa de la plantilla"></iframe></div></div>
 <section style="padding-top:56px;max-width:56rem;display:flex;flex-direction:column;gap:12px"><h2 style="margin:0;font:400 36px/1.1 var(--serif)">Qué trae cada plantilla</h2>
 <ul style="margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;color:var(--umber)">
+<li><b style="color:var(--ink)">Índice de servicios:</b> los 18 servicios en sus tres áreas (consulta y prevención, estudios, procedimientos), con acceso directo por lo que siente la persona.</li>
+<li><b style="color:var(--ink)">Índice de condiciones:</b> las 13 molestias y situaciones del material de ustedes. En la variante A con buscador; en la B, al elegir una, se muestra su recorrido: por dónde empezar, estudios y tratamiento.</li>
 <li><b style="color:var(--ink)">Servicio:</b> entrada con botones y línea de confianza, datos rápidos, ¿es para usted?, frase del doctor, cómo funciona, así será su visita, dónde se hace, qué traer, preguntas, servicios relacionados y cierre. El aviso de emergencia (911) aparece solo en los servicios que lo llevan.</li>
 <li><b style="color:var(--ink)">Condición:</b> síntomas para que la persona se reconozca, aviso de emergencia, la ruta en Vascardio (empiece por, estudios, tratamiento) enlazada a los servicios, qué pasa si sale positivo, preguntas y otras molestias.</li>
 </ul></section>
@@ -74,7 +76,7 @@ h1,h2,h3{text-wrap:balance;font-weight:400}
 <script>
 (function(){
   var f=document.getElementById('frame'),o=document.getElementById('open'),sc=document.getElementById('scaler');
-  var st={ver:'a',t:'servicio',d:'desk'};
+  var st={ver:'a',t:'servicios',d:'desk'};
   try{var q=new URLSearchParams(location.search);['ver','t','d'].forEach(function(k){if(q.get(k))st[k]=q.get(k);});}catch(e){}
   function url(){return '/vascardio/plantillas/'+st.ver+'/'+st.t+'/';}
   function fit(){var H=Math.round(window.innerHeight*.78);
